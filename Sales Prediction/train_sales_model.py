@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 def main():
     print("Loading data...")
-    df = pd.read_csv('store_sales_seasons.csv')
+    df = pd.read_csv('../dataset/store_sales.csv')
     
     # 2. Data Loading & Feature Engineering
     print("Feature engineering...")

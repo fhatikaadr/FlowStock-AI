@@ -31,7 +31,7 @@ def print_metrics(model_name, y_true, y_pred):
 
 def main():
     print("Loading and aggregating data...")
-    df = pd.read_csv('store_sales_seasons.csv')
+    df = pd.read_csv('../dataset/store_sales.csv')
     df['date'] = pd.to_datetime(df['date'])
     
     # Aggregating to global daily sales
