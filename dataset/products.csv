@@ -1,51 +1,51 @@
-id,sku,name,category,price,weight
-1,SKU-ELE-1001,Wireless Earbuds,Electronic,128000.0,2.5kg
-2,SKU-ELE-1002,Smartwatch,Electronic,28000.0,200g
-3,SKU-ELE-1003,Bluetooth Speaker,Electronic,362000.0,50g
-4,SKU-ELE-1004,Powerbank 10k,Electronic,279000.0,200g
-5,SKU-ELE-1005,Phone Stand,Electronic,233000.0,500g
-6,SKU-ELE-1006,USB-C Cable,Electronic,408000.0,100g
-7,SKU-ELE-1007,LED Desk Lamp,Electronic,383000.0,200g
-8,SKU-ELE-1008,Mini Humidifier,Electronic,354000.0,500g
-9,SKU-FAS-1009,T-Shirt Oversized,Fashion,150000.0,200g
-10,SKU-FAS-1010,Hoodie Cotton,Fashion,479000.0,500g
-11,SKU-FAS-1011,Canvas Tote Bag,Fashion,65000.0,1.0kg
-12,SKU-FAS-1012,Socks Pack,Fashion,62000.0,500g
-13,SKU-FAS-1013,Running Shoes,Fashion,308000.0,100g
-14,SKU-FAS-1014,Bucket Hat,Fashion,369000.0,2.5kg
-15,SKU-FAS-1015,Denim Jacket,Fashion,76000.0,1.0kg
-16,SKU-STA-1016,Pencil 2B,Stationery,53000.0,500g
-17,SKU-STA-1017,Gel Pen Black,Stationery,417000.0,2.5kg
-18,SKU-STA-1018,Notebook A5,Stationery,444000.0,500g
-19,SKU-STA-1019,Sticky Notes,Stationery,295000.0,50g
-20,SKU-STA-1020,Highlighter Set,Stationery,49000.0,50g
-21,SKU-STA-1021,Scissors,Stationery,126000.0,500g
-22,SKU-STA-1022,Desk Organizer,Stationery,493000.0,200g
-23,SKU-MAK-1023,Matte Lipstick,Makeup,435000.0,1.0kg
-24,SKU-MAK-1024,Liquid Foundation,Makeup,150000.0,50g
-25,SKU-MAK-1025,Eyebrow Pencil,Makeup,420000.0,200g
-26,SKU-MAK-1026,Eyeliner Waterproof,Makeup,195000.0,200g
-27,SKU-MAK-1027,Blush On,Makeup,340000.0,50g
-28,SKU-MAK-1028,Setting Spray,Makeup,469000.0,50g
-29,SKU-SKI-1029,Sunscreen SPF50,Skincare,50000.0,50g
-30,SKU-SKI-1030,Moisturizer Gel,Skincare,98000.0,50g
-31,SKU-SKI-1031,Micellar Water,Skincare,134000.0,1.0kg
-32,SKU-SKI-1032,Vitamin C Serum,Skincare,199000.0,50g
-33,SKU-SKI-1033,Facial Wash,Skincare,349000.0,200g
-34,SKU-SKI-1034,Clay Mask,Skincare,347000.0,100g
-35,SKU-FRE-1035,Organic Banana,Fresh Food,126000.0,100g
-36,SKU-FRE-1036,Fresh Milk 1L,Fresh Food,405000.0,1.0kg
-37,SKU-FRE-1037,Whole Wheat Bread,Fresh Food,145000.0,200g
-38,SKU-FRE-1038,Greek Yogurt,Fresh Food,458000.0,2.5kg
-39,SKU-FRE-1039,Almond Milk,Fresh Food,440000.0,500g
-40,SKU-FRE-1040,Granola Bar,Fresh Food,118000.0,1.0kg
-41,SKU-FRE-1041,Organic Avocado,Fresh Food,207000.0,50g
-42,SKU-ELE-1042,Wireless Mouse,Electronic,238000.0,500g
-43,SKU-STA-1043,Fountain Pen,Stationery,83000.0,50g
-44,SKU-FAS-1044,Leather Belt,Fashion,287000.0,500g
-45,SKU-FRE-1045,Red Apples 1kg,Fresh Food,377000.0,1.0kg
-46,SKU-FRE-1046,Cheddar Cheese,Fresh Food,450000.0,1.0kg
-47,SKU-SKI-1047,Hydrating Toner,Skincare,191000.0,200g
-48,SKU-SKI-1048,Night Cream,Skincare,262000.0,100g
-49,SKU-ELE-1049,HDMI Cable 2m,Electronic,382000.0,100g
-50,SKU-ELE-1050,Phone Case Clear,Electronic,89000.0,200g
+id,sku,name,category,price,weight,seasonality_group
+1,FNB-001,Vanilla Ice Cream,Food & Beverage,25000,500,Summer Peak
+2,HNB-002,Sunscreen SPF 50,Health & Beauty,120000,50,Summer Peak
+3,OUT-003,BBQ Charcoal,Outdoor & Garden,35000,2000,Summer Peak
+4,HOM-004,Beach Towel,Home Goods,85000,400,Summer Peak
+5,TOY-005,Pool Float,Toys & Games,150000,800,Summer Peak
+6,HNB-006,Insect Repellent,Health & Beauty,45000,100,Summer Peak
+7,APP-007,Sunglasses,Apparel & Accessories,75000,50,Summer Peak
+8,APP-008,Swim Trunks,Apparel & Accessories,125000,250,Summer Peak
+9,OUT-009,Beach Umbrella,Outdoor & Garden,195000,1500,Summer Peak
+10,FNB-010,Lemonade Mix,Food & Beverage,30000,300,Summer Peak
+11,FNB-011,Watermelon,Food & Beverage,40000,4000,Summer Peak
+12,OUT-012,Camping Tent,Outdoor & Garden,650000,3500,Summer Peak
+13,OUT-013,Ice Cooler,Outdoor & Garden,250000,2000,Summer Peak
+14,APP-014,Winter Coat,Apparel & Accessories,350000,1200,Winter Peak
+15,FNB-015,Hot Chocolate Mix,Food & Beverage,45000,250,Winter Peak
+16,OUT-016,Snow Shovel,Outdoor & Garden,120000,1500,Winter Peak
+17,AUT-017,Ice Scraper,Automotive,35000,150,Winter Peak
+18,APP-018,Thermal Socks,Apparel & Accessories,25000,80,Winter Peak
+19,HOM-019,Space Heater,Home Goods,299000,2500,Winter Peak
+20,HNB-020,Lip Balm,Health & Beauty,25000,10,Winter Peak
+21,FNB-021,Marshmallows,Food & Beverage,20000,150,Winter Peak
+22,APP-022,Snow Boots,Apparel & Accessories,450000,1500,Winter Peak
+23,HOM-023,Fleece Blanket,Home Goods,125000,800,Winter Peak
+24,AUT-024,Antifreeze,Automotive,75000,4000,Winter Peak
+25,APP-025,Beanie Hat,Apparel & Accessories,35000,70,Winter Peak
+26,APP-026,Winter Gloves,Apparel & Accessories,50000,120,Winter Peak
+27,FNB-027,Halloween Candy Pack,Food & Beverage,45000,500,Autumn Peak
+28,TOY-028,Pumpkin Carving Kit,Toys & Games,60000,300,Autumn Peak
+29,OFF-029,College Ruled Notebooks,Office & School,15000,250,Autumn Peak
+30,APP-030,School Backpack,Apparel & Accessories,180000,600,Autumn Peak
+31,HOM-031,Fall Wreath,Home Goods,135000,700,Autumn Peak
+32,FNB-032,Apple Cider,Food & Beverage,65000,1000,Autumn Peak
+33,APP-033,Flannel Shirt,Apparel & Accessories,145000,350,Autumn Peak
+34,OUT-034,Leaf Rake,Outdoor & Garden,55000,800,Autumn Peak
+35,OFF-035,3-Ring Binders,Office & School,25000,300,Autumn Peak
+36,OFF-036,No. 2 Pencils (Box),Office & School,12000,100,Autumn Peak
+37,FNB-037,Caramel Apples,Food & Beverage,25000,150,Autumn Peak
+38,APP-038,Assorted Halloween Costumes,Apparel & Accessories,250000,800,Autumn Peak
+39,OUT-039,Gardening Trowel,Outdoor & Garden,30000,250,Spring Peak
+40,APP-040,Raincoat,Apparel & Accessories,95000,400,Spring Peak
+41,FNB-041,Easter Chocolate Eggs,Food & Beverage,50000,250,Spring Peak
+42,HNB-042,Allergy Medicine,Health & Beauty,45000,20,Spring Peak
+43,OUT-043,Flower Seeds,Outdoor & Garden,15000,10,Spring Peak
+44,APP-044,Rubber Boots,Apparel & Accessories,175000,1200,Spring Peak
+45,OUT-045,Spring Fertilizer,Outdoor & Garden,60000,2000,Spring Peak
+46,HOM-046,Pastel Decor,Home Goods,80000,500,Spring Peak
+47,OUT-047,Watering Can,Outdoor & Garden,40000,400,Spring Peak
+48,OUT-048,Bird Feeder,Outdoor & Garden,65000,600,Spring Peak
+49,OUT-049,Picnic Basket,Outdoor & Garden,120000,1200,Spring Peak
+50,TOY-050,Kite,Toys & Games,25000,80,Spring Peak
