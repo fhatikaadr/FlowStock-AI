@@ -714,10 +714,62 @@ async def generate_recommendation_explanation(payload: RecommendationRequest) ->
         text = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
         parsed = json.loads(text)
 
+        # compute local breakdowns to use as fallback if Gemini output omits them
+        product = lookup_product(payload)
+        transfer_total = cost_inputs.estimated_transfer_total
+        order_total = cost_inputs.estimated_order_total
+        discount_total = cost_inputs.estimated_discount_total
+        monitor_total = cost_inputs.estimated_monitor_total
+
+        transfer_breakdown = cost_breakdown_from_total(
+            transfer_total,
+            item_cost=0.0,
+            shipping_cost=max(0.0, (transfer_total or 0.0) * 0.72),
+            other_costs=max(0.0, (transfer_total or 0.0) * 0.28),
+        )
+        order_breakdown = cost_breakdown_from_total(
+            order_total,
+            item_cost=float(product.get("price", 0.0) or 0.0) * cost_inputs.quantity,
+            shipping_cost=max(15000.0, (cost_inputs.product_weight_kg or 0.0) * cost_inputs.quantity * 3200.0),
+            other_costs=max(5000.0, float(product.get("price", 0.0) or 0.0) * cost_inputs.quantity * 0.015),
+        )
+        discount_breakdown = cost_breakdown_from_total(
+            discount_total,
+            item_cost=0.0,
+            shipping_cost=max(0.0, (discount_total or 0.0) * 0.15),
+            other_costs=max(5000.0, (discount_total or 0.0) * 0.85),
+        )
+        monitor_breakdown = cost_breakdown_from_total(
+            monitor_total,
+            item_cost=0.0,
+            shipping_cost=0.0,
+            other_costs=float(monitor_total or 0.0),
+        )
+
+        def _ensure_cost_cb(option: dict) -> dict:
+            if not isinstance(option, dict):
+                return option
+            cb = option.get("cost_breakdown")
+            if cb and isinstance(cb, dict) and cb.get("total_cost") is not None:
+                return option
+            title = (option.get("title", "") or "").lower()
+            if "transfer" in title:
+                option["cost_breakdown"] = transfer_breakdown
+            elif "order" in title or "supplier" in title:
+                option["cost_breakdown"] = order_breakdown
+            elif "discount" in title or "markdown" in title:
+                option["cost_breakdown"] = discount_breakdown
+            else:
+                option["cost_breakdown"] = monitor_breakdown
+            return option
+
+        best = _ensure_cost_cb(parsed.get("best_option", {}))
+        alt = _ensure_cost_cb(parsed.get("alternative_option", {}))
+
         return RecommendationExplanation(
             recommended_action=payload.recommended_action,
-            best_option=SolutionOption(**parsed["best_option"]),
-            alternative_option=SolutionOption(**parsed["alternative_option"]),
+            best_option=SolutionOption(**best),
+            alternative_option=SolutionOption(**alt),
         )
     except Exception:
         return build_fallback_explanation(payload, cost_inputs)
@@ -772,16 +824,16 @@ def build_fallback_explanation(payload: RecommendationRequest, cost_inputs: Cost
             recommended_action=payload.recommended_action,
             best_option=SolutionOption(
                 title=f"Transfer stock from {cost_inputs.source_warehouse or 'surplus warehouse'}",
-                description=f"Pindahkan stok ke {payload.warehouse_name} untuk menutup shortage {payload.shortage} unit pada {payload.product_name}.",
-                costImpact="Biaya lebih rendah karena hanya ongkir antar-warehouse dan handling.",
+                description=f"Transfer stock to {payload.warehouse_name} to cover the shortage of {payload.shortage} units for {payload.product_name}.",
+                costImpact="Lower cost because it only incurs inter-warehouse shipping and handling.",
                 riskLevel="Low",
                 feasibility="High",
                 cost_breakdown=transfer_breakdown,
             ),
             alternative_option=SolutionOption(
                 title="Order from supplier",
-                description="Jika donor stock tidak tersedia, lakukan order ke supplier.",
-                costImpact="Biaya lebih tinggi karena harga barang, ongkir, dan handling dari supplier.",
+                description="If donor stock is not available, place an order with the supplier.",
+                costImpact="Higher cost due to item price, shipping, and supplier handling fees.",
                 riskLevel="Medium",
                 feasibility="Medium",
                 cost_breakdown=order_breakdown,
@@ -793,16 +845,16 @@ def build_fallback_explanation(payload: RecommendationRequest, cost_inputs: Cost
             recommended_action=payload.recommended_action,
             best_option=SolutionOption(
                 title="Order from supplier",
-                description=f"Stok di {payload.warehouse_name} tidak cukup untuk demand 14 hari.",
-                costImpact="Mencegah lost sales tetapi menambah biaya pembelian dan pengiriman.",
+                description=f"Stock at {payload.warehouse_name} is insufficient to meet 14-day demand.",
+                costImpact="Prevents lost sales but increases procurement and shipping costs.",
                 riskLevel="Low",
                 feasibility="High",
                 cost_breakdown=order_breakdown,
             ),
             alternative_option=SolutionOption(
                 title=f"Transfer stock from {cost_inputs.source_warehouse or 'surplus warehouse'}",
-                description="Cari warehouse donor sebelum order baru.",
-                costImpact="Lebih murah jika stok donor tersedia.",
+                description="Search for donor warehouses before creating a new order.",
+                costImpact="Cheaper if donor stock is available.",
                 riskLevel="Medium",
                 feasibility="Medium",
                 cost_breakdown=transfer_breakdown,
@@ -814,16 +866,16 @@ def build_fallback_explanation(payload: RecommendationRequest, cost_inputs: Cost
             recommended_action=payload.recommended_action,
             best_option=SolutionOption(
                 title="Apply discount",
-                description=f"Stok {payload.product_name} lebih tinggi dari target {payload.target_stock}; diskon bisa mempercepat perputaran.",
-                costImpact="Mengurangi holding cost tetapi ada biaya markdown.",
+                description=f"Stock of {payload.product_name} is above the target {payload.target_stock}; applying a discount can speed up turnover.",
+                costImpact="Reduces holding cost but incurs markdown expense.",
                 riskLevel="Low",
                 feasibility="High",
                 cost_breakdown=discount_breakdown,
             ),
             alternative_option=SolutionOption(
                 title="Hold and monitor",
-                description="Pantau penjualan dan hindari diskon jika demand mulai naik.",
-                costImpact="Biaya rendah sekarang, tetapi holding cost tetap berjalan.",
+                description="Monitor sales and avoid discounting if demand starts to increase.",
+                costImpact="Low immediate cost, but holding cost remains.",
                 riskLevel="Medium",
                 feasibility="High",
                 cost_breakdown=monitor_breakdown,
@@ -834,7 +886,7 @@ def build_fallback_explanation(payload: RecommendationRequest, cost_inputs: Cost
         recommended_action="None",
         best_option=SolutionOption(
             title="No action needed",
-            description=f"Stok {payload.product_name} masih sesuai target di {payload.warehouse_name}.",
+            description=f"Stock of {payload.product_name} is within target levels at {payload.warehouse_name}.",
             costImpact="No additional cost.",
             riskLevel="Low",
             feasibility="High",
@@ -842,7 +894,7 @@ def build_fallback_explanation(payload: RecommendationRequest, cost_inputs: Cost
         ),
         alternative_option=SolutionOption(
             title="Monitor daily",
-            description="Pantau pergerakan demand harian untuk menjaga kesiapan.",
+            description="Monitor daily demand movements to stay prepared.",
             costImpact="Minimal cost.",
             riskLevel="Low",
             feasibility="High",
