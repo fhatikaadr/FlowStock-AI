@@ -13,4 +13,4 @@ build/
 
 # Env
 .env
-../backend/.env".env" 
+backend/.env
