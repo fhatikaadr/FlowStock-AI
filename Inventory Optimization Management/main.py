@@ -8,6 +8,7 @@ from typing import Optional
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
+import pandas as pd
 
 load_dotenv()
 
@@ -25,7 +26,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.train import train_inventory_forecast_model  # type: ignore
 from src.inventory_recommendation import build_inventory_recommendations  # type: ignore
 from ai_metrics import load_inventory_forecast_metrics  # type: ignore
-from supabase_utils import supabase_enabled, upsert_rows  # type: ignore
+from supabase_utils import supabase_enabled, update_row  # type: ignore
 
 app = FastAPI(title="Inventory Optimization Management API", version="1.0.0")
 
@@ -57,39 +58,30 @@ def api_sync_inventory() -> dict:
             }
 
         inventory_rows = []
-        recommendation_rows = []
 
         for _, row in recommendations.iterrows():
             row_dict = row.to_dict()
-            recommendation_rows.append({
-                "id": int(row_dict.get("id", 0) or 0),
-                "product_id": str(row_dict.get("product_id", "")),
-                "product_name": row_dict.get("product_name"),
-                "sku": row_dict.get("sku"),
-                "product_category": row_dict.get("product_category"),
-                "warehouse_id": str(row_dict.get("warehouse_id", "")),
-                "warehouse_name": row_dict.get("warehouse_name"),
-                "current_stock": int(row_dict.get("current_stock", 0) or 0),
-                "predicted_demand_14d": int(row_dict.get("predicted_demand_14d", 0) or 0),
-                "reorder_point": int(row_dict.get("reorder_point", 0) or 0),
-                "target_stock": int(row_dict.get("target_stock", 0) or 0),
-                "shortage": int(row_dict.get("shortage", 0) or 0),
-                "status": row_dict.get("status"),
-                "recommended_action": row_dict.get("recommended_action"),
-            })
+            expiry_date = row_dict.get("expiry_date")
 
             inventory_rows.append({
-                "product_id": str(row_dict.get("product_id", "")),
-                "warehouse_id": str(row_dict.get("warehouse_id", "")),
-                "predicted_demand": int(row_dict.get("predicted_demand_14d", 0) or 0),
+                "id": int(row_dict.get("id", 0) or 0),
+                "product_id": int(row_dict.get("product_id", 0) or 0),
+                "warehouse_id": int(row_dict.get("warehouse_id", 0) or 0),
+                "current_stock": int(row_dict.get("current_stock", 0) or 0),
+                "expiry_date": None if pd.isna(expiry_date) else str(expiry_date),
+                "predicted_demand": int(row_dict.get("predicted_demand", 0) or 0),
+                "shortage": int(row_dict.get("shortage", 0) or 0),
                 "status": row_dict.get("status"),
                 "recommended_action": row_dict.get("recommended_action"),
-                "target_stock": int(row_dict.get("target_stock", 0) or 0),
-                "shortage": int(row_dict.get("shortage", 0) or 0),
             })
 
-        upsert_rows("inventory_ai_recommendations", recommendation_rows, on_conflict="id")
-        upsert_rows("inventory", inventory_rows, on_conflict="product_id,warehouse_id")
+        def update_inventory_row(payload: dict[str, object]) -> None:
+            row_id = int(payload["id"])
+            values = {k: v for k, v in payload.items() if k != "id"}
+            update_row("inventory", values, f"id=eq.{row_id}")
+
+        for payload in inventory_rows:
+            update_inventory_row(payload)
 
         return {
             "status": "ok",
