@@ -22,3 +22,18 @@ copy .env.example .env
 ## Web usage
 
 Point the web app to `http://localhost:8000` and call the API with `fetch()`.
+
+## Supabase (opsional)
+
+Kalau ingin service ini membaca data langsung dari Supabase, isi `.env` dengan:
+
+```bash
+SUPABASE_URL=https://xxxxx.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+```
+
+Table yang dibaca:
+- `inventory_ai_recommendations`
+- `inventory`
+- `products`
+- `warehouses`

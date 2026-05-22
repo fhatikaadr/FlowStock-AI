@@ -30,3 +30,17 @@ python -m src.inventory_recommendation
 ```
 
 Output akan tersimpan di `../artifacts/inventory_ai_recommendations.csv`.
+
+## Supabase (opsional)
+
+Kalau mau data diambil dari Supabase dan hasil prediksi ditulis balik ke Supabase, isi `.env` dengan:
+
+```bash
+SUPABASE_URL=https://xxxxx.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+```
+
+Table yang dipakai:
+- `store_sales` untuk data historis penjualan
+- `inventory` untuk update hasil prediksi
+- `products` dan `warehouses` untuk enrichment data

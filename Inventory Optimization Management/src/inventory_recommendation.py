@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -8,6 +9,11 @@ import pandas as pd
 from .data import PROJECT_ROOT, load_store_sales
 from .policy import PolicyConfig, classify_status, reorder_point
 from .predict import forecast_inventory_demand
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from supabase_utils import load_table_df, supabase_enabled
 
 
 DEFAULT_INVENTORY_PATH = PROJECT_ROOT / "dataset" / "inventory.csv"
@@ -52,9 +58,14 @@ def build_inventory_recommendations(
     warehouses_path = Path(warehouses_path) if warehouses_path is not None else DEFAULT_WAREHOUSES_PATH
     output_path = Path(output_path) if output_path is not None else DEFAULT_OUTPUT_PATH
 
-    inv = pd.read_csv(inventory_path)
-    products = pd.read_csv(products_path)
-    warehouses = pd.read_csv(warehouses_path)
+    if supabase_enabled():
+        inv = load_table_df("inventory")
+        products = load_table_df("products")
+        warehouses = load_table_df("warehouses")
+    else:
+        inv = pd.read_csv(inventory_path)
+        products = pd.read_csv(products_path)
+        warehouses = pd.read_csv(warehouses_path)
 
     inv["product_id"] = inv["product_id"].astype(str)
     inv["warehouse_id"] = inv["warehouse_id"].astype(str)

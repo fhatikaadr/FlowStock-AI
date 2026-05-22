@@ -29,6 +29,8 @@ INVENTORY_CSV = DATASET_DIR / "inventory.csv"
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from supabase_utils import load_table_df, supabase_enabled, update_row
+
 app = FastAPI(title="FlowStock AI Recommendation API", version="1.0.0")
 
 app.add_middleware(
@@ -108,6 +110,11 @@ class CostInput(BaseModel):
 
 @lru_cache(maxsize=1)
 def load_products() -> pd.DataFrame:
+    if supabase_enabled():
+        df = load_table_df("products")
+        if not df.empty:
+            return df
+
     if not PRODUCTS_CSV.exists():
         return pd.DataFrame()
     return pd.read_csv(PRODUCTS_CSV)
@@ -115,6 +122,11 @@ def load_products() -> pd.DataFrame:
 
 @lru_cache(maxsize=1)
 def load_warehouses() -> pd.DataFrame:
+    if supabase_enabled():
+        df = load_table_df("warehouses")
+        if not df.empty:
+            return df
+
     if not WAREHOUSES_CSV.exists():
         return pd.DataFrame()
     return pd.read_csv(WAREHOUSES_CSV)
@@ -122,9 +134,26 @@ def load_warehouses() -> pd.DataFrame:
 
 @lru_cache(maxsize=1)
 def load_inventory() -> pd.DataFrame:
+    if supabase_enabled():
+        df = load_table_df("inventory")
+        if not df.empty:
+            return df
+
     if not INVENTORY_CSV.exists():
         return pd.DataFrame()
     return pd.read_csv(INVENTORY_CSV)
+
+
+@lru_cache(maxsize=1)
+def load_recommendations() -> pd.DataFrame:
+    if supabase_enabled():
+        df = load_table_df("inventory_ai_recommendations")
+        if not df.empty:
+            return df
+
+    if not RECOMMENDATIONS_CSV.exists():
+        return pd.DataFrame()
+    return pd.read_csv(RECOMMENDATIONS_CSV)
 
 
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
