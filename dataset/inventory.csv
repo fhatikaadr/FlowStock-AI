@@ -1,125 +1,125 @@
 id,product_id,warehouse_id,current_stock,expiry_date,predicted_demand,shortage,status,recommended_action
-1,1,1,226,,325,99,Critical,Restock Order
-2,1,2,205,,325,120,Critical,⚡ Transfer
-3,1,3,280,,148,0,Healthy,None
-4,1,4,293,,25,0,Overstock,Discount
-5,1,5,68,,294,226,Critical,⚡ Transfer
-6,1,6,184,,77,0,Overstock,Discount
-7,1,7,160,,242,82,Critical,Restock Order
-8,1,8,11,,154,143,Critical,⚡ Transfer
-9,1,9,101,,279,178,Critical,⚡ Transfer
-10,1,10,162,,347,185,Critical,⚡ Transfer
-11,2,1,111,,98,0,Healthy,None
-12,2,2,201,,102,0,Healthy,None
-13,2,3,286,,291,5,Healthy,None
-14,2,4,10,,326,316,Critical,⚡ Transfer
-15,2,5,19,,77,58,Critical,⚡ Transfer
-16,2,6,167,,142,0,Healthy,None
-17,2,7,39,,143,104,Critical,⚡ Transfer
-18,2,8,50,,63,13,Healthy,None
-19,2,9,258,,55,0,Overstock,Discount
-20,2,10,282,,84,0,Overstock,Discount
+1,1,1,226,2027-01-05,325,99,Critical,Restock Order
+2,1,2,205,2027-12-12,325,120,Critical,⚡ Transfer
+3,1,3,280,2027-11-11,148,0,Healthy,
+4,1,4,293,2028-02-10,25,0,Overstock,Discount
+5,1,5,68,2027-10-30,294,226,Critical,⚡ Transfer
+6,1,6,184,2027-06-02,77,0,Overstock,Discount
+7,1,7,160,2027-01-05,242,82,Critical,Restock Order
+8,1,8,11,2027-04-14,154,143,Critical,⚡ Transfer
+9,1,9,101,2028-03-25,279,178,Critical,⚡ Transfer
+10,1,10,162,2027-05-05,347,185,Critical,⚡ Transfer
+11,2,1,111,2027-12-31,98,0,Healthy,
+12,2,2,201,2027-03-05,102,0,Healthy,
+13,2,3,286,2027-07-09,291,5,Healthy,
+14,2,4,10,2028-03-17,326,316,Critical,⚡ Transfer
+15,2,5,19,2028-02-05,77,58,Critical,⚡ Transfer
+16,2,6,167,2027-02-12,142,0,Healthy,
+17,2,7,39,2027-05-05,143,104,Critical,⚡ Transfer
+18,2,8,50,2027-07-19,63,13,Healthy,
+19,2,9,258,2028-02-19,55,0,Overstock,Discount
+20,2,10,282,2027-06-02,84,0,Overstock,Discount
 21,3,1,75,,263,188,Critical,⚡ Transfer
 22,3,2,94,,155,61,Critical,⚡ Transfer
-23,3,3,226,,128,0,Healthy,None
+23,3,3,226,,128,0,Healthy,
 24,3,4,286,,122,0,Overstock,Discount
 25,3,5,169,,224,55,Critical,⚡ Transfer
-26,3,6,201,,244,43,Healthy,None
-27,3,7,274,,251,0,Healthy,None
+26,3,6,201,,244,43,Healthy,
+27,3,7,274,,251,0,Healthy,
 28,3,8,71,,146,75,Critical,Restock Order
 29,3,9,183,,30,0,Overstock,Discount
 30,3,10,293,,137,0,Overstock,Discount
 31,4,1,122,,23,0,Overstock,Discount
 32,4,2,46,,343,297,Critical,Restock Order
-33,4,3,44,,36,0,Healthy,None
+33,4,3,44,,36,0,Healthy,
 34,4,4,179,,56,0,Overstock,Discount
-35,4,5,273,,141,0,Healthy,None
+35,4,5,273,,141,0,Healthy,
 36,4,6,152,,268,116,Critical,Restock Order
 37,4,7,77,,312,235,Critical,⚡ Transfer
 38,4,8,134,,262,128,Critical,⚡ Transfer
-39,4,9,107,,68,0,Healthy,None
+39,4,9,107,,68,0,Healthy,
 40,4,10,59,,240,181,Critical,⚡ Transfer
-41,5,1,220,,259,39,Healthy,None
+41,5,1,220,,259,39,Healthy,
 42,5,2,37,,350,313,Critical,Restock Order
-43,5,3,216,,193,0,Healthy,None
+43,5,3,216,,193,0,Healthy,
 44,5,4,65,,147,82,Critical,Restock Order
-45,5,5,284,,249,0,Healthy,None
+45,5,5,284,,249,0,Healthy,
 46,5,6,81,,236,155,Critical,Restock Order
-47,5,7,246,,147,0,Healthy,None
+47,5,7,246,,147,0,Healthy,
 48,5,8,48,,246,198,Critical,⚡ Transfer
 49,5,9,291,,70,0,Overstock,Discount
 50,5,10,35,,296,261,Critical,⚡ Transfer
-51,6,1,57,,141,84,Critical,Restock Order
-52,6,2,258,,266,8,Healthy,None
-53,6,3,119,,225,106,Critical,⚡ Transfer
-54,6,4,94,,214,120,Critical,Restock Order
-55,6,5,209,,155,0,Healthy,None
-56,6,6,242,,166,0,Healthy,None
-57,6,7,226,,304,78,Critical,⚡ Transfer
-58,6,8,259,,99,0,Overstock,Discount
-59,6,9,107,,171,64,Critical,Restock Order
-60,6,10,39,,316,277,Critical,⚡ Transfer
+51,6,1,57,2027-10-13,141,84,Critical,Restock Order
+52,6,2,258,2027-11-20,266,8,Healthy,
+53,6,3,119,2027-10-14,225,106,Critical,⚡ Transfer
+54,6,4,94,2027-10-12,214,120,Critical,Restock Order
+55,6,5,209,2028-04-25,155,0,Healthy,
+56,6,6,242,2027-11-11,166,0,Healthy,
+57,6,7,226,2026-12-27,304,78,Critical,⚡ Transfer
+58,6,8,259,2027-02-16,99,0,Overstock,Discount
+59,6,9,107,2027-04-29,171,64,Critical,Restock Order
+60,6,10,39,2028-03-26,316,277,Critical,⚡ Transfer
 61,7,1,41,,180,139,Critical,Restock Order
-62,7,2,254,,277,23,Healthy,None
+62,7,2,254,,277,23,Healthy,
 63,7,3,281,,100,0,Overstock,Discount
 64,7,4,39,,280,241,Critical,Restock Order
-65,7,5,105,,55,0,Healthy,None
+65,7,5,105,,55,0,Healthy,
 66,7,6,44,,140,96,Critical,⚡ Transfer
 67,7,7,136,,316,180,Critical,⚡ Transfer
 68,7,8,51,,234,183,Critical,⚡ Transfer
-69,7,9,299,,287,0,Healthy,None
-70,7,10,171,,153,0,Healthy,None
+69,7,9,299,,287,0,Healthy,
+70,7,10,171,,153,0,Healthy,
 71,8,1,114,,180,66,Critical,Restock Order
 72,8,2,212,,87,0,Overstock,Discount
 73,8,3,163,,254,91,Critical,⚡ Transfer
-74,8,4,47,,24,0,Healthy,None
+74,8,4,47,,24,0,Healthy,
 75,8,5,244,,338,94,Critical,⚡ Transfer
-76,8,6,61,,57,0,Healthy,None
+76,8,6,61,,57,0,Healthy,
 77,8,7,285,,129,0,Overstock,Discount
-78,8,8,269,,155,0,Healthy,None
+78,8,8,269,,155,0,Healthy,
 79,8,9,77,,198,121,Critical,⚡ Transfer
 80,8,10,135,,209,74,Critical,Restock Order
 81,9,1,234,,298,64,Critical,⚡ Transfer
 82,9,2,280,,24,0,Overstock,Discount
-83,9,3,293,,173,0,Healthy,None
-84,9,4,63,,88,25,Healthy,None
-85,9,5,145,,79,0,Healthy,None
+83,9,3,293,,173,0,Healthy,
+84,9,4,63,,88,25,Healthy,
+85,9,5,145,,79,0,Healthy,
 86,9,6,64,,303,239,Critical,Restock Order
 87,9,7,154,,329,175,Critical,Restock Order
-88,9,8,185,,124,0,Healthy,None
+88,9,8,185,,124,0,Healthy,
 89,9,9,145,,278,133,Critical,⚡ Transfer
-90,9,10,36,,67,31,Healthy,None
-91,10,1,226,,161,0,Healthy,None
-92,10,2,32,,21,0,Healthy,None
-93,10,3,180,,86,0,Overstock,Discount
-94,10,4,144,,102,0,Healthy,None
-95,10,5,236,,302,66,Critical,⚡ Transfer
-96,10,6,297,,24,0,Overstock,Discount
-97,10,7,67,,58,0,Healthy,None
-98,10,8,86,,299,213,Critical,Restock Order
-99,10,9,199,,318,119,Critical,⚡ Transfer
-100,10,10,230,,85,0,Overstock,Discount
-101,11,1,31,,177,146,Critical,⚡ Transfer
-102,11,2,30,,203,173,Critical,Restock Order
-103,11,3,137,,72,0,Healthy,None
-104,11,4,191,,306,115,Critical,⚡ Transfer
-105,11,5,218,,337,119,Critical,⚡ Transfer
-106,11,6,131,,103,0,Healthy,None
-107,11,7,100,,231,131,Critical,Restock Order
-108,11,8,180,,230,50,Healthy,None
-109,11,9,137,,156,19,Healthy,None
-110,11,10,91,,75,0,Healthy,None
+90,9,10,36,,67,31,Healthy,
+91,10,1,226,2028-03-17,161,0,Healthy,
+92,10,2,32,2026-12-27,21,0,Healthy,
+93,10,3,180,2027-06-02,86,0,Overstock,Discount
+94,10,4,144,2026-11-18,102,0,Healthy,
+95,10,5,236,2027-03-18,302,66,Critical,⚡ Transfer
+96,10,6,297,2027-10-14,24,0,Overstock,Discount
+97,10,7,67,2028-03-03,58,0,Healthy,
+98,10,8,86,2027-11-03,299,213,Critical,Restock Order
+99,10,9,199,2027-07-21,318,119,Critical,⚡ Transfer
+100,10,10,230,2027-11-18,85,0,Overstock,Discount
+101,11,1,31,2028-02-05,177,146,Critical,⚡ Transfer
+102,11,2,30,2028-02-19,203,173,Critical,Restock Order
+103,11,3,137,2027-12-28,72,0,Healthy,
+104,11,4,191,2027-05-14,306,115,Critical,⚡ Transfer
+105,11,5,218,2028-04-12,337,119,Critical,⚡ Transfer
+106,11,6,131,2026-11-26,103,0,Healthy,
+107,11,7,100,2028-01-29,231,131,Critical,Restock Order
+108,11,8,180,2028-02-09,230,50,Healthy,
+109,11,9,137,2027-07-08,156,19,Healthy,
+110,11,10,91,2027-07-09,75,0,Healthy,
 111,12,1,205,,39,0,Overstock,Discount
-112,12,2,250,,133,0,Healthy,None
+112,12,2,250,,133,0,Healthy,
 113,12,3,112,,255,143,Critical,⚡ Transfer
-114,12,4,126,,134,8,Healthy,None
+114,12,4,126,,134,8,Healthy,
 115,12,5,22,,118,96,Critical,⚡ Transfer
 116,12,6,152,,55,0,Overstock,Discount
-117,12,7,152,,199,47,Healthy,None
-118,12,8,270,,224,0,Healthy,None
-119,12,9,284,,189,0,Healthy,None
+117,12,7,152,,199,47,Healthy,
+118,12,8,270,,224,0,Healthy,
+119,12,9,284,,189,0,Healthy,
 120,12,10,24,,79,55,Critical,⚡ Transfer
-121,13,1,143,,111,0,Healthy,None
+121,13,1,143,,111,0,Healthy,
 122,13,2,145,,39,0,Overstock,Discount
 123,13,3,65,,325,260,Critical,⚡ Transfer
 124,13,4,170,,243,73,Critical,⚡ Transfer
@@ -127,330 +127,330 @@ id,product_id,warehouse_id,current_stock,expiry_date,predicted_demand,shortage,s
 126,13,6,207,,315,108,Critical,Restock Order
 127,13,7,32,,243,211,Critical,Restock Order
 128,13,8,285,,120,0,Overstock,Discount
-129,13,9,196,,240,44,Healthy,None
+129,13,9,196,,240,44,Healthy,
 130,13,10,45,,189,144,Critical,⚡ Transfer
 131,14,1,73,,173,100,Critical,⚡ Transfer
-132,14,2,219,,187,0,Healthy,None
-133,14,3,216,,171,0,Healthy,None
+132,14,2,219,,187,0,Healthy,
+133,14,3,216,,171,0,Healthy,
 134,14,4,293,,85,0,Overstock,Discount
 135,14,5,108,,235,127,Critical,⚡ Transfer
-136,14,6,204,,109,0,Healthy,None
+136,14,6,204,,109,0,Healthy,
 137,14,7,164,,227,63,Critical,⚡ Transfer
 138,14,8,10,,175,165,Critical,Restock Order
 139,14,9,230,,316,86,Critical,⚡ Transfer
 140,14,10,174,,258,84,Critical,⚡ Transfer
-141,15,1,119,,281,162,Critical,⚡ Transfer
-142,15,2,96,,63,0,Healthy,None
-143,15,3,155,,283,128,Critical,⚡ Transfer
-144,15,4,181,,67,0,Overstock,Discount
-145,15,5,130,,178,48,Healthy,None
-146,15,6,125,,121,0,Healthy,None
-147,15,7,85,,32,0,Overstock,Discount
-148,15,8,33,,145,112,Critical,⚡ Transfer
-149,15,9,47,,253,206,Critical,⚡ Transfer
-150,15,10,109,,216,107,Critical,⚡ Transfer
-151,16,1,134,,95,0,Healthy,None
+141,15,1,119,2027-02-12,281,162,Critical,⚡ Transfer
+142,15,2,96,2027-10-23,63,0,Healthy,
+143,15,3,155,2027-02-23,283,128,Critical,⚡ Transfer
+144,15,4,181,2026-12-15,67,0,Overstock,Discount
+145,15,5,130,2027-10-23,178,48,Healthy,
+146,15,6,125,2027-03-13,121,0,Healthy,
+147,15,7,85,2027-11-03,32,0,Overstock,Discount
+148,15,8,33,2027-08-04,145,112,Critical,⚡ Transfer
+149,15,9,47,2028-04-04,253,206,Critical,⚡ Transfer
+150,15,10,109,2027-11-11,216,107,Critical,⚡ Transfer
+151,16,1,134,,95,0,Healthy,
 152,16,2,12,,74,62,Critical,⚡ Transfer
-153,16,3,122,,110,0,Healthy,None
-154,16,4,275,,257,0,Healthy,None
+153,16,3,122,,110,0,Healthy,
+154,16,4,275,,257,0,Healthy,
 155,16,5,35,,305,270,Critical,Restock Order
 156,16,6,72,,253,181,Critical,Restock Order
-157,16,7,247,,291,44,Healthy,None
-158,16,8,296,,324,28,Healthy,None
+157,16,7,247,,291,44,Healthy,
+158,16,8,296,,324,28,Healthy,
 159,16,9,172,,246,74,Critical,⚡ Transfer
-160,16,10,268,,238,0,Healthy,None
-161,17,1,290,,248,0,Healthy,None
+160,16,10,268,,238,0,Healthy,
+161,17,1,290,,248,0,Healthy,
 162,17,2,91,,263,172,Critical,⚡ Transfer
 163,17,3,136,,346,210,Critical,Restock Order
-164,17,4,276,,268,0,Healthy,None
-165,17,5,132,,160,28,Healthy,None
+164,17,4,276,,268,0,Healthy,
+165,17,5,132,,160,28,Healthy,
 166,17,6,235,,59,0,Overstock,Discount
-167,17,7,156,,140,0,Healthy,None
-168,17,8,149,,191,42,Healthy,None
+167,17,7,156,,140,0,Healthy,
+168,17,8,149,,191,42,Healthy,
 169,17,9,173,,296,123,Critical,Restock Order
 170,17,10,87,,138,51,Critical,⚡ Transfer
-171,18,1,88,,129,41,Healthy,None
+171,18,1,88,,129,41,Healthy,
 172,18,2,42,,232,190,Critical,⚡ Transfer
-173,18,3,287,,258,0,Healthy,None
+173,18,3,287,,258,0,Healthy,
 174,18,4,222,,51,0,Overstock,Discount
 175,18,5,115,,235,120,Critical,⚡ Transfer
 176,18,6,20,,314,294,Critical,⚡ Transfer
 177,18,7,13,,200,187,Critical,Restock Order
-178,18,8,209,,234,25,Healthy,None
-179,18,9,285,,299,14,Healthy,None
+178,18,8,209,,234,25,Healthy,
+179,18,9,285,,299,14,Healthy,
 180,18,10,122,,269,147,Critical,Restock Order
-181,19,1,233,,268,35,Healthy,None
+181,19,1,233,,268,35,Healthy,
 182,19,2,24,,219,195,Critical,⚡ Transfer
 183,19,3,217,,104,0,Overstock,Discount
 184,19,4,249,,85,0,Overstock,Discount
 185,19,5,283,,33,0,Overstock,Discount
 186,19,6,211,,323,112,Critical,⚡ Transfer
-187,19,7,23,,62,39,Healthy,None
+187,19,7,23,,62,39,Healthy,
 188,19,8,229,,89,0,Overstock,Discount
 189,19,9,246,,113,0,Overstock,Discount
 190,19,10,35,,153,118,Critical,⚡ Transfer
-191,20,1,118,,252,134,Critical,⚡ Transfer
-192,20,2,204,,162,0,Healthy,None
-193,20,3,225,,149,0,Healthy,None
-194,20,4,51,,260,209,Critical,Restock Order
-195,20,5,286,,46,0,Overstock,Discount
-196,20,6,189,,134,0,Healthy,None
-197,20,7,45,,40,0,Healthy,None
-198,20,8,25,,146,121,Critical,Restock Order
-199,20,9,20,,338,318,Critical,Restock Order
-200,20,10,74,,262,188,Critical,⚡ Transfer
-201,21,1,298,,131,0,Overstock,Discount
-202,21,2,248,,151,0,Healthy,None
-203,21,3,198,,105,0,Healthy,None
-204,21,4,68,,103,35,Healthy,None
-205,21,5,169,,75,0,Overstock,Discount
-206,21,6,23,,179,156,Critical,⚡ Transfer
-207,21,7,202,,223,21,Healthy,None
-208,21,8,111,,58,0,Healthy,None
-209,21,9,134,,72,0,Healthy,None
-210,21,10,164,,327,163,Critical,⚡ Transfer
+191,20,1,118,2028-03-11,252,134,Critical,⚡ Transfer
+192,20,2,204,2028-02-26,162,0,Healthy,
+193,20,3,225,2028-04-12,149,0,Healthy,
+194,20,4,51,2028-02-05,260,209,Critical,Restock Order
+195,20,5,286,2027-01-01,46,0,Overstock,Discount
+196,20,6,189,2027-05-16,134,0,Healthy,
+197,20,7,45,2027-07-11,40,0,Healthy,
+198,20,8,25,2027-11-11,146,121,Critical,Restock Order
+199,20,9,20,2027-04-10,338,318,Critical,Restock Order
+200,20,10,74,2027-09-30,262,188,Critical,⚡ Transfer
+201,21,1,298,2027-10-14,131,0,Overstock,Discount
+202,21,2,248,2027-01-26,151,0,Healthy,
+203,21,3,198,2027-07-21,105,0,Healthy,
+204,21,4,68,2027-05-05,103,35,Healthy,
+205,21,5,169,2028-04-18,75,0,Overstock,Discount
+206,21,6,23,2027-03-30,179,156,Critical,⚡ Transfer
+207,21,7,202,2028-02-09,223,21,Healthy,
+208,21,8,111,2028-01-16,58,0,Healthy,
+209,21,9,134,2027-05-12,72,0,Healthy,
+210,21,10,164,2027-05-21,327,163,Critical,⚡ Transfer
 211,22,1,299,,41,0,Overstock,Discount
 212,22,2,187,,292,105,Critical,⚡ Transfer
 213,22,3,199,,55,0,Overstock,Discount
-214,22,4,269,,194,0,Healthy,None
+214,22,4,269,,194,0,Healthy,
 215,22,5,16,,235,219,Critical,⚡ Transfer
 216,22,6,64,,241,177,Critical,⚡ Transfer
 217,22,7,245,,98,0,Overstock,Discount
 218,22,8,232,,110,0,Overstock,Discount
-219,22,9,277,,158,0,Healthy,None
-220,22,10,285,,267,0,Healthy,None
-221,23,1,248,2027-08-17,243,0,Healthy,None
-222,23,2,175,2027-02-12,145,0,Healthy,None
-223,23,3,152,2027-07-23,250,98,Critical,⚡ Transfer
-224,23,4,204,2026-12-15,192,0,Healthy,None
-225,23,5,263,2027-05-21,186,0,Healthy,None
-226,23,6,259,2027-11-14,128,0,Overstock,Discount
-227,23,7,142,2027-08-29,194,52,Critical,⚡ Transfer
-228,23,8,151,2026-11-26,304,153,Critical,⚡ Transfer
-229,23,9,107,2027-07-21,63,0,Healthy,None
-230,23,10,218,2027-07-20,270,52,Critical,⚡ Transfer
-231,24,1,261,2026-12-03,249,0,Healthy,None
-232,24,2,57,2027-06-30,170,113,Critical,⚡ Transfer
-233,24,3,134,2027-11-28,176,42,Healthy,None
-234,24,4,252,2027-11-03,303,51,Critical,⚡ Transfer
-235,24,5,291,2027-11-11,189,0,Healthy,None
-236,24,6,242,2027-09-25,158,0,Healthy,None
-237,24,7,138,2027-03-19,138,0,Healthy,None
-238,24,8,108,2027-03-18,181,73,Critical,⚡ Transfer
-239,24,9,104,2027-06-25,118,14,Healthy,None
-240,24,10,257,2028-05-06,161,0,Healthy,None
-241,25,1,154,2027-06-02,71,0,Overstock,Discount
-242,25,2,161,2027-11-20,136,0,Healthy,None
-243,25,3,101,2026-11-30,174,73,Critical,⚡ Transfer
-244,25,4,74,2027-01-01,160,86,Critical,⚡ Transfer
-245,25,5,293,2027-03-25,169,0,Healthy,None
-246,25,6,261,2026-11-28,72,0,Overstock,Discount
-247,25,7,155,2028-03-20,260,105,Critical,⚡ Transfer
-248,25,8,104,2027-08-01,46,0,Overstock,Discount
-249,25,9,254,2027-01-21,78,0,Overstock,Discount
-250,25,10,215,2027-01-30,271,56,Critical,⚡ Transfer
-251,26,1,37,2027-04-17,97,60,Critical,⚡ Transfer
-252,26,2,165,2027-07-28,63,0,Overstock,Discount
-253,26,3,70,2028-01-16,305,235,Critical,⚡ Transfer
-254,26,4,125,2027-12-10,287,162,Critical,⚡ Transfer
-255,26,5,236,2028-01-29,172,0,Healthy,None
-256,26,6,166,2027-01-16,311,145,Critical,⚡ Transfer
-257,26,7,60,2027-06-20,126,66,Critical,Restock Order
-258,26,8,51,2027-07-19,100,49,Healthy,None
-259,26,9,98,2027-01-31,302,204,Critical,Restock Order
-260,26,10,219,2028-03-11,250,31,Healthy,None
+219,22,9,277,,158,0,Healthy,
+220,22,10,285,,267,0,Healthy,
+221,23,1,248,,243,0,Healthy,
+222,23,2,175,,145,0,Healthy,
+223,23,3,152,,250,98,Critical,⚡ Transfer
+224,23,4,204,,192,0,Healthy,
+225,23,5,263,,186,0,Healthy,
+226,23,6,259,,128,0,Overstock,Discount
+227,23,7,142,,194,52,Critical,⚡ Transfer
+228,23,8,151,,304,153,Critical,⚡ Transfer
+229,23,9,107,,63,0,Healthy,
+230,23,10,218,,270,52,Critical,⚡ Transfer
+231,24,1,261,,249,0,Healthy,
+232,24,2,57,,170,113,Critical,⚡ Transfer
+233,24,3,134,,176,42,Healthy,
+234,24,4,252,,303,51,Critical,⚡ Transfer
+235,24,5,291,,189,0,Healthy,
+236,24,6,242,,158,0,Healthy,
+237,24,7,138,,138,0,Healthy,
+238,24,8,108,,181,73,Critical,⚡ Transfer
+239,24,9,104,,118,14,Healthy,
+240,24,10,257,,161,0,Healthy,
+241,25,1,154,,71,0,Overstock,Discount
+242,25,2,161,,136,0,Healthy,
+243,25,3,101,,174,73,Critical,⚡ Transfer
+244,25,4,74,,160,86,Critical,⚡ Transfer
+245,25,5,293,,169,0,Healthy,
+246,25,6,261,,72,0,Overstock,Discount
+247,25,7,155,,260,105,Critical,⚡ Transfer
+248,25,8,104,,46,0,Overstock,Discount
+249,25,9,254,,78,0,Overstock,Discount
+250,25,10,215,,271,56,Critical,⚡ Transfer
+251,26,1,37,,97,60,Critical,⚡ Transfer
+252,26,2,165,,63,0,Overstock,Discount
+253,26,3,70,,305,235,Critical,⚡ Transfer
+254,26,4,125,,287,162,Critical,⚡ Transfer
+255,26,5,236,,172,0,Healthy,
+256,26,6,166,,311,145,Critical,⚡ Transfer
+257,26,7,60,,126,66,Critical,Restock Order
+258,26,8,51,,100,49,Healthy,
+259,26,9,98,,302,204,Critical,Restock Order
+260,26,10,219,,250,31,Healthy,
 261,27,1,159,2027-07-11,36,0,Overstock,Discount
-262,27,2,157,2028-02-23,164,7,Healthy,None
+262,27,2,157,2028-02-23,164,7,Healthy,
 263,27,3,46,2027-08-13,139,93,Critical,⚡ Transfer
 264,27,4,111,2027-03-13,237,126,Critical,⚡ Transfer
 265,27,5,86,2027-04-10,156,70,Critical,Restock Order
 266,27,6,94,2027-09-07,177,83,Critical,⚡ Transfer
-267,27,7,249,2028-01-02,175,0,Healthy,None
+267,27,7,249,2028-01-02,175,0,Healthy,
 268,27,8,149,2028-04-04,276,127,Critical,⚡ Transfer
 269,27,9,30,2027-10-12,241,211,Critical,⚡ Transfer
-270,27,10,23,2027-07-08,66,43,Healthy,None
-271,28,1,20,2026-12-27,157,137,Critical,⚡ Transfer
-272,28,2,99,2028-04-30,260,161,Critical,⚡ Transfer
-273,28,3,152,2028-02-05,112,0,Healthy,None
-274,28,4,261,2028-03-11,66,0,Overstock,Discount
-275,28,5,188,2027-10-23,229,41,Healthy,None
-276,28,6,174,2027-04-29,73,0,Overstock,Discount
-277,28,7,178,2028-04-06,230,52,Critical,Restock Order
-278,28,8,215,2026-12-23,301,86,Critical,⚡ Transfer
-279,28,9,171,2027-10-13,149,0,Healthy,None
-280,28,10,69,2028-04-25,226,157,Critical,⚡ Transfer
-281,29,1,10,2028-03-03,297,287,Critical,⚡ Transfer
-282,29,2,106,2027-11-21,285,179,Critical,⚡ Transfer
-283,29,3,265,2028-02-11,340,75,Critical,⚡ Transfer
-284,29,4,114,2027-03-30,156,42,Healthy,None
-285,29,5,157,2028-03-26,244,87,Critical,Restock Order
-286,29,6,132,2027-09-30,101,0,Healthy,None
-287,29,7,292,2028-01-07,27,0,Overstock,Discount
-288,29,8,57,2027-03-12,135,78,Critical,⚡ Transfer
-289,29,9,70,2028-04-09,98,28,Healthy,None
-290,29,10,159,2027-08-22,280,121,Critical,⚡ Transfer
-291,30,1,257,2027-07-23,261,4,Healthy,None
-292,30,2,243,2027-04-13,302,59,Critical,⚡ Transfer
-293,30,3,270,2027-01-26,89,0,Overstock,Discount
-294,30,4,151,2027-10-30,232,81,Critical,⚡ Transfer
-295,30,5,269,2026-11-18,156,0,Healthy,None
-296,30,6,154,2028-03-31,172,18,Healthy,None
-297,30,7,86,2028-03-25,248,162,Critical,⚡ Transfer
-298,30,8,292,2027-12-07,298,6,Healthy,None
-299,30,9,243,2027-05-28,184,0,Healthy,None
-300,30,10,132,2027-12-13,312,180,Critical,Restock Order
-301,31,1,220,2027-10-07,42,0,Overstock,Discount
-302,31,2,252,2027-12-16,215,0,Healthy,None
-303,31,3,87,2026-12-23,273,186,Critical,Restock Order
-304,31,4,179,2028-02-09,71,0,Overstock,Discount
-305,31,5,61,2028-02-26,289,228,Critical,Restock Order
-306,31,6,83,2027-04-23,229,146,Critical,Restock Order
-307,31,7,145,2027-12-28,193,48,Healthy,None
-308,31,8,51,2027-12-10,188,137,Critical,⚡ Transfer
-309,31,9,259,2026-12-22,297,38,Healthy,None
-310,31,10,45,2027-09-06,140,95,Critical,⚡ Transfer
+270,27,10,23,2027-07-08,66,43,Healthy,
+271,28,1,20,,157,137,Critical,⚡ Transfer
+272,28,2,99,,260,161,Critical,⚡ Transfer
+273,28,3,152,,112,0,Healthy,
+274,28,4,261,,66,0,Overstock,Discount
+275,28,5,188,,229,41,Healthy,
+276,28,6,174,,73,0,Overstock,Discount
+277,28,7,178,,230,52,Critical,Restock Order
+278,28,8,215,,301,86,Critical,⚡ Transfer
+279,28,9,171,,149,0,Healthy,
+280,28,10,69,,226,157,Critical,⚡ Transfer
+281,29,1,10,,297,287,Critical,⚡ Transfer
+282,29,2,106,,285,179,Critical,⚡ Transfer
+283,29,3,265,,340,75,Critical,⚡ Transfer
+284,29,4,114,,156,42,Healthy,
+285,29,5,157,,244,87,Critical,Restock Order
+286,29,6,132,,101,0,Healthy,
+287,29,7,292,,27,0,Overstock,Discount
+288,29,8,57,,135,78,Critical,⚡ Transfer
+289,29,9,70,,98,28,Healthy,
+290,29,10,159,,280,121,Critical,⚡ Transfer
+291,30,1,257,,261,4,Healthy,
+292,30,2,243,,302,59,Critical,⚡ Transfer
+293,30,3,270,,89,0,Overstock,Discount
+294,30,4,151,,232,81,Critical,⚡ Transfer
+295,30,5,269,,156,0,Healthy,
+296,30,6,154,,172,18,Healthy,
+297,30,7,86,,248,162,Critical,⚡ Transfer
+298,30,8,292,,298,6,Healthy,
+299,30,9,243,,184,0,Healthy,
+300,30,10,132,,312,180,Critical,Restock Order
+301,31,1,220,,42,0,Overstock,Discount
+302,31,2,252,,215,0,Healthy,
+303,31,3,87,,273,186,Critical,Restock Order
+304,31,4,179,,71,0,Overstock,Discount
+305,31,5,61,,289,228,Critical,Restock Order
+306,31,6,83,,229,146,Critical,Restock Order
+307,31,7,145,,193,48,Healthy,
+308,31,8,51,,188,137,Critical,⚡ Transfer
+309,31,9,259,,297,38,Healthy,
+310,31,10,45,,140,95,Critical,⚡ Transfer
 311,32,1,56,2027-02-24,242,186,Critical,⚡ Transfer
 312,32,2,61,2027-05-05,247,186,Critical,⚡ Transfer
-313,32,3,24,2027-10-14,43,19,Healthy,None
+313,32,3,24,2027-10-14,43,19,Healthy,
 314,32,4,38,2027-11-18,170,132,Critical,⚡ Transfer
 315,32,5,84,2028-01-11,145,61,Critical,⚡ Transfer
-316,32,6,102,2027-05-14,107,5,Healthy,None
+316,32,6,102,2027-05-14,107,5,Healthy,
 317,32,7,50,2027-12-12,332,282,Critical,⚡ Transfer
 318,32,8,133,2027-04-11,274,141,Critical,Restock Order
 319,32,9,140,2027-08-04,255,115,Critical,⚡ Transfer
-320,32,10,248,2027-04-26,167,0,Healthy,None
-321,33,1,47,2027-11-04,246,199,Critical,⚡ Transfer
-322,33,2,163,2028-01-24,347,184,Critical,⚡ Transfer
-323,33,3,243,2027-06-07,174,0,Healthy,None
-324,33,4,206,2027-03-05,267,61,Critical,Restock Order
-325,33,5,193,2027-09-14,314,121,Critical,⚡ Transfer
-326,33,6,161,2027-12-26,31,0,Overstock,Discount
-327,33,7,150,2027-01-05,24,0,Overstock,Discount
-328,33,8,264,2027-07-09,166,0,Healthy,None
-329,33,9,190,2027-05-29,132,0,Healthy,None
-330,33,10,138,2027-02-23,90,0,Healthy,None
-331,34,1,30,2028-02-10,178,148,Critical,Restock Order
-332,34,2,196,2027-02-16,87,0,Overstock,Discount
-333,34,3,161,2028-01-15,187,26,Healthy,None
-334,34,4,99,2027-03-31,122,23,Healthy,None
-335,34,5,286,2028-04-12,207,0,Healthy,None
-336,34,6,149,2027-08-06,104,0,Healthy,None
-337,34,7,256,2027-10-28,171,0,Healthy,None
-338,34,8,68,2027-02-01,259,191,Critical,Restock Order
-339,34,9,125,2027-11-25,223,98,Critical,Restock Order
-340,34,10,212,2027-08-13,27,0,Overstock,Discount
+320,32,10,248,2027-04-26,167,0,Healthy,
+321,33,1,47,,246,199,Critical,⚡ Transfer
+322,33,2,163,,347,184,Critical,⚡ Transfer
+323,33,3,243,,174,0,Healthy,
+324,33,4,206,,267,61,Critical,Restock Order
+325,33,5,193,,314,121,Critical,⚡ Transfer
+326,33,6,161,,31,0,Overstock,Discount
+327,33,7,150,,24,0,Overstock,Discount
+328,33,8,264,,166,0,Healthy,
+329,33,9,190,,132,0,Healthy,
+330,33,10,138,,90,0,Healthy,
+331,34,1,30,,178,148,Critical,Restock Order
+332,34,2,196,,87,0,Overstock,Discount
+333,34,3,161,,187,26,Healthy,
+334,34,4,99,,122,23,Healthy,
+335,34,5,286,,207,0,Healthy,
+336,34,6,149,,104,0,Healthy,
+337,34,7,256,,171,0,Healthy,
+338,34,8,68,,259,191,Critical,Restock Order
+339,34,9,125,,223,98,Critical,Restock Order
+340,34,10,212,,27,0,Overstock,Discount
 341,35,1,284,,83,0,Overstock,Discount
-342,35,2,242,,208,0,Healthy,None
+342,35,2,242,,208,0,Healthy,
 343,35,3,144,,319,175,Critical,⚡ Transfer
 344,35,4,200,,75,0,Overstock,Discount
 345,35,5,129,,261,132,Critical,Restock Order
-346,35,6,297,,187,0,Healthy,None
+346,35,6,297,,187,0,Healthy,
 347,35,7,123,,52,0,Overstock,Discount
-348,35,8,247,,174,0,Healthy,None
+348,35,8,247,,174,0,Healthy,
 349,35,9,219,,79,0,Overstock,Discount
-350,35,10,81,,43,0,Healthy,None
+350,35,10,81,,43,0,Healthy,
 351,36,1,29,,175,146,Critical,⚡ Transfer
-352,36,2,69,,69,0,Healthy,None
+352,36,2,69,,69,0,Healthy,
 353,36,3,130,,295,165,Critical,Restock Order
-354,36,4,242,,209,0,Healthy,None
-355,36,5,286,,234,0,Healthy,None
+354,36,4,242,,209,0,Healthy,
+355,36,5,286,,234,0,Healthy,
 356,36,6,89,,232,143,Critical,⚡ Transfer
 357,36,7,260,,335,75,Critical,⚡ Transfer
 358,36,8,153,,36,0,Overstock,Discount
-359,36,9,199,,131,0,Healthy,None
-360,36,10,237,,247,10,Healthy,None
-361,37,1,130,,205,75,Critical,Restock Order
-362,37,2,198,,298,100,Critical,⚡ Transfer
-363,37,3,193,,51,0,Overstock,Discount
-364,37,4,213,,161,0,Healthy,None
-365,37,5,107,,82,0,Healthy,None
-366,37,6,242,,66,0,Overstock,Discount
-367,37,7,118,,348,230,Critical,⚡ Transfer
-368,37,8,20,,45,25,Healthy,None
-369,37,9,180,,144,0,Healthy,None
-370,37,10,74,,309,235,Critical,Restock Order
+359,36,9,199,,131,0,Healthy,
+360,36,10,237,,247,10,Healthy,
+361,37,1,130,2027-07-11,205,75,Critical,Restock Order
+362,37,2,198,2027-08-01,298,100,Critical,⚡ Transfer
+363,37,3,193,2027-10-30,51,0,Overstock,Discount
+364,37,4,213,2027-06-30,161,0,Healthy,
+365,37,5,107,2028-01-16,82,0,Healthy,
+366,37,6,242,2028-04-04,66,0,Overstock,Discount
+367,37,7,118,2028-02-11,348,230,Critical,⚡ Transfer
+368,37,8,20,2027-06-20,45,25,Healthy,
+369,37,9,180,2027-06-07,144,0,Healthy,
+370,37,10,74,2027-07-09,309,235,Critical,Restock Order
 371,38,1,293,,126,0,Overstock,Discount
-372,38,2,120,,139,19,Healthy,None
-373,38,3,178,,95,0,Healthy,None
+372,38,2,120,,139,19,Healthy,
+373,38,3,178,,95,0,Healthy,
 374,38,4,11,,161,150,Critical,⚡ Transfer
-375,38,5,84,,86,2,Healthy,None
-376,38,6,286,,148,0,Healthy,None
-377,38,7,99,,76,0,Healthy,None
+375,38,5,84,,86,2,Healthy,
+376,38,6,286,,148,0,Healthy,
+377,38,7,99,,76,0,Healthy,
 378,38,8,23,,87,64,Critical,Restock Order
 379,38,9,131,,321,190,Critical,⚡ Transfer
 380,38,10,99,,155,56,Critical,Restock Order
 381,39,1,225,,289,64,Critical,Restock Order
 382,39,2,42,,263,221,Critical,⚡ Transfer
 383,39,3,195,,282,87,Critical,⚡ Transfer
-384,39,4,241,,277,36,Healthy,None
+384,39,4,241,,277,36,Healthy,
 385,39,5,123,,334,211,Critical,Restock Order
-386,39,6,276,,174,0,Healthy,None
+386,39,6,276,,174,0,Healthy,
 387,39,7,244,,349,105,Critical,⚡ Transfer
 388,39,8,41,,265,224,Critical,⚡ Transfer
 389,39,9,228,,75,0,Overstock,Discount
-390,39,10,261,,247,0,Healthy,None
-391,40,1,47,,61,14,Healthy,None
+390,39,10,261,,247,0,Healthy,
+391,40,1,47,,61,14,Healthy,
 392,40,2,174,,331,157,Critical,Restock Order
 393,40,3,74,,160,86,Critical,⚡ Transfer
-394,40,4,290,,186,0,Healthy,None
+394,40,4,290,,186,0,Healthy,
 395,40,5,205,,325,120,Critical,⚡ Transfer
-396,40,6,242,,278,36,Healthy,None
+396,40,6,242,,278,36,Healthy,
 397,40,7,230,,70,0,Overstock,Discount
 398,40,8,68,,302,234,Critical,⚡ Transfer
 399,40,9,120,,240,120,Critical,⚡ Transfer
 400,40,10,126,,231,105,Critical,⚡ Transfer
-401,41,1,242,,224,0,Healthy,None
-402,41,2,222,,68,0,Overstock,Discount
-403,41,3,170,,238,68,Critical,⚡ Transfer
-404,41,4,140,,211,71,Critical,⚡ Transfer
-405,41,5,252,,54,0,Overstock,Discount
-406,41,6,56,,63,7,Healthy,None
-407,41,7,57,,241,184,Critical,Restock Order
-408,41,8,200,,86,0,Overstock,Discount
-409,41,9,294,,50,0,Overstock,Discount
-410,41,10,297,,307,10,Healthy,None
-411,42,1,178,,82,0,Overstock,Discount
-412,42,2,220,,201,0,Healthy,None
-413,42,3,226,,46,0,Overstock,Discount
-414,42,4,157,,327,170,Critical,⚡ Transfer
-415,42,5,63,,315,252,Critical,⚡ Transfer
-416,42,6,89,,266,177,Critical,Restock Order
-417,42,7,65,,199,134,Critical,⚡ Transfer
-418,42,8,198,,78,0,Overstock,Discount
-419,42,9,152,,313,161,Critical,Restock Order
-420,42,10,229,,307,78,Critical,⚡ Transfer
+401,41,1,242,2028-01-29,224,0,Healthy,
+402,41,2,222,2027-09-14,68,0,Overstock,Discount
+403,41,3,170,2028-03-17,238,68,Critical,⚡ Transfer
+404,41,4,140,2027-08-17,211,71,Critical,⚡ Transfer
+405,41,5,252,2027-05-21,54,0,Overstock,Discount
+406,41,6,56,2027-01-05,63,7,Healthy,
+407,41,7,57,2028-03-20,241,184,Critical,Restock Order
+408,41,8,200,2027-11-11,86,0,Overstock,Discount
+409,41,9,294,2027-11-18,50,0,Overstock,Discount
+410,41,10,297,2028-02-23,307,10,Healthy,
+411,42,1,178,2027-05-16,82,0,Overstock,Discount
+412,42,2,220,2027-03-30,201,0,Healthy,
+413,42,3,226,2027-04-26,46,0,Overstock,Discount
+414,42,4,157,2028-04-30,327,170,Critical,⚡ Transfer
+415,42,5,63,2027-04-26,315,252,Critical,⚡ Transfer
+416,42,6,89,2027-01-21,266,177,Critical,Restock Order
+417,42,7,65,2027-01-16,199,134,Critical,⚡ Transfer
+418,42,8,198,2027-11-28,78,0,Overstock,Discount
+419,42,9,152,2027-01-26,313,161,Critical,Restock Order
+420,42,10,229,2027-09-06,307,78,Critical,⚡ Transfer
 421,43,1,295,,33,0,Overstock,Discount
 422,43,2,146,,34,0,Overstock,Discount
 423,43,3,102,,159,57,Critical,⚡ Transfer
-424,43,4,168,,193,25,Healthy,None
+424,43,4,168,,193,25,Healthy,
 425,43,5,189,,23,0,Overstock,Discount
-426,43,6,102,,93,0,Healthy,None
-427,43,7,299,,225,0,Healthy,None
-428,43,8,45,,92,47,Healthy,None
-429,43,9,25,,66,41,Healthy,None
+426,43,6,102,,93,0,Healthy,
+427,43,7,299,,225,0,Healthy,
+428,43,8,45,,92,47,Healthy,
+429,43,9,25,,66,41,Healthy,
 430,43,10,281,,130,0,Overstock,Discount
-431,44,1,202,,234,32,Healthy,None
-432,44,2,242,,194,0,Healthy,None
+431,44,1,202,,234,32,Healthy,
+432,44,2,242,,194,0,Healthy,
 433,44,3,90,,209,119,Critical,⚡ Transfer
 434,44,4,176,,310,134,Critical,⚡ Transfer
 435,44,5,36,,99,63,Critical,Restock Order
-436,44,6,35,,61,26,Healthy,None
+436,44,6,35,,61,26,Healthy,
 437,44,7,149,,246,97,Critical,⚡ Transfer
 438,44,8,258,,330,72,Critical,⚡ Transfer
-439,44,9,149,,130,0,Healthy,None
+439,44,9,149,,130,0,Healthy,
 440,44,10,272,,78,0,Overstock,Discount
 441,45,1,186,,240,54,Critical,Restock Order
-442,45,2,259,,289,30,Healthy,None
+442,45,2,259,,289,30,Healthy,
 443,45,3,167,,43,0,Overstock,Discount
 444,45,4,122,,222,100,Critical,⚡ Transfer
-445,45,5,38,,23,0,Healthy,None
+445,45,5,38,,23,0,Healthy,
 446,45,6,114,,174,60,Critical,⚡ Transfer
 447,45,7,80,,150,70,Critical,Restock Order
 448,45,8,71,,23,0,Overstock,Discount
-449,45,9,264,,240,0,Healthy,None
-450,45,10,99,,86,0,Healthy,None
+449,45,9,264,,240,0,Healthy,
+450,45,10,99,,86,0,Healthy,
 451,46,1,204,,292,88,Critical,⚡ Transfer
-452,46,2,266,,306,40,Healthy,None
+452,46,2,266,,306,40,Healthy,
 453,46,3,191,,56,0,Overstock,Discount
 454,46,4,213,,41,0,Overstock,Discount
 455,46,5,233,,29,0,Overstock,Discount
@@ -458,39 +458,39 @@ id,product_id,warehouse_id,current_stock,expiry_date,predicted_demand,shortage,s
 457,46,7,170,,314,144,Critical,⚡ Transfer
 458,46,8,217,,347,130,Critical,⚡ Transfer
 459,46,9,68,,227,159,Critical,Restock Order
-460,46,10,176,,107,0,Healthy,None
-461,47,1,245,2027-02-14,205,0,Healthy,None
-462,47,2,233,2027-07-23,74,0,Overstock,Discount
-463,47,3,233,2027-12-31,321,88,Critical,⚡ Transfer
-464,47,4,212,2027-10-29,178,0,Healthy,None
-465,47,5,123,2027-05-07,190,67,Critical,Restock Order
-466,47,6,68,2028-04-21,291,223,Critical,Restock Order
-467,47,7,188,2027-04-16,199,11,Healthy,None
-468,47,8,130,2027-04-14,72,0,Healthy,None
-469,47,9,141,2027-05-12,121,0,Healthy,None
-470,47,10,88,2027-05-16,58,0,Healthy,None
-471,48,1,262,2028-02-18,257,0,Healthy,None
-472,48,2,299,2027-10-12,349,50,Healthy,None
-473,48,3,171,2028-02-09,97,0,Healthy,None
-474,48,4,44,2028-02-11,260,216,Critical,⚡ Transfer
-475,48,5,150,2027-01-12,322,172,Critical,⚡ Transfer
-476,48,6,47,2028-03-02,178,131,Critical,⚡ Transfer
-477,48,7,39,2027-09-05,208,169,Critical,Restock Order
-478,48,8,56,2028-04-18,334,278,Critical,⚡ Transfer
-479,48,9,293,2028-02-19,41,0,Overstock,Discount
-480,48,10,106,2028-03-17,184,78,Critical,⚡ Transfer
+460,46,10,176,,107,0,Healthy,
+461,47,1,245,,205,0,Healthy,
+462,47,2,233,,74,0,Overstock,Discount
+463,47,3,233,,321,88,Critical,⚡ Transfer
+464,47,4,212,,178,0,Healthy,
+465,47,5,123,,190,67,Critical,Restock Order
+466,47,6,68,,291,223,Critical,Restock Order
+467,47,7,188,,199,11,Healthy,
+468,47,8,130,,72,0,Healthy,
+469,47,9,141,,121,0,Healthy,
+470,47,10,88,,58,0,Healthy,
+471,48,1,262,,257,0,Healthy,
+472,48,2,299,,349,50,Healthy,
+473,48,3,171,,97,0,Healthy,
+474,48,4,44,,260,216,Critical,⚡ Transfer
+475,48,5,150,,322,172,Critical,⚡ Transfer
+476,48,6,47,,178,131,Critical,⚡ Transfer
+477,48,7,39,,208,169,Critical,Restock Order
+478,48,8,56,,334,278,Critical,⚡ Transfer
+479,48,9,293,,41,0,Overstock,Discount
+480,48,10,106,,184,78,Critical,⚡ Transfer
 481,49,1,41,,250,209,Critical,Restock Order
 482,49,2,185,,63,0,Overstock,Discount
 483,49,3,268,,350,82,Critical,Restock Order
 484,49,4,136,,244,108,Critical,⚡ Transfer
-485,49,5,278,,287,9,Healthy,None
+485,49,5,278,,287,9,Healthy,
 486,49,6,91,,206,115,Critical,⚡ Transfer
 487,49,7,154,,218,64,Critical,⚡ Transfer
 488,49,8,183,,326,143,Critical,Restock Order
 489,49,9,181,,53,0,Overstock,Discount
 490,49,10,178,,68,0,Overstock,Discount
-491,50,1,295,,217,0,Healthy,None
-492,50,2,155,,149,0,Healthy,None
+491,50,1,295,,217,0,Healthy,
+492,50,2,155,,149,0,Healthy,
 493,50,3,86,,190,104,Critical,Restock Order
 494,50,4,82,,199,117,Critical,⚡ Transfer
 495,50,5,210,,86,0,Overstock,Discount
@@ -498,4 +498,4 @@ id,product_id,warehouse_id,current_stock,expiry_date,predicted_demand,shortage,s
 497,50,7,178,,85,0,Overstock,Discount
 498,50,8,279,,67,0,Overstock,Discount
 499,50,9,226,,280,54,Critical,⚡ Transfer
-500,50,10,195,,178,0,Healthy,None
+500,50,10,195,,178,0,Healthy,

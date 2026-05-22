@@ -21,7 +21,7 @@ def load_store_sales(csv_path: str | Path | None = None) -> pd.DataFrame:
     for col in df.columns:
         if col == "date":
             rename_map[col] = "date"
-        elif col == "store":
+        elif col in {"store", "warehouse"}:
             rename_map[col] = "store_id"
         elif col == "item":
             rename_map[col] = "item_id"

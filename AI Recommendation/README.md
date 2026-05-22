@@ -5,6 +5,7 @@ Self-contained API service for FlowStock AI inventory recommendations and Gemini
 ## Endpoints
 
 - `GET /health` - health check
+- `GET /api/metrics` - full validation metrics for the inventory forecast model
 - `GET /api/inventory-recommendations` - returns recommendation rows from `FlowStock-AI/artifacts/inventory_ai_recommendations.csv`
 - `POST /api/generate-recommendation-explanation` - returns a Gemini explanation or a fallback explanation
 

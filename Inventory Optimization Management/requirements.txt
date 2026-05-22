@@ -4,3 +4,6 @@ scikit-learn
 lightgbm
 joblib
 pyarrow
+fastapi
+uvicorn[standard]
+python-dotenv
