@@ -7,12 +7,14 @@ from app.models.schemas import (
     SavedScenarioCreate, ScenarioResponse,
     ForecastDataPoint, WeeklyForecastPoint,
     HistoricalDataPoint, Metrics,
+    AIInsightRequest, AIInsightResponse,
 )
 from app.models import db_models
 from app.services.data_loader import load_and_preprocess_data
 from app.forecasting.model_manager import ModelManager
 from app.services.simulation_engine import apply_what_if_scenario
 from app.services.ai_insight import generate_insights, aggregate_to_weekly
+from app.services.ai_recommendation import generate_ai_recommendation
 from app.evaluation.metrics import calculate_metrics
 from app.visualization.charts import generate_prediction_chart
 
@@ -206,3 +208,56 @@ def get_recent_metrics(db: Session = Depends(get_db)):
         {"model": h.model_used, "metrics": h.metrics, "date": h.forecast_date}
         for h in history
     ]
+
+
+@router.post("/forecast/ai-insight", response_model=AIInsightResponse)
+def get_ai_insight(request: AIInsightRequest):
+    """
+    Generate AI-powered business insights using HuggingFace LLM (Qwen).
+
+    This is an independent endpoint — it accepts already-computed forecast
+    data (weekly_forecast, historical, metrics) and returns natural-language
+    insights and bullet points tailored to the AI Insight panel in the frontend.
+
+    If the HF_TOKEN is not configured, it gracefully falls back to rule-based
+    insights so the panel always has data to display.
+    """
+    try:
+        # Serialise schema objects → plain dicts for the service layer
+        weekly_forecast_dicts = [
+            {"week": pt.week, "predicted_sales": pt.predicted_sales}
+            for pt in request.weekly_forecast
+        ]
+
+        historical_values = [
+            float(pt.sales) for pt in (request.historical or [])
+        ]
+
+        metrics_dict = request.metrics.model_dump() if request.metrics else {}
+
+        result = generate_ai_recommendation(
+            weekly_forecast=weekly_forecast_dicts,
+            historical_sales_values=historical_values,
+            metrics=metrics_dict,
+            peak_week=request.peak_week,
+            peak_sales=request.peak_sales,
+        )
+
+        import os
+        hf_token = os.getenv("HF_TOKEN", "")
+        source = "rule-based" if not hf_token or hf_token in ("xx", "your_token_here", "") else "llm"
+
+        return AIInsightResponse(
+            summary=result["summary"],
+            stockout_risk=result["stockout_risk"],
+            peak_week=result.get("peak_week"),
+            peak_sales=result.get("peak_sales"),
+            recommended_safety_stock=result["recommended_safety_stock"],
+            recommended_action=result["recommended_action"],
+            bullets=result.get("bullets", []),
+            source=source,
+        )
+
+    except Exception as e:
+        logger.exception("AI Insight endpoint failed")
+        raise HTTPException(status_code=500, detail=str(e))

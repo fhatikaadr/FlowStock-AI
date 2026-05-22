@@ -105,6 +105,32 @@ class Insight(BaseModel):
     peak_sales:               Optional[float]
     recommended_safety_stock: str
     recommended_action:       str
+    bullets:                  Optional[List[str]] = []   # LLM-generated bullet points
+
+
+# ── AI Recommendation endpoint schemas (AIaaS) ───────────────────────────────
+
+class AIInsightRequest(BaseModel):
+    """Input payload for POST /forecast/ai-insight"""
+    store:              Optional[int]   = None
+    item:               Optional[int]   = None
+    weekly_forecast:    List[WeeklyForecastPoint]
+    historical:         Optional[List[HistoricalDataPoint]] = []
+    metrics:            Optional[Metrics]  = None
+    peak_week:          Optional[str]   = None
+    peak_sales:         Optional[float] = None
+
+
+class AIInsightResponse(BaseModel):
+    """Response from the AI Recommendation endpoint"""
+    summary:                  str
+    stockout_risk:            str
+    peak_week:                Optional[str]
+    peak_sales:               Optional[float]
+    recommended_safety_stock: str
+    recommended_action:       str
+    bullets:                  List[str] = []
+    source:                   str = "llm"   # 'llm' or 'rule-based'
 
 
 class ForecastResponse(BaseModel):
