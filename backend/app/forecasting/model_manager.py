@@ -27,13 +27,14 @@ class ModelManager:
 
     def generate_future_dataframe(self, last_date, steps: int) -> pd.DataFrame:
         future_dates = [last_date + timedelta(days=i) for i in range(1, steps + 1)]
-        df = pd.DataFrame({'date': future_dates})
-        df['year'] = df['date'].dt.year
-        df['month'] = df['date'].dt.month
-        df['dayofweek'] = df['date'].dt.dayofweek
-        df['dayofyear'] = df['date'].dt.dayofyear
-        df['quarter'] = df['date'].dt.quarter
+        df = pd.DataFrame({'date': pd.to_datetime(future_dates)})
+        df['year']       = df['date'].dt.year
+        df['month']      = df['date'].dt.month
+        df['dayofweek']  = df['date'].dt.dayofweek
+        df['dayofyear']  = df['date'].dt.dayofyear
+        df['quarter']    = df['date'].dt.quarter
         df['is_weekend'] = df['dayofweek'].isin([5, 6]).astype(int)
+        df['weekofyear'] = df['date'].dt.isocalendar().week.astype(int)
         return df
 
     def train_and_predict(self, model_name: str, historical_df: pd.DataFrame, forecast_period_days: int):

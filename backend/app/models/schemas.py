@@ -18,6 +18,7 @@ class Metrics(BaseModel):
     rmse: float
     medae: float
     mape: float
+    smape: float
     r2: float
     evs: float
 

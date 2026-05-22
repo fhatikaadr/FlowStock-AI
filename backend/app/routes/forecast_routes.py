@@ -31,31 +31,35 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
                 detail="No data found for the given store/item combination."
             )
 
-        # 2. Chronological train/validation split for metric calculation
-        #    Use the last 20% of data (max 30 days) as validation
-        val_size = min(int(len(df) * 0.2), 30)
-        if val_size < 1:
+        # 2. Chronological year-based split — train on all but last year,
+        #    validate on last full year. This gives a representative view of
+        #    model quality across all seasons (mirrors the original scripts).
+        last_year = df["year"].max()
+        train_df = df[df["year"] < last_year].copy()
+        val_df   = df[df["year"] == last_year].copy()
+
+        if train_df.empty or val_df.empty:
             raise HTTPException(
                 status_code=400,
-                detail="Not enough data to create a validation split."
+                detail="Not enough yearly data to create a train/validation split."
             )
 
-        train_df = df.iloc[:-val_size].copy()
-        val_df   = df.iloc[-val_size:].copy()
-
-        # --- Train one model instance and evaluate on validation set ---
+        # --- Train one model instance on train set, evaluate on val year ---
         model = model_manager.get_model(request.model)
         model.train(train_df)
 
-        # Get validation predictions using the model's own predict interface.
-        # For feature-based models (XGBoost) we pass val_df directly.
-        # For sequence/univariate models (MLP, LSTM, SARIMA, Prophet) we
-        # generate a future dataframe of the same length from train_end.
-        val_future_df = model_manager.generate_future_dataframe(
-            last_date=train_df["date"].max(),
-            steps=val_size
-        )
-        val_predictions = model.predict(val_future_df)
+        # Pass val_df directly — XGBoost uses its actual computed lag/rolling
+        # features for accurate metrics. Sequence models (MLP, LSTM, SARIMA,
+        # Prophet) still auto-regressively predict from the end of train_df.
+        try:
+            val_predictions = model.predict(val_df)
+        except Exception:
+            # Fallback: generate a future frame for models that don't use df features
+            val_future_df = model_manager.generate_future_dataframe(
+                last_date=train_df["date"].max(),
+                steps=len(val_df)
+            )
+            val_predictions = model.predict(val_future_df)
 
         # Compute metrics vs true validation values
         metrics_dict = calculate_metrics(val_df["sales"].values, val_predictions)
