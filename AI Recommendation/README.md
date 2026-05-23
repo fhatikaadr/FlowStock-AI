@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+# AI Recommendation
+
+Folder ini disiapkan untuk orkestrasi rekomendasi lintas modul AI.
+
+Status: placeholder
+=======
 # AI Recommendation Service
 
 Self-contained API service for FlowStock AI inventory recommendations and Gemini-powered explanations.
@@ -37,3 +44,4 @@ Table yang dibaca:
 - `inventory`
 - `products`
 - `warehouses`
+>>>>>>> 521348a31de2d03e3fa03a0a52b9b7a1c16316dd

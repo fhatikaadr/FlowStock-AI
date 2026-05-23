@@ -3,6 +3,8 @@ FlowStock-AI
 
 Inventory Management Optimization — ML forecasting + inventory optimizer
 
+<<<<<<< HEAD
+=======
 ## Hugging Face deploy
 
 The repo now includes a root `Dockerfile` for Hugging Face Spaces.
@@ -11,6 +13,7 @@ By default it runs the `AI Recommendation` FastAPI app on port `7860`.
 
 If you want to deploy the inventory optimizer instead, change `APP_DIR` in the `Dockerfile` to `Inventory Optimization Management`.
 
+>>>>>>> 521348a31de2d03e3fa03a0a52b9b7a1c16316dd
 Contents
 - `src/data_ingest.py` — download dataset
 - `src/preprocess.py` — preprocessing & feature engineering

@@ -30,6 +30,8 @@ python -m src.inventory_recommendation
 ```
 
 Output akan tersimpan di `../artifacts/inventory_ai_recommendations.csv`.
+<<<<<<< HEAD
+=======
 
 ## Supabase (opsional)
 
@@ -44,3 +46,4 @@ Table yang dipakai:
 - `store_sales` untuk data historis penjualan
 - `inventory` untuk update hasil prediksi
 - `products` dan `warehouses` untuk enrichment data
+>>>>>>> 521348a31de2d03e3fa03a0a52b9b7a1c16316dd
