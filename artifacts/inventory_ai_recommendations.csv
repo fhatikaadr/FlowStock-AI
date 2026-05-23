@@ -1,501 +1,1004 @@
 id,product_id,product_name,sku,product_category,warehouse_id,warehouse_name,current_stock,predicted_demand_14d,reorder_point,target_stock,shortage,status,recommended_action
-1,1,Vanilla Ice Cream,FNB-001,Food & Beverage,1,Jakarta Hub,226,173,107,173,0,Healthy,None
-10,1,Vanilla Ice Cream,FNB-001,Food & Beverage,10,Balikpapan Hub,162,249,134,249,87,Critical,Transfer
-2,1,Vanilla Ice Cream,FNB-001,Food & Beverage,2,Bandung Hub,205,262,152,262,57,Critical,Transfer
-3,1,Vanilla Ice Cream,FNB-001,Food & Beverage,3,Surabaya Hub,280,211,136,211,0,Healthy,None
-4,1,Vanilla Ice Cream,FNB-001,Food & Beverage,4,Medan Hub,293,191,127,191,0,Overstock,Discount
-5,1,Vanilla Ice Cream,FNB-001,Food & Beverage,5,Makassar Hub,68,144,92,144,76,Critical,Transfer
-6,1,Vanilla Ice Cream,FNB-001,Food & Beverage,6,Semarang Hub,184,131,92,131,0,Overstock,Discount
-7,1,Vanilla Ice Cream,FNB-001,Food & Beverage,7,Yogyakarta Hub,160,132,85,132,0,Healthy,None
-8,1,Vanilla Ice Cream,FNB-001,Food & Beverage,8,Palembang Hub,11,199,146,199,188,Critical,Transfer
-9,1,Vanilla Ice Cream,FNB-001,Food & Beverage,9,Denpasar Hub,101,185,126,185,84,Critical,Transfer
-91,10,Lemonade Mix,FNB-010,Food & Beverage,1,Jakarta Hub,226,584,355,584,358,Critical,Order
-100,10,Lemonade Mix,FNB-010,Food & Beverage,10,Balikpapan Hub,230,743,437,743,513,Critical,Order
-92,10,Lemonade Mix,FNB-010,Food & Beverage,2,Bandung Hub,32,806,502,806,774,Critical,Order
-93,10,Lemonade Mix,FNB-010,Food & Beverage,3,Surabaya Hub,180,706,447,706,526,Critical,Order
-94,10,Lemonade Mix,FNB-010,Food & Beverage,4,Medan Hub,144,676,413,676,532,Critical,Order
-95,10,Lemonade Mix,FNB-010,Food & Beverage,5,Makassar Hub,236,503,298,503,267,Critical,Order
-96,10,Lemonade Mix,FNB-010,Food & Beverage,6,Semarang Hub,297,504,301,504,207,Critical,Order
-97,10,Lemonade Mix,FNB-010,Food & Beverage,7,Yogyakarta Hub,67,460,272,460,393,Critical,Order
-98,10,Lemonade Mix,FNB-010,Food & Beverage,8,Palembang Hub,86,772,480,772,686,Critical,Order
-99,10,Lemonade Mix,FNB-010,Food & Beverage,9,Denpasar Hub,199,709,410,709,510,Critical,Order
-101,11,Watermelon,FNB-011,Food & Beverage,1,Jakarta Hub,31,558,337,558,527,Critical,Order
-110,11,Watermelon,FNB-011,Food & Beverage,10,Balikpapan Hub,91,721,418,721,630,Critical,Order
-102,11,Watermelon,FNB-011,Food & Beverage,2,Bandung Hub,30,802,479,802,772,Critical,Order
-103,11,Watermelon,FNB-011,Food & Beverage,3,Surabaya Hub,137,651,424,651,514,Critical,Order
-104,11,Watermelon,FNB-011,Food & Beverage,4,Medan Hub,191,647,391,647,456,Critical,Order
-105,11,Watermelon,FNB-011,Food & Beverage,5,Makassar Hub,218,448,284,448,230,Critical,Order
-106,11,Watermelon,FNB-011,Food & Beverage,6,Semarang Hub,131,466,285,466,335,Critical,Order
-107,11,Watermelon,FNB-011,Food & Beverage,7,Yogyakarta Hub,100,431,261,431,331,Critical,Order
-108,11,Watermelon,FNB-011,Food & Beverage,8,Palembang Hub,180,780,456,780,600,Critical,Order
-109,11,Watermelon,FNB-011,Food & Beverage,9,Denpasar Hub,137,616,393,616,479,Critical,Order
-111,12,Camping Tent,OUT-012,Outdoor & Garden,1,Jakarta Hub,205,578,339,578,373,Critical,Order
-120,12,Camping Tent,OUT-012,Outdoor & Garden,10,Balikpapan Hub,24,676,416,676,652,Critical,Order
-112,12,Camping Tent,OUT-012,Outdoor & Garden,2,Bandung Hub,250,837,479,837,587,Critical,Order
-113,12,Camping Tent,OUT-012,Outdoor & Garden,3,Surabaya Hub,112,755,424,755,643,Critical,Order
-114,12,Camping Tent,OUT-012,Outdoor & Garden,4,Medan Hub,126,600,390,600,474,Critical,Order
-115,12,Camping Tent,OUT-012,Outdoor & Garden,5,Makassar Hub,22,453,287,453,431,Critical,Order
-116,12,Camping Tent,OUT-012,Outdoor & Garden,6,Semarang Hub,152,504,285,504,352,Critical,Order
-117,12,Camping Tent,OUT-012,Outdoor & Garden,7,Yogyakarta Hub,152,423,260,423,271,Critical,Order
-118,12,Camping Tent,OUT-012,Outdoor & Garden,8,Palembang Hub,270,763,458,763,493,Critical,Order
-119,12,Camping Tent,OUT-012,Outdoor & Garden,9,Denpasar Hub,284,647,392,647,363,Critical,Order
-121,13,Ice Cooler,OUT-013,Outdoor & Garden,1,Jakarta Hub,143,714,407,714,571,Critical,Order
-130,13,Ice Cooler,OUT-013,Outdoor & Garden,10,Balikpapan Hub,45,837,505,837,792,Critical,Order
-122,13,Ice Cooler,OUT-013,Outdoor & Garden,2,Bandung Hub,145,932,577,932,787,Critical,Order
-123,13,Ice Cooler,OUT-013,Outdoor & Garden,3,Surabaya Hub,65,859,512,859,794,Critical,Order
-124,13,Ice Cooler,OUT-013,Outdoor & Garden,4,Medan Hub,170,745,474,745,575,Critical,Order
-125,13,Ice Cooler,OUT-013,Outdoor & Garden,5,Makassar Hub,271,540,344,540,269,Critical,Order
-126,13,Ice Cooler,OUT-013,Outdoor & Garden,6,Semarang Hub,207,528,343,528,321,Critical,Order
-127,13,Ice Cooler,OUT-013,Outdoor & Garden,7,Yogyakarta Hub,32,524,314,524,492,Critical,Order
-128,13,Ice Cooler,OUT-013,Outdoor & Garden,8,Palembang Hub,285,863,550,863,578,Critical,Order
-129,13,Ice Cooler,OUT-013,Outdoor & Garden,9,Denpasar Hub,196,755,472,755,559,Critical,Order
-131,14,Winter Coat,APP-014,Apparel & Accessories,1,Jakarta Hub,73,1327,284,1327,1254,Critical,Order
-140,14,Winter Coat,APP-014,Apparel & Accessories,10,Balikpapan Hub,174,1619,352,1619,1445,Critical,Order
-132,14,Winter Coat,APP-014,Apparel & Accessories,2,Bandung Hub,219,1803,400,1803,1584,Critical,Order
-133,14,Winter Coat,APP-014,Apparel & Accessories,3,Surabaya Hub,216,1671,358,1671,1455,Critical,Order
-134,14,Winter Coat,APP-014,Apparel & Accessories,4,Medan Hub,293,1488,330,1488,1195,Critical,Order
-135,14,Winter Coat,APP-014,Apparel & Accessories,5,Makassar Hub,108,1090,239,1090,982,Critical,Order
-136,14,Winter Coat,APP-014,Apparel & Accessories,6,Semarang Hub,204,1130,240,1130,926,Critical,Order
-137,14,Winter Coat,APP-014,Apparel & Accessories,7,Yogyakarta Hub,164,1025,219,1025,861,Critical,Order
-138,14,Winter Coat,APP-014,Apparel & Accessories,8,Palembang Hub,10,1863,387,1863,1853,Critical,Order
-139,14,Winter Coat,APP-014,Apparel & Accessories,9,Denpasar Hub,230,1527,330,1527,1297,Critical,Order
-141,15,Hot Chocolate Mix,FNB-015,Food & Beverage,1,Jakarta Hub,119,2059,426,2059,1940,Critical,Order
-150,15,Hot Chocolate Mix,FNB-015,Food & Beverage,10,Balikpapan Hub,109,2412,529,2412,2303,Critical,Order
-142,15,Hot Chocolate Mix,FNB-015,Food & Beverage,2,Bandung Hub,96,2625,601,2625,2529,Critical,Order
-143,15,Hot Chocolate Mix,FNB-015,Food & Beverage,3,Surabaya Hub,155,2429,534,2429,2274,Critical,Order
-144,15,Hot Chocolate Mix,FNB-015,Food & Beverage,4,Medan Hub,181,2282,492,2282,2101,Critical,Order
-145,15,Hot Chocolate Mix,FNB-015,Food & Beverage,5,Makassar Hub,130,1681,357,1681,1551,Critical,Order
-146,15,Hot Chocolate Mix,FNB-015,Food & Beverage,6,Semarang Hub,125,1682,357,1682,1557,Critical,Order
-147,15,Hot Chocolate Mix,FNB-015,Food & Beverage,7,Yogyakarta Hub,85,1459,326,1459,1374,Critical,Order
-148,15,Hot Chocolate Mix,FNB-015,Food & Beverage,8,Palembang Hub,33,2568,575,2568,2535,Critical,Order
-149,15,Hot Chocolate Mix,FNB-015,Food & Beverage,9,Denpasar Hub,47,2275,491,2275,2228,Critical,Order
-151,16,Snow Shovel,OUT-016,Outdoor & Garden,1,Jakarta Hub,134,590,126,590,456,Critical,Order
-160,16,Snow Shovel,OUT-016,Outdoor & Garden,10,Balikpapan Hub,268,691,156,691,423,Critical,Order
-152,16,Snow Shovel,OUT-016,Outdoor & Garden,2,Bandung Hub,12,810,176,810,798,Critical,Order
-153,16,Snow Shovel,OUT-016,Outdoor & Garden,3,Surabaya Hub,122,697,158,697,575,Critical,Order
-154,16,Snow Shovel,OUT-016,Outdoor & Garden,4,Medan Hub,275,673,145,673,398,Critical,Order
-155,16,Snow Shovel,OUT-016,Outdoor & Garden,5,Makassar Hub,35,488,107,488,453,Critical,Order
-156,16,Snow Shovel,OUT-016,Outdoor & Garden,6,Semarang Hub,72,475,105,475,403,Critical,Order
-157,16,Snow Shovel,OUT-016,Outdoor & Garden,7,Yogyakarta Hub,247,435,97,435,188,Critical,Order
-158,16,Snow Shovel,OUT-016,Outdoor & Garden,8,Palembang Hub,296,796,170,796,500,Critical,Order
-159,16,Snow Shovel,OUT-016,Outdoor & Garden,9,Denpasar Hub,172,655,146,655,483,Critical,Order
-161,17,Ice Scraper,AUT-017,Automotive,1,Jakarta Hub,290,774,163,774,484,Critical,Order
-170,17,Ice Scraper,AUT-017,Automotive,10,Balikpapan Hub,87,965,200,965,878,Critical,Order
-162,17,Ice Scraper,AUT-017,Automotive,2,Bandung Hub,91,1020,226,1020,929,Critical,Order
-163,17,Ice Scraper,AUT-017,Automotive,3,Surabaya Hub,136,924,201,924,788,Critical,Order
-164,17,Ice Scraper,AUT-017,Automotive,4,Medan Hub,276,903,187,903,627,Critical,Order
-165,17,Ice Scraper,AUT-017,Automotive,5,Makassar Hub,132,614,136,614,482,Critical,Order
-166,17,Ice Scraper,AUT-017,Automotive,6,Semarang Hub,235,646,136,646,411,Critical,Order
-167,17,Ice Scraper,AUT-017,Automotive,7,Yogyakarta Hub,156,580,125,580,424,Critical,Order
-168,17,Ice Scraper,AUT-017,Automotive,8,Palembang Hub,149,1046,218,1046,897,Critical,Order
-169,17,Ice Scraper,AUT-017,Automotive,9,Denpasar Hub,173,867,187,867,694,Critical,Order
-171,18,Thermal Socks,APP-018,Apparel & Accessories,1,Jakarta Hub,88,1928,408,1928,1840,Critical,Order
-180,18,Thermal Socks,APP-018,Apparel & Accessories,10,Balikpapan Hub,122,2366,505,2366,2244,Critical,Order
-172,18,Thermal Socks,APP-018,Apparel & Accessories,2,Bandung Hub,42,2548,574,2548,2506,Critical,Order
-173,18,Thermal Socks,APP-018,Apparel & Accessories,3,Surabaya Hub,287,2347,513,2347,2060,Critical,Order
-174,18,Thermal Socks,APP-018,Apparel & Accessories,4,Medan Hub,222,2194,474,2194,1972,Critical,Order
-175,18,Thermal Socks,APP-018,Apparel & Accessories,5,Makassar Hub,115,1536,342,1536,1421,Critical,Order
-176,18,Thermal Socks,APP-018,Apparel & Accessories,6,Semarang Hub,20,1543,341,1543,1523,Critical,Order
-177,18,Thermal Socks,APP-018,Apparel & Accessories,7,Yogyakarta Hub,13,1419,313,1419,1406,Critical,Order
-178,18,Thermal Socks,APP-018,Apparel & Accessories,8,Palembang Hub,209,2497,550,2497,2288,Critical,Order
-179,18,Thermal Socks,APP-018,Apparel & Accessories,9,Denpasar Hub,285,2229,473,2229,1944,Critical,Order
-181,19,Space Heater,HOM-019,Home Goods,1,Jakarta Hub,233,886,198,886,653,Critical,Order
-190,19,Space Heater,HOM-019,Home Goods,10,Balikpapan Hub,35,1128,245,1128,1093,Critical,Order
-182,19,Space Heater,HOM-019,Home Goods,2,Bandung Hub,24,1234,277,1234,1210,Critical,Order
-183,19,Space Heater,HOM-019,Home Goods,3,Surabaya Hub,217,1115,246,1115,898,Critical,Order
-184,19,Space Heater,HOM-019,Home Goods,4,Medan Hub,249,1100,228,1100,851,Critical,Order
-185,19,Space Heater,HOM-019,Home Goods,5,Makassar Hub,283,796,166,796,513,Critical,Order
-186,19,Space Heater,HOM-019,Home Goods,6,Semarang Hub,211,793,166,793,582,Critical,Order
-187,19,Space Heater,HOM-019,Home Goods,7,Yogyakarta Hub,23,734,151,734,711,Critical,Order
-188,19,Space Heater,HOM-019,Home Goods,8,Palembang Hub,229,1257,265,1257,1028,Critical,Order
-189,19,Space Heater,HOM-019,Home Goods,9,Denpasar Hub,246,1031,230,1031,785,Critical,Order
-11,2,Sunscreen SPF 50,HNB-002,Health & Beauty,1,Jakarta Hub,111,534,284,534,423,Critical,Order
-20,2,Sunscreen SPF 50,HNB-002,Health & Beauty,10,Balikpapan Hub,282,595,352,595,313,Critical,Order
-12,2,Sunscreen SPF 50,HNB-002,Health & Beauty,2,Bandung Hub,201,701,403,701,500,Critical,Order
-13,2,Sunscreen SPF 50,HNB-002,Health & Beauty,3,Surabaya Hub,286,597,358,597,311,Critical,Order
-14,2,Sunscreen SPF 50,HNB-002,Health & Beauty,4,Medan Hub,10,519,331,519,509,Critical,Order
-15,2,Sunscreen SPF 50,HNB-002,Health & Beauty,5,Makassar Hub,19,410,238,410,391,Critical,Order
-16,2,Sunscreen SPF 50,HNB-002,Health & Beauty,6,Semarang Hub,167,362,241,362,195,Critical,Order
-17,2,Sunscreen SPF 50,HNB-002,Health & Beauty,7,Yogyakarta Hub,39,341,220,341,302,Critical,Order
-18,2,Sunscreen SPF 50,HNB-002,Health & Beauty,8,Palembang Hub,50,638,383,638,588,Critical,Order
-19,2,Sunscreen SPF 50,HNB-002,Health & Beauty,9,Denpasar Hub,258,533,327,533,275,Critical,Order
-191,20,Lip Balm,HNB-020,Health & Beauty,1,Jakarta Hub,118,1140,232,1140,1022,Critical,Order
-200,20,Lip Balm,HNB-020,Health & Beauty,10,Balikpapan Hub,74,1333,285,1333,1259,Critical,Order
-192,20,Lip Balm,HNB-020,Health & Beauty,2,Bandung Hub,204,1431,327,1431,1227,Critical,Order
-193,20,Lip Balm,HNB-020,Health & Beauty,3,Surabaya Hub,225,1342,289,1342,1117,Critical,Order
-194,20,Lip Balm,HNB-020,Health & Beauty,4,Medan Hub,51,1235,267,1235,1184,Critical,Order
-195,20,Lip Balm,HNB-020,Health & Beauty,5,Makassar Hub,286,904,196,904,618,Critical,Order
-196,20,Lip Balm,HNB-020,Health & Beauty,6,Semarang Hub,189,888,193,888,699,Critical,Order
-197,20,Lip Balm,HNB-020,Health & Beauty,7,Yogyakarta Hub,45,870,179,870,825,Critical,Order
-198,20,Lip Balm,HNB-020,Health & Beauty,8,Palembang Hub,25,1420,311,1420,1395,Critical,Order
-199,20,Lip Balm,HNB-020,Health & Beauty,9,Denpasar Hub,20,1224,267,1224,1204,Critical,Order
-201,21,Marshmallows,FNB-021,Food & Beverage,1,Jakarta Hub,298,889,195,889,591,Critical,Order
-210,21,Marshmallows,FNB-021,Food & Beverage,10,Balikpapan Hub,164,1086,242,1086,922,Critical,Order
-202,21,Marshmallows,FNB-021,Food & Beverage,2,Bandung Hub,248,1274,277,1274,1026,Critical,Order
-203,21,Marshmallows,FNB-021,Food & Beverage,3,Surabaya Hub,198,1143,246,1143,945,Critical,Order
-204,21,Marshmallows,FNB-021,Food & Beverage,4,Medan Hub,68,1013,227,1013,945,Critical,Order
-205,21,Marshmallows,FNB-021,Food & Beverage,5,Makassar Hub,169,757,166,757,588,Critical,Order
-206,21,Marshmallows,FNB-021,Food & Beverage,6,Semarang Hub,23,785,166,785,762,Critical,Order
-207,21,Marshmallows,FNB-021,Food & Beverage,7,Yogyakarta Hub,202,680,152,680,478,Critical,Order
-208,21,Marshmallows,FNB-021,Food & Beverage,8,Palembang Hub,111,1200,265,1200,1089,Critical,Order
-209,21,Marshmallows,FNB-021,Food & Beverage,9,Denpasar Hub,134,1048,227,1048,914,Critical,Order
-211,22,Snow Boots,APP-022,Apparel & Accessories,1,Jakarta Hub,299,1830,390,1830,1531,Critical,Order
-220,22,Snow Boots,APP-022,Apparel & Accessories,10,Balikpapan Hub,285,2232,484,2232,1947,Critical,Order
-212,22,Snow Boots,APP-022,Apparel & Accessories,2,Bandung Hub,187,2442,548,2442,2255,Critical,Order
-213,22,Snow Boots,APP-022,Apparel & Accessories,3,Surabaya Hub,199,2269,489,2269,2070,Critical,Order
-214,22,Snow Boots,APP-022,Apparel & Accessories,4,Medan Hub,269,2129,451,2129,1860,Critical,Order
-215,22,Snow Boots,APP-022,Apparel & Accessories,5,Makassar Hub,16,1487,327,1487,1471,Critical,Order
-216,22,Snow Boots,APP-022,Apparel & Accessories,6,Semarang Hub,64,1505,327,1505,1441,Critical,Order
-217,22,Snow Boots,APP-022,Apparel & Accessories,7,Yogyakarta Hub,245,1379,299,1379,1134,Critical,Order
-218,22,Snow Boots,APP-022,Apparel & Accessories,8,Palembang Hub,232,2397,528,2397,2165,Critical,Order
-219,22,Snow Boots,APP-022,Apparel & Accessories,9,Denpasar Hub,277,2184,453,2184,1907,Critical,Order
-221,23,Fleece Blanket,HOM-023,Home Goods,1,Jakarta Hub,248,669,144,669,421,Critical,Order
-230,23,Fleece Blanket,HOM-023,Home Goods,10,Balikpapan Hub,218,794,177,794,576,Critical,Order
-222,23,Fleece Blanket,HOM-023,Home Goods,2,Bandung Hub,175,881,202,881,706,Critical,Order
-223,23,Fleece Blanket,HOM-023,Home Goods,3,Surabaya Hub,152,815,180,815,663,Critical,Order
-224,23,Fleece Blanket,HOM-023,Home Goods,4,Medan Hub,204,765,165,765,561,Critical,Order
-225,23,Fleece Blanket,HOM-023,Home Goods,5,Makassar Hub,263,541,120,541,278,Critical,Order
-226,23,Fleece Blanket,HOM-023,Home Goods,6,Semarang Hub,259,542,120,542,283,Critical,Order
-227,23,Fleece Blanket,HOM-023,Home Goods,7,Yogyakarta Hub,142,499,110,499,357,Critical,Order
-228,23,Fleece Blanket,HOM-023,Home Goods,8,Palembang Hub,151,902,193,902,751,Critical,Order
-229,23,Fleece Blanket,HOM-023,Home Goods,9,Denpasar Hub,107,758,168,758,651,Critical,Order
-231,24,Antifreeze,AUT-024,Automotive,1,Jakarta Hub,261,1535,319,1535,1274,Critical,Order
-240,24,Antifreeze,AUT-024,Automotive,10,Balikpapan Hub,257,1843,397,1843,1586,Critical,Order
-232,24,Antifreeze,AUT-024,Automotive,2,Bandung Hub,57,2218,450,2218,2161,Critical,Order
-233,24,Antifreeze,AUT-024,Automotive,3,Surabaya Hub,134,1920,401,1920,1786,Critical,Order
-234,24,Antifreeze,AUT-024,Automotive,4,Medan Hub,252,1729,371,1729,1477,Critical,Order
-235,24,Antifreeze,AUT-024,Automotive,5,Makassar Hub,291,1184,270,1184,893,Critical,Order
-236,24,Antifreeze,AUT-024,Automotive,6,Semarang Hub,242,1233,268,1233,991,Critical,Order
-237,24,Antifreeze,AUT-024,Automotive,7,Yogyakarta Hub,138,1067,244,1067,929,Critical,Order
-238,24,Antifreeze,AUT-024,Automotive,8,Palembang Hub,108,1970,431,1970,1862,Critical,Order
-239,24,Antifreeze,AUT-024,Automotive,9,Denpasar Hub,104,1749,372,1749,1645,Critical,Order
-241,25,Beanie Hat,APP-025,Apparel & Accessories,1,Jakarta Hub,154,1834,389,1834,1680,Critical,Order
-250,25,Beanie Hat,APP-025,Apparel & Accessories,10,Balikpapan Hub,215,2267,486,2267,2052,Critical,Order
-242,25,Beanie Hat,APP-025,Apparel & Accessories,2,Bandung Hub,161,2461,550,2461,2300,Critical,Order
-243,25,Beanie Hat,APP-025,Apparel & Accessories,3,Surabaya Hub,101,2283,489,2283,2182,Critical,Order
-244,25,Beanie Hat,APP-025,Apparel & Accessories,4,Medan Hub,74,2137,451,2137,2063,Critical,Order
-245,25,Beanie Hat,APP-025,Apparel & Accessories,5,Makassar Hub,293,1469,327,1469,1176,Critical,Order
-246,25,Beanie Hat,APP-025,Apparel & Accessories,6,Semarang Hub,261,1458,329,1458,1197,Critical,Order
-247,25,Beanie Hat,APP-025,Apparel & Accessories,7,Yogyakarta Hub,155,1356,299,1356,1201,Critical,Order
-248,25,Beanie Hat,APP-025,Apparel & Accessories,8,Palembang Hub,104,2372,530,2372,2268,Critical,Order
-249,25,Beanie Hat,APP-025,Apparel & Accessories,9,Denpasar Hub,254,2061,450,2061,1807,Critical,Order
-251,26,Winter Gloves,APP-026,Apparel & Accessories,1,Jakarta Hub,37,1091,232,1091,1054,Critical,Order
-260,26,Winter Gloves,APP-026,Apparel & Accessories,10,Balikpapan Hub,219,1327,286,1327,1108,Critical,Order
-252,26,Winter Gloves,APP-026,Apparel & Accessories,2,Bandung Hub,165,1445,326,1445,1280,Critical,Order
-253,26,Winter Gloves,APP-026,Apparel & Accessories,3,Surabaya Hub,70,1327,289,1327,1257,Critical,Order
-254,26,Winter Gloves,APP-026,Apparel & Accessories,4,Medan Hub,125,1273,267,1273,1148,Critical,Order
-255,26,Winter Gloves,APP-026,Apparel & Accessories,5,Makassar Hub,236,949,195,949,713,Critical,Order
-256,26,Winter Gloves,APP-026,Apparel & Accessories,6,Semarang Hub,166,946,195,946,780,Critical,Order
-257,26,Winter Gloves,APP-026,Apparel & Accessories,7,Yogyakarta Hub,60,821,180,821,761,Critical,Order
-258,26,Winter Gloves,APP-026,Apparel & Accessories,8,Palembang Hub,51,1417,312,1417,1366,Critical,Order
-259,26,Winter Gloves,APP-026,Apparel & Accessories,9,Denpasar Hub,98,1310,268,1310,1212,Critical,Order
-261,27,Halloween Candy Pack,FNB-027,Food & Beverage,1,Jakarta Hub,159,327,109,327,168,Critical,Order
-270,27,Halloween Candy Pack,FNB-027,Food & Beverage,10,Balikpapan Hub,23,454,135,454,431,Critical,Order
-262,27,Halloween Candy Pack,FNB-027,Food & Beverage,2,Bandung Hub,157,503,153,503,346,Critical,Order
-263,27,Halloween Candy Pack,FNB-027,Food & Beverage,3,Surabaya Hub,46,425,136,425,379,Critical,Order
-264,27,Halloween Candy Pack,FNB-027,Food & Beverage,4,Medan Hub,111,347,125,347,236,Critical,Order
-265,27,Halloween Candy Pack,FNB-027,Food & Beverage,5,Makassar Hub,86,284,92,284,198,Critical,Order
-266,27,Halloween Candy Pack,FNB-027,Food & Beverage,6,Semarang Hub,94,299,92,299,205,Critical,Order
-267,27,Halloween Candy Pack,FNB-027,Food & Beverage,7,Yogyakarta Hub,249,277,84,277,28,Critical,Order
-268,27,Halloween Candy Pack,FNB-027,Food & Beverage,8,Palembang Hub,149,481,146,481,332,Critical,Order
-269,27,Halloween Candy Pack,FNB-027,Food & Beverage,9,Denpasar Hub,30,385,127,385,355,Critical,Order
-271,28,Pumpkin Carving Kit,TOY-028,Toys & Games,1,Jakarta Hub,20,1364,428,1364,1344,Critical,Order
-280,28,Pumpkin Carving Kit,TOY-028,Toys & Games,10,Balikpapan Hub,69,1759,525,1759,1690,Critical,Order
-272,28,Pumpkin Carving Kit,TOY-028,Toys & Games,2,Bandung Hub,99,1983,602,1983,1884,Critical,Order
-273,28,Pumpkin Carving Kit,TOY-028,Toys & Games,3,Surabaya Hub,152,1699,534,1699,1547,Critical,Order
-274,28,Pumpkin Carving Kit,TOY-028,Toys & Games,4,Medan Hub,261,1577,493,1577,1316,Critical,Order
-275,28,Pumpkin Carving Kit,TOY-028,Toys & Games,5,Makassar Hub,188,1174,359,1174,986,Critical,Order
-276,28,Pumpkin Carving Kit,TOY-028,Toys & Games,6,Semarang Hub,174,1096,358,1096,922,Critical,Order
-277,28,Pumpkin Carving Kit,TOY-028,Toys & Games,7,Yogyakarta Hub,178,1039,327,1039,861,Critical,Order
-278,28,Pumpkin Carving Kit,TOY-028,Toys & Games,8,Palembang Hub,215,1938,575,1938,1723,Critical,Order
-279,28,Pumpkin Carving Kit,TOY-028,Toys & Games,9,Denpasar Hub,171,1550,492,1550,1379,Critical,Order
-281,29,College Ruled Notebooks,OFF-029,Office & School,1,Jakarta Hub,10,1136,337,1136,1126,Critical,Order
-290,29,College Ruled Notebooks,OFF-029,Office & School,10,Balikpapan Hub,159,1366,420,1366,1207,Critical,Order
-282,29,College Ruled Notebooks,OFF-029,Office & School,2,Bandung Hub,106,1560,476,1560,1454,Critical,Order
-283,29,College Ruled Notebooks,OFF-029,Office & School,3,Surabaya Hub,265,1400,423,1400,1135,Critical,Order
-284,29,College Ruled Notebooks,OFF-029,Office & School,4,Medan Hub,114,1234,390,1234,1120,Critical,Order
-285,29,College Ruled Notebooks,OFF-029,Office & School,5,Makassar Hub,157,908,284,908,751,Critical,Order
-286,29,College Ruled Notebooks,OFF-029,Office & School,6,Semarang Hub,132,928,285,928,796,Critical,Order
-287,29,College Ruled Notebooks,OFF-029,Office & School,7,Yogyakarta Hub,292,784,260,784,492,Critical,Order
-288,29,College Ruled Notebooks,OFF-029,Office & School,8,Palembang Hub,57,1493,459,1493,1436,Critical,Order
-289,29,College Ruled Notebooks,OFF-029,Office & School,9,Denpasar Hub,70,1244,392,1244,1174,Critical,Order
-21,3,BBQ Charcoal,OUT-003,Outdoor & Garden,1,Jakarta Hub,75,292,180,292,217,Critical,Transfer
-30,3,BBQ Charcoal,OUT-003,Outdoor & Garden,10,Balikpapan Hub,293,359,221,359,66,Critical,Transfer
-22,3,BBQ Charcoal,OUT-003,Outdoor & Garden,2,Bandung Hub,94,402,253,402,308,Critical,Transfer
-23,3,BBQ Charcoal,OUT-003,Outdoor & Garden,3,Surabaya Hub,226,353,225,353,127,Critical,Transfer
-24,3,BBQ Charcoal,OUT-003,Outdoor & Garden,4,Medan Hub,286,335,208,335,49,Critical,Transfer
-25,3,BBQ Charcoal,OUT-003,Outdoor & Garden,5,Makassar Hub,169,256,151,256,87,Critical,Transfer
-26,3,BBQ Charcoal,OUT-003,Outdoor & Garden,6,Semarang Hub,201,249,150,249,48,Critical,Transfer
-27,3,BBQ Charcoal,OUT-003,Outdoor & Garden,7,Yogyakarta Hub,274,222,139,222,0,Healthy,None
-28,3,BBQ Charcoal,OUT-003,Outdoor & Garden,8,Palembang Hub,71,401,243,401,330,Critical,Transfer
-29,3,BBQ Charcoal,OUT-003,Outdoor & Garden,9,Denpasar Hub,183,341,209,341,158,Critical,Transfer
-291,30,School Backpack,APP-030,Apparel & Accessories,1,Jakarta Hub,257,600,197,600,343,Critical,Order
-300,30,School Backpack,APP-030,Apparel & Accessories,10,Balikpapan Hub,132,765,243,765,633,Critical,Order
-292,30,School Backpack,APP-030,Apparel & Accessories,2,Bandung Hub,243,856,276,856,613,Critical,Order
-293,30,School Backpack,APP-030,Apparel & Accessories,3,Surabaya Hub,270,819,248,819,549,Critical,Order
-294,30,School Backpack,APP-030,Apparel & Accessories,4,Medan Hub,151,745,229,745,594,Critical,Order
-295,30,School Backpack,APP-030,Apparel & Accessories,5,Makassar Hub,269,509,167,509,240,Critical,Order
-296,30,School Backpack,APP-030,Apparel & Accessories,6,Semarang Hub,154,490,166,490,336,Critical,Order
-297,30,School Backpack,APP-030,Apparel & Accessories,7,Yogyakarta Hub,86,460,153,460,374,Critical,Order
-298,30,School Backpack,APP-030,Apparel & Accessories,8,Palembang Hub,292,833,266,833,541,Critical,Order
-299,30,School Backpack,APP-030,Apparel & Accessories,9,Denpasar Hub,243,726,228,726,483,Critical,Order
-301,31,Fall Wreath,HOM-031,Home Goods,1,Jakarta Hub,220,955,284,955,735,Critical,Order
-310,31,Fall Wreath,HOM-031,Home Goods,10,Balikpapan Hub,45,1167,355,1167,1122,Critical,Order
-302,31,Fall Wreath,HOM-031,Home Goods,2,Bandung Hub,252,1365,400,1365,1113,Critical,Order
-303,31,Fall Wreath,HOM-031,Home Goods,3,Surabaya Hub,87,1132,357,1132,1045,Critical,Order
-304,31,Fall Wreath,HOM-031,Home Goods,4,Medan Hub,179,1074,332,1074,895,Critical,Order
-305,31,Fall Wreath,HOM-031,Home Goods,5,Makassar Hub,61,751,241,751,690,Critical,Order
-306,31,Fall Wreath,HOM-031,Home Goods,6,Semarang Hub,83,733,240,733,650,Critical,Order
-307,31,Fall Wreath,HOM-031,Home Goods,7,Yogyakarta Hub,145,580,218,580,435,Critical,Order
-308,31,Fall Wreath,HOM-031,Home Goods,8,Palembang Hub,51,1314,385,1314,1263,Critical,Order
-309,31,Fall Wreath,HOM-031,Home Goods,9,Denpasar Hub,259,1027,331,1027,768,Critical,Order
-311,32,Apple Cider,FNB-032,Food & Beverage,1,Jakarta Hub,56,649,214,649,593,Critical,Order
-320,32,Apple Cider,FNB-032,Food & Beverage,10,Balikpapan Hub,248,815,266,815,567,Critical,Order
-312,32,Apple Cider,FNB-032,Food & Beverage,2,Bandung Hub,61,1033,302,1033,972,Critical,Order
-313,32,Apple Cider,FNB-032,Food & Beverage,3,Surabaya Hub,24,835,269,835,811,Critical,Order
-314,32,Apple Cider,FNB-032,Food & Beverage,4,Medan Hub,38,771,249,771,733,Critical,Order
-315,32,Apple Cider,FNB-032,Food & Beverage,5,Makassar Hub,84,527,182,527,443,Critical,Order
-316,32,Apple Cider,FNB-032,Food & Beverage,6,Semarang Hub,102,518,181,518,416,Critical,Order
-317,32,Apple Cider,FNB-032,Food & Beverage,7,Yogyakarta Hub,50,487,166,487,437,Critical,Order
-318,32,Apple Cider,FNB-032,Food & Beverage,8,Palembang Hub,133,1007,289,1007,874,Critical,Order
-319,32,Apple Cider,FNB-032,Food & Beverage,9,Denpasar Hub,140,779,249,779,639,Critical,Order
-321,33,Flannel Shirt,APP-033,Apparel & Accessories,1,Jakarta Hub,47,1074,335,1074,1027,Critical,Order
-330,33,Flannel Shirt,APP-033,Apparel & Accessories,10,Balikpapan Hub,138,1283,418,1283,1145,Critical,Order
-322,33,Flannel Shirt,APP-033,Apparel & Accessories,2,Bandung Hub,163,1636,474,1636,1473,Critical,Order
-323,33,Flannel Shirt,APP-033,Apparel & Accessories,3,Surabaya Hub,243,1382,424,1382,1139,Critical,Order
-324,33,Flannel Shirt,APP-033,Apparel & Accessories,4,Medan Hub,206,1256,392,1256,1050,Critical,Order
-325,33,Flannel Shirt,APP-033,Apparel & Accessories,5,Makassar Hub,193,861,284,861,668,Critical,Order
-326,33,Flannel Shirt,APP-033,Apparel & Accessories,6,Semarang Hub,161,888,284,888,727,Critical,Order
-327,33,Flannel Shirt,APP-033,Apparel & Accessories,7,Yogyakarta Hub,150,783,260,783,633,Critical,Order
-328,33,Flannel Shirt,APP-033,Apparel & Accessories,8,Palembang Hub,264,1511,455,1511,1247,Critical,Order
-329,33,Flannel Shirt,APP-033,Apparel & Accessories,9,Denpasar Hub,190,1294,396,1294,1104,Critical,Order
-331,34,Leaf Rake,OUT-034,Outdoor & Garden,1,Jakarta Hub,30,349,126,349,319,Critical,Order
-340,34,Leaf Rake,OUT-034,Outdoor & Garden,10,Balikpapan Hub,212,503,157,503,291,Critical,Order
-332,34,Leaf Rake,OUT-034,Outdoor & Garden,2,Bandung Hub,196,538,179,538,342,Critical,Order
-333,34,Leaf Rake,OUT-034,Outdoor & Garden,3,Surabaya Hub,161,474,159,474,313,Critical,Order
-334,34,Leaf Rake,OUT-034,Outdoor & Garden,4,Medan Hub,99,469,148,469,370,Critical,Order
-335,34,Leaf Rake,OUT-034,Outdoor & Garden,5,Makassar Hub,286,340,107,340,54,Critical,Order
-336,34,Leaf Rake,OUT-034,Outdoor & Garden,6,Semarang Hub,149,333,108,333,184,Critical,Order
-337,34,Leaf Rake,OUT-034,Outdoor & Garden,7,Yogyakarta Hub,256,310,99,310,54,Critical,Order
-338,34,Leaf Rake,OUT-034,Outdoor & Garden,8,Palembang Hub,68,498,170,498,430,Critical,Order
-339,34,Leaf Rake,OUT-034,Outdoor & Garden,9,Denpasar Hub,125,455,147,455,330,Critical,Order
-341,35,3-Ring Binders,OFF-035,Office & School,1,Jakarta Hub,284,981,319,981,697,Critical,Order
-350,35,3-Ring Binders,OFF-035,Office & School,10,Balikpapan Hub,81,1293,398,1293,1212,Critical,Order
-342,35,3-Ring Binders,OFF-035,Office & School,2,Bandung Hub,242,1511,450,1511,1269,Critical,Order
-343,35,3-Ring Binders,OFF-035,Office & School,3,Surabaya Hub,144,1192,402,1192,1048,Critical,Order
-344,35,3-Ring Binders,OFF-035,Office & School,4,Medan Hub,200,1183,371,1183,983,Critical,Order
-345,35,3-Ring Binders,OFF-035,Office & School,5,Makassar Hub,129,812,269,812,683,Critical,Order
-346,35,3-Ring Binders,OFF-035,Office & School,6,Semarang Hub,297,812,270,812,515,Critical,Order
-347,35,3-Ring Binders,OFF-035,Office & School,7,Yogyakarta Hub,123,762,246,762,639,Critical,Order
-348,35,3-Ring Binders,OFF-035,Office & School,8,Palembang Hub,247,1414,430,1414,1167,Critical,Order
-349,35,3-Ring Binders,OFF-035,Office & School,9,Denpasar Hub,219,1166,373,1166,947,Critical,Order
-351,36,No. 2 Pencils (Box),OFF-036,Office & School,1,Jakarta Hub,29,1210,373,1210,1181,Critical,Order
-360,36,No. 2 Pencils (Box),OFF-036,Office & School,10,Balikpapan Hub,237,1540,462,1540,1303,Critical,Order
-352,36,No. 2 Pencils (Box),OFF-036,Office & School,2,Bandung Hub,69,1773,530,1773,1704,Critical,Order
-353,36,No. 2 Pencils (Box),OFF-036,Office & School,3,Surabaya Hub,130,1484,467,1484,1354,Critical,Order
-354,36,No. 2 Pencils (Box),OFF-036,Office & School,4,Medan Hub,242,1387,433,1387,1145,Critical,Order
-355,36,No. 2 Pencils (Box),OFF-036,Office & School,5,Makassar Hub,286,1035,314,1035,749,Critical,Order
-356,36,No. 2 Pencils (Box),OFF-036,Office & School,6,Semarang Hub,89,1035,312,1035,946,Critical,Order
-357,36,No. 2 Pencils (Box),OFF-036,Office & School,7,Yogyakarta Hub,260,926,285,926,666,Critical,Order
-358,36,No. 2 Pencils (Box),OFF-036,Office & School,8,Palembang Hub,153,1622,505,1622,1469,Critical,Order
-359,36,No. 2 Pencils (Box),OFF-036,Office & School,9,Denpasar Hub,199,1406,433,1406,1207,Critical,Order
-361,37,Caramel Apples,FNB-037,Food & Beverage,1,Jakarta Hub,130,439,143,439,309,Critical,Order
-370,37,Caramel Apples,FNB-037,Food & Beverage,10,Balikpapan Hub,74,568,177,568,494,Critical,Order
-362,37,Caramel Apples,FNB-037,Food & Beverage,2,Bandung Hub,198,612,201,612,414,Critical,Order
-363,37,Caramel Apples,FNB-037,Food & Beverage,3,Surabaya Hub,193,560,180,560,367,Critical,Order
-364,37,Caramel Apples,FNB-037,Food & Beverage,4,Medan Hub,213,542,168,542,329,Critical,Order
-365,37,Caramel Apples,FNB-037,Food & Beverage,5,Makassar Hub,107,389,122,389,282,Critical,Order
-366,37,Caramel Apples,FNB-037,Food & Beverage,6,Semarang Hub,242,342,120,342,100,Critical,Order
-367,37,Caramel Apples,FNB-037,Food & Beverage,7,Yogyakarta Hub,118,310,111,310,192,Critical,Order
-368,37,Caramel Apples,FNB-037,Food & Beverage,8,Palembang Hub,20,610,196,610,590,Critical,Order
-369,37,Caramel Apples,FNB-037,Food & Beverage,9,Denpasar Hub,180,466,165,466,286,Critical,Order
-371,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,1,Jakarta Hub,293,1248,391,1248,955,Critical,Order
-380,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,10,Balikpapan Hub,99,1475,482,1475,1376,Critical,Order
-372,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,2,Bandung Hub,120,1917,552,1917,1797,Critical,Order
-373,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,3,Surabaya Hub,178,1543,490,1543,1365,Critical,Order
-374,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,4,Medan Hub,11,1447,454,1447,1436,Critical,Order
-375,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,5,Makassar Hub,84,1039,328,1039,955,Critical,Order
-376,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,6,Semarang Hub,286,976,328,976,690,Critical,Order
-377,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,7,Yogyakarta Hub,99,956,301,956,857,Critical,Order
-378,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,8,Palembang Hub,23,1756,529,1756,1733,Critical,Order
-379,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,9,Denpasar Hub,131,1463,450,1463,1332,Critical,Order
-381,39,Gardening Trowel,OUT-039,Outdoor & Garden,1,Jakarta Hub,225,682,214,682,457,Critical,Order
-390,39,Gardening Trowel,OUT-039,Outdoor & Garden,10,Balikpapan Hub,261,752,263,752,491,Critical,Order
-382,39,Gardening Trowel,OUT-039,Outdoor & Garden,2,Bandung Hub,42,898,299,898,856,Critical,Order
-383,39,Gardening Trowel,OUT-039,Outdoor & Garden,3,Surabaya Hub,195,791,270,791,596,Critical,Order
-384,39,Gardening Trowel,OUT-039,Outdoor & Garden,4,Medan Hub,241,800,248,800,559,Critical,Order
-385,39,Gardening Trowel,OUT-039,Outdoor & Garden,5,Makassar Hub,123,594,180,594,471,Critical,Order
-386,39,Gardening Trowel,OUT-039,Outdoor & Garden,6,Semarang Hub,276,574,180,574,298,Critical,Order
-387,39,Gardening Trowel,OUT-039,Outdoor & Garden,7,Yogyakarta Hub,244,484,165,484,240,Critical,Order
-388,39,Gardening Trowel,OUT-039,Outdoor & Garden,8,Palembang Hub,41,877,288,877,836,Critical,Order
-389,39,Gardening Trowel,OUT-039,Outdoor & Garden,9,Denpasar Hub,228,824,248,824,596,Critical,Order
-31,4,Beach Towel,HOM-004,Home Goods,1,Jakarta Hub,122,164,110,164,42,Critical,Transfer
-40,4,Beach Towel,HOM-004,Home Goods,10,Balikpapan Hub,59,218,134,218,159,Critical,Transfer
-32,4,Beach Towel,HOM-004,Home Goods,2,Bandung Hub,46,279,153,279,233,Critical,Transfer
-33,4,Beach Towel,HOM-004,Home Goods,3,Surabaya Hub,44,211,136,211,167,Critical,Transfer
-34,4,Beach Towel,HOM-004,Home Goods,4,Medan Hub,179,190,128,190,11,Critical,Transfer
-35,4,Beach Towel,HOM-004,Home Goods,5,Makassar Hub,273,139,92,139,0,Overstock,Discount
-36,4,Beach Towel,HOM-004,Home Goods,6,Semarang Hub,152,130,92,130,0,Healthy,None
-37,4,Beach Towel,HOM-004,Home Goods,7,Yogyakarta Hub,77,127,84,127,50,Critical,Transfer
-38,4,Beach Towel,HOM-004,Home Goods,8,Palembang Hub,134,225,146,225,91,Critical,Transfer
-39,4,Beach Towel,HOM-004,Home Goods,9,Denpasar Hub,107,216,128,216,109,Critical,Transfer
-391,40,Raincoat,APP-040,Apparel & Accessories,1,Jakarta Hub,47,450,142,450,403,Critical,Order
-400,40,Raincoat,APP-040,Apparel & Accessories,10,Balikpapan Hub,126,555,177,555,429,Critical,Order
-392,40,Raincoat,APP-040,Apparel & Accessories,2,Bandung Hub,174,620,201,620,446,Critical,Order
-393,40,Raincoat,APP-040,Apparel & Accessories,3,Surabaya Hub,74,544,180,544,470,Critical,Order
-394,40,Raincoat,APP-040,Apparel & Accessories,4,Medan Hub,290,551,166,551,261,Critical,Order
-395,40,Raincoat,APP-040,Apparel & Accessories,5,Makassar Hub,205,388,121,388,183,Critical,Order
-396,40,Raincoat,APP-040,Apparel & Accessories,6,Semarang Hub,242,425,122,425,183,Critical,Order
-397,40,Raincoat,APP-040,Apparel & Accessories,7,Yogyakarta Hub,230,358,110,358,128,Critical,Order
-398,40,Raincoat,APP-040,Apparel & Accessories,8,Palembang Hub,68,585,193,585,517,Critical,Order
-399,40,Raincoat,APP-040,Apparel & Accessories,9,Denpasar Hub,120,501,166,501,381,Critical,Order
-401,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,1,Jakarta Hub,242,338,109,338,96,Critical,Order
-410,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,10,Balikpapan Hub,297,444,133,444,147,Critical,Order
-402,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,2,Bandung Hub,222,485,152,485,263,Critical,Order
-403,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,3,Surabaya Hub,170,399,136,399,229,Critical,Order
-404,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,4,Medan Hub,140,373,126,373,233,Critical,Order
-405,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,5,Makassar Hub,252,283,93,283,31,Critical,Order
-406,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,6,Semarang Hub,56,304,93,304,248,Critical,Order
-407,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,7,Yogyakarta Hub,57,265,84,265,208,Critical,Order
-408,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,8,Palembang Hub,200,426,147,426,226,Critical,Order
-409,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,9,Denpasar Hub,294,411,126,411,117,Critical,Order
-411,42,Allergy Medicine,HNB-042,Health & Beauty,1,Jakarta Hub,178,574,178,574,396,Critical,Order
-420,42,Allergy Medicine,HNB-042,Health & Beauty,10,Balikpapan Hub,229,664,220,664,435,Critical,Order
-412,42,Allergy Medicine,HNB-042,Health & Beauty,2,Bandung Hub,220,791,252,791,571,Critical,Order
-413,42,Allergy Medicine,HNB-042,Health & Beauty,3,Surabaya Hub,226,707,226,707,481,Critical,Order
-414,42,Allergy Medicine,HNB-042,Health & Beauty,4,Medan Hub,157,606,208,606,449,Critical,Order
-415,42,Allergy Medicine,HNB-042,Health & Beauty,5,Makassar Hub,63,488,151,488,425,Critical,Order
-416,42,Allergy Medicine,HNB-042,Health & Beauty,6,Semarang Hub,89,492,150,492,403,Critical,Order
-417,42,Allergy Medicine,HNB-042,Health & Beauty,7,Yogyakarta Hub,65,474,138,474,409,Critical,Order
-418,42,Allergy Medicine,HNB-042,Health & Beauty,8,Palembang Hub,198,706,242,706,508,Critical,Order
-419,42,Allergy Medicine,HNB-042,Health & Beauty,9,Denpasar Hub,152,639,209,639,487,Critical,Order
-421,43,Flower Seeds,OUT-043,Outdoor & Garden,1,Jakarta Hub,295,794,249,794,499,Critical,Order
-430,43,Flower Seeds,OUT-043,Outdoor & Garden,10,Balikpapan Hub,281,942,310,942,661,Critical,Order
-422,43,Flower Seeds,OUT-043,Outdoor & Garden,2,Bandung Hub,146,1028,348,1028,882,Critical,Order
-423,43,Flower Seeds,OUT-043,Outdoor & Garden,3,Surabaya Hub,102,981,311,981,879,Critical,Order
-424,43,Flower Seeds,OUT-043,Outdoor & Garden,4,Medan Hub,168,882,287,882,714,Critical,Order
-425,43,Flower Seeds,OUT-043,Outdoor & Garden,5,Makassar Hub,189,664,210,664,475,Critical,Order
-426,43,Flower Seeds,OUT-043,Outdoor & Garden,6,Semarang Hub,102,665,209,665,563,Critical,Order
-427,43,Flower Seeds,OUT-043,Outdoor & Garden,7,Yogyakarta Hub,299,612,193,612,313,Critical,Order
-428,43,Flower Seeds,OUT-043,Outdoor & Garden,8,Palembang Hub,45,1039,338,1039,994,Critical,Order
-429,43,Flower Seeds,OUT-043,Outdoor & Garden,9,Denpasar Hub,25,916,290,916,891,Critical,Order
-431,44,Rubber Boots,APP-044,Apparel & Accessories,1,Jakarta Hub,202,461,145,461,259,Critical,Order
-440,44,Rubber Boots,APP-044,Apparel & Accessories,10,Balikpapan Hub,272,530,179,530,258,Critical,Order
-432,44,Rubber Boots,APP-044,Apparel & Accessories,2,Bandung Hub,242,589,204,589,347,Critical,Order
-433,44,Rubber Boots,APP-044,Apparel & Accessories,3,Surabaya Hub,90,568,179,568,478,Critical,Order
-434,44,Rubber Boots,APP-044,Apparel & Accessories,4,Medan Hub,176,506,167,506,330,Critical,Order
-435,44,Rubber Boots,APP-044,Apparel & Accessories,5,Makassar Hub,36,378,121,378,342,Critical,Order
-436,44,Rubber Boots,APP-044,Apparel & Accessories,6,Semarang Hub,35,394,123,394,359,Critical,Order
-437,44,Rubber Boots,APP-044,Apparel & Accessories,7,Yogyakarta Hub,149,354,112,354,205,Critical,Order
-438,44,Rubber Boots,APP-044,Apparel & Accessories,8,Palembang Hub,258,565,193,565,307,Critical,Order
-439,44,Rubber Boots,APP-044,Apparel & Accessories,9,Denpasar Hub,149,557,167,557,408,Critical,Order
-441,45,Spring Fertilizer,OUT-045,Outdoor & Garden,1,Jakarta Hub,186,1241,389,1241,1055,Critical,Order
-450,45,Spring Fertilizer,OUT-045,Outdoor & Garden,10,Balikpapan Hub,99,1467,483,1467,1368,Critical,Order
-442,45,Spring Fertilizer,OUT-045,Outdoor & Garden,2,Bandung Hub,259,1678,550,1678,1419,Critical,Order
-443,45,Spring Fertilizer,OUT-045,Outdoor & Garden,3,Surabaya Hub,167,1484,490,1484,1317,Critical,Order
-444,45,Spring Fertilizer,OUT-045,Outdoor & Garden,4,Medan Hub,122,1416,450,1416,1294,Critical,Order
-445,45,Spring Fertilizer,OUT-045,Outdoor & Garden,5,Makassar Hub,38,981,329,981,943,Critical,Order
-446,45,Spring Fertilizer,OUT-045,Outdoor & Garden,6,Semarang Hub,114,1059,328,1059,945,Critical,Order
-447,45,Spring Fertilizer,OUT-045,Outdoor & Garden,7,Yogyakarta Hub,80,951,300,951,871,Critical,Order
-448,45,Spring Fertilizer,OUT-045,Outdoor & Garden,8,Palembang Hub,71,1605,524,1605,1534,Critical,Order
-449,45,Spring Fertilizer,OUT-045,Outdoor & Garden,9,Denpasar Hub,264,1454,450,1454,1190,Critical,Order
-451,46,Pastel Decor,HOM-046,Home Goods,1,Jakarta Hub,204,856,282,856,652,Critical,Order
-460,46,Pastel Decor,HOM-046,Home Goods,10,Balikpapan Hub,176,1087,353,1087,911,Critical,Order
-452,46,Pastel Decor,HOM-046,Home Goods,2,Bandung Hub,266,1170,403,1170,904,Critical,Order
-453,46,Pastel Decor,HOM-046,Home Goods,3,Surabaya Hub,191,1086,358,1086,895,Critical,Order
-454,46,Pastel Decor,HOM-046,Home Goods,4,Medan Hub,213,996,330,996,783,Critical,Order
-455,46,Pastel Decor,HOM-046,Home Goods,5,Makassar Hub,233,735,239,735,502,Critical,Order
-456,46,Pastel Decor,HOM-046,Home Goods,6,Semarang Hub,245,758,239,758,513,Critical,Order
-457,46,Pastel Decor,HOM-046,Home Goods,7,Yogyakarta Hub,170,693,217,693,523,Critical,Order
-458,46,Pastel Decor,HOM-046,Home Goods,8,Palembang Hub,217,1165,384,1165,948,Critical,Order
-459,46,Pastel Decor,HOM-046,Home Goods,9,Denpasar Hub,68,1040,332,1040,972,Critical,Order
-461,47,Watering Can,OUT-047,Outdoor & Garden,1,Jakarta Hub,245,357,109,357,112,Critical,Order
-470,47,Watering Can,OUT-047,Outdoor & Garden,10,Balikpapan Hub,88,431,134,431,343,Critical,Order
-462,47,Watering Can,OUT-047,Outdoor & Garden,2,Bandung Hub,233,458,154,458,225,Critical,Order
-463,47,Watering Can,OUT-047,Outdoor & Garden,3,Surabaya Hub,233,429,137,429,196,Critical,Order
-464,47,Watering Can,OUT-047,Outdoor & Garden,4,Medan Hub,212,393,126,393,181,Critical,Order
-465,47,Watering Can,OUT-047,Outdoor & Garden,5,Makassar Hub,123,292,93,292,169,Critical,Order
-466,47,Watering Can,OUT-047,Outdoor & Garden,6,Semarang Hub,68,321,92,321,253,Critical,Order
-467,47,Watering Can,OUT-047,Outdoor & Garden,7,Yogyakarta Hub,188,278,85,278,90,Critical,Order
-468,47,Watering Can,OUT-047,Outdoor & Garden,8,Palembang Hub,130,441,147,441,311,Critical,Order
-469,47,Watering Can,OUT-047,Outdoor & Garden,9,Denpasar Hub,141,393,127,393,252,Critical,Order
-471,48,Bird Feeder,OUT-048,Outdoor & Garden,1,Jakarta Hub,262,820,249,820,558,Critical,Order
-480,48,Bird Feeder,OUT-048,Outdoor & Garden,10,Balikpapan Hub,106,977,310,977,871,Critical,Order
-472,48,Bird Feeder,OUT-048,Outdoor & Garden,2,Bandung Hub,299,1071,352,1071,772,Critical,Order
-473,48,Bird Feeder,OUT-048,Outdoor & Garden,3,Surabaya Hub,171,1024,316,1024,853,Critical,Order
-474,48,Bird Feeder,OUT-048,Outdoor & Garden,4,Medan Hub,44,899,288,899,855,Critical,Order
-475,48,Bird Feeder,OUT-048,Outdoor & Garden,5,Makassar Hub,150,653,209,653,503,Critical,Order
-476,48,Bird Feeder,OUT-048,Outdoor & Garden,6,Semarang Hub,47,609,210,609,562,Critical,Order
-477,48,Bird Feeder,OUT-048,Outdoor & Garden,7,Yogyakarta Hub,39,620,193,620,581,Critical,Order
-478,48,Bird Feeder,OUT-048,Outdoor & Garden,8,Palembang Hub,56,1013,335,1013,957,Critical,Order
-479,48,Bird Feeder,OUT-048,Outdoor & Garden,9,Denpasar Hub,293,882,289,882,589,Critical,Order
-481,49,Picnic Basket,OUT-049,Outdoor & Garden,1,Jakarta Hub,41,454,144,454,413,Critical,Order
-490,49,Picnic Basket,OUT-049,Outdoor & Garden,10,Balikpapan Hub,178,525,180,525,347,Critical,Order
-482,49,Picnic Basket,OUT-049,Outdoor & Garden,2,Bandung Hub,185,611,202,611,426,Critical,Order
-483,49,Picnic Basket,OUT-049,Outdoor & Garden,3,Surabaya Hub,268,586,181,586,318,Critical,Order
-484,49,Picnic Basket,OUT-049,Outdoor & Garden,4,Medan Hub,136,503,167,503,367,Critical,Order
-485,49,Picnic Basket,OUT-049,Outdoor & Garden,5,Makassar Hub,278,379,121,379,101,Critical,Order
-486,49,Picnic Basket,OUT-049,Outdoor & Garden,6,Semarang Hub,91,380,122,380,289,Critical,Order
-487,49,Picnic Basket,OUT-049,Outdoor & Garden,7,Yogyakarta Hub,154,371,113,371,217,Critical,Order
-488,49,Picnic Basket,OUT-049,Outdoor & Garden,8,Palembang Hub,183,577,194,577,394,Critical,Order
-489,49,Picnic Basket,OUT-049,Outdoor & Garden,9,Denpasar Hub,181,534,167,534,353,Critical,Order
-41,5,Pool Float,TOY-005,Toys & Games,1,Jakarta Hub,220,141,91,141,0,Overstock,Discount
-50,5,Pool Float,TOY-005,Toys & Games,10,Balikpapan Hub,35,176,112,176,141,Critical,Transfer
-42,5,Pool Float,TOY-005,Toys & Games,2,Bandung Hub,37,198,128,198,161,Critical,Transfer
-43,5,Pool Float,TOY-005,Toys & Games,3,Surabaya Hub,216,175,115,175,0,Healthy,None
-44,5,Pool Float,TOY-005,Toys & Games,4,Medan Hub,65,165,106,165,100,Critical,Transfer
-45,5,Pool Float,TOY-005,Toys & Games,5,Makassar Hub,284,118,77,118,0,Overstock,Discount
-46,5,Pool Float,TOY-005,Toys & Games,6,Semarang Hub,81,129,77,129,48,Critical,Transfer
-47,5,Pool Float,TOY-005,Toys & Games,7,Yogyakarta Hub,246,106,71,106,0,Overstock,Discount
-48,5,Pool Float,TOY-005,Toys & Games,8,Palembang Hub,48,195,123,195,147,Critical,Transfer
-49,5,Pool Float,TOY-005,Toys & Games,9,Denpasar Hub,291,155,105,155,0,Overstock,Discount
-491,50,Kite,TOY-050,Toys & Games,1,Jakarta Hub,295,996,320,996,701,Critical,Order
-500,50,Kite,TOY-050,Toys & Games,10,Balikpapan Hub,195,1185,394,1185,990,Critical,Order
-492,50,Kite,TOY-050,Toys & Games,2,Bandung Hub,155,1379,450,1379,1224,Critical,Order
-493,50,Kite,TOY-050,Toys & Games,3,Surabaya Hub,86,1235,399,1235,1149,Critical,Order
-494,50,Kite,TOY-050,Toys & Games,4,Medan Hub,82,1166,369,1166,1084,Critical,Order
-495,50,Kite,TOY-050,Toys & Games,5,Makassar Hub,210,872,269,872,662,Critical,Order
-496,50,Kite,TOY-050,Toys & Games,6,Semarang Hub,53,833,269,833,780,Critical,Order
-497,50,Kite,TOY-050,Toys & Games,7,Yogyakarta Hub,178,793,246,793,615,Critical,Order
-498,50,Kite,TOY-050,Toys & Games,8,Palembang Hub,279,1256,430,1256,977,Critical,Order
-499,50,Kite,TOY-050,Toys & Games,9,Denpasar Hub,226,1157,369,1157,931,Critical,Order
-51,6,Insect Repellent,HNB-006,Health & Beauty,1,Jakarta Hub,57,460,285,460,403,Critical,Order
-60,6,Insect Repellent,HNB-006,Health & Beauty,10,Balikpapan Hub,39,575,354,575,536,Critical,Order
-52,6,Insect Repellent,HNB-006,Health & Beauty,2,Bandung Hub,258,668,403,668,410,Critical,Order
-53,6,Insect Repellent,HNB-006,Health & Beauty,3,Surabaya Hub,119,557,357,557,438,Critical,Order
-54,6,Insect Repellent,HNB-006,Health & Beauty,4,Medan Hub,94,560,329,560,466,Critical,Order
-55,6,Insect Repellent,HNB-006,Health & Beauty,5,Makassar Hub,209,377,240,377,168,Critical,Order
-56,6,Insect Repellent,HNB-006,Health & Beauty,6,Semarang Hub,242,349,238,349,107,Critical,Order
-57,6,Insect Repellent,HNB-006,Health & Beauty,7,Yogyakarta Hub,226,406,219,406,180,Critical,Order
-58,6,Insect Repellent,HNB-006,Health & Beauty,8,Palembang Hub,259,648,384,648,389,Critical,Order
-59,6,Insect Repellent,HNB-006,Health & Beauty,9,Denpasar Hub,107,522,331,522,415,Critical,Order
-61,7,Sunglasses,APP-007,Apparel & Accessories,1,Jakarta Hub,41,464,283,464,423,Critical,Order
-70,7,Sunglasses,APP-007,Apparel & Accessories,10,Balikpapan Hub,171,581,351,581,410,Critical,Order
-62,7,Sunglasses,APP-007,Apparel & Accessories,2,Bandung Hub,254,605,401,605,351,Critical,Order
-63,7,Sunglasses,APP-007,Apparel & Accessories,3,Surabaya Hub,281,601,357,601,320,Critical,Order
-64,7,Sunglasses,APP-007,Apparel & Accessories,4,Medan Hub,39,495,328,495,456,Critical,Order
-65,7,Sunglasses,APP-007,Apparel & Accessories,5,Makassar Hub,105,383,242,383,278,Critical,Order
-66,7,Sunglasses,APP-007,Apparel & Accessories,6,Semarang Hub,44,388,240,388,344,Critical,Order
-67,7,Sunglasses,APP-007,Apparel & Accessories,7,Yogyakarta Hub,136,337,219,337,201,Critical,Order
-68,7,Sunglasses,APP-007,Apparel & Accessories,8,Palembang Hub,51,641,385,641,590,Critical,Order
-69,7,Sunglasses,APP-007,Apparel & Accessories,9,Denpasar Hub,299,572,329,572,273,Critical,Order
-71,8,Swim Trunks,APP-008,Apparel & Accessories,1,Jakarta Hub,114,582,374,582,468,Critical,Order
-80,8,Swim Trunks,APP-008,Apparel & Accessories,10,Balikpapan Hub,135,796,460,796,661,Critical,Order
-72,8,Swim Trunks,APP-008,Apparel & Accessories,2,Bandung Hub,212,925,526,925,713,Critical,Order
-73,8,Swim Trunks,APP-008,Apparel & Accessories,3,Surabaya Hub,163,763,468,763,600,Critical,Order
-74,8,Swim Trunks,APP-008,Apparel & Accessories,4,Medan Hub,47,769,431,769,722,Critical,Order
-75,8,Swim Trunks,APP-008,Apparel & Accessories,5,Makassar Hub,244,577,315,577,333,Critical,Order
-76,8,Swim Trunks,APP-008,Apparel & Accessories,6,Semarang Hub,61,529,315,529,468,Critical,Order
-77,8,Swim Trunks,APP-008,Apparel & Accessories,7,Yogyakarta Hub,285,487,287,487,202,Critical,Order
-78,8,Swim Trunks,APP-008,Apparel & Accessories,8,Palembang Hub,269,867,503,867,598,Critical,Order
-79,8,Swim Trunks,APP-008,Apparel & Accessories,9,Denpasar Hub,77,685,435,685,608,Critical,Order
-81,9,Beach Umbrella,OUT-009,Outdoor & Garden,1,Jakarta Hub,234,380,249,380,146,Critical,Order
-90,9,Beach Umbrella,OUT-009,Outdoor & Garden,10,Balikpapan Hub,36,501,310,501,465,Critical,Order
-82,9,Beach Umbrella,OUT-009,Outdoor & Garden,2,Bandung Hub,280,576,352,576,296,Critical,Order
-83,9,Beach Umbrella,OUT-009,Outdoor & Garden,3,Surabaya Hub,293,455,314,455,162,Critical,Order
-84,9,Beach Umbrella,OUT-009,Outdoor & Garden,4,Medan Hub,63,442,290,442,379,Critical,Order
-85,9,Beach Umbrella,OUT-009,Outdoor & Garden,5,Makassar Hub,145,355,210,355,210,Critical,Order
-86,9,Beach Umbrella,OUT-009,Outdoor & Garden,6,Semarang Hub,64,341,209,341,277,Critical,Order
-87,9,Beach Umbrella,OUT-009,Outdoor & Garden,7,Yogyakarta Hub,154,333,193,333,179,Critical,Order
-88,9,Beach Umbrella,OUT-009,Outdoor & Garden,8,Palembang Hub,185,518,337,518,333,Critical,Order
-89,9,Beach Umbrella,OUT-009,Outdoor & Garden,9,Denpasar Hub,145,465,290,465,320,Critical,Order
+<<<<<<< HEAD
+1,1,Wireless Earbuds,SKU-ELE-1001,Electronic,1,Jakarta Hub,226,221,102,221,0,Healthy,None
+10,1,Wireless Earbuds,SKU-ELE-1001,Electronic,10,Balikpapan Hub,162,265,125,265,103,Critical,Transfer
+2,1,Wireless Earbuds,SKU-ELE-1001,Electronic,2,Bandung Hub,205,313,141,313,108,Critical,Transfer
+3,1,Wireless Earbuds,SKU-ELE-1001,Electronic,3,Surabaya Hub,280,288,126,288,8,Critical,Transfer
+4,1,Wireless Earbuds,SKU-ELE-1001,Electronic,4,Medan Hub,293,272,115,272,0,Healthy,None
+5,1,Wireless Earbuds,SKU-ELE-1001,Electronic,5,Makassar Hub,68,203,85,203,135,Critical,Transfer
+6,1,Wireless Earbuds,SKU-ELE-1001,Electronic,6,Semarang Hub,184,177,85,177,0,Healthy,None
+7,1,Wireless Earbuds,SKU-ELE-1001,Electronic,7,Yogyakarta Hub,160,174,78,174,14,Critical,Transfer
+8,1,Wireless Earbuds,SKU-ELE-1001,Electronic,8,Palembang Hub,11,309,136,309,298,Critical,Transfer
+9,1,Wireless Earbuds,SKU-ELE-1001,Electronic,9,Denpasar Hub,101,257,118,257,156,Critical,Transfer
+91,10,Hoodie Cotton,SKU-FAS-1010,Fashion,1,Jakarta Hub,226,797,325,797,571,Critical,Order
+100,10,Hoodie Cotton,SKU-FAS-1010,Fashion,10,Balikpapan Hub,230,949,401,949,719,Critical,Order
+92,10,Hoodie Cotton,SKU-FAS-1010,Fashion,2,Bandung Hub,32,1072,458,1072,1040,Critical,Order
+93,10,Hoodie Cotton,SKU-FAS-1010,Fashion,3,Surabaya Hub,180,923,407,923,743,Critical,Order
+94,10,Hoodie Cotton,SKU-FAS-1010,Fashion,4,Medan Hub,144,903,376,903,759,Critical,Order
+95,10,Hoodie Cotton,SKU-FAS-1010,Fashion,5,Makassar Hub,236,652,273,652,416,Critical,Order
+96,10,Hoodie Cotton,SKU-FAS-1010,Fashion,6,Semarang Hub,297,647,273,647,350,Critical,Order
+97,10,Hoodie Cotton,SKU-FAS-1010,Fashion,7,Yogyakarta Hub,67,580,251,580,513,Critical,Order
+98,10,Hoodie Cotton,SKU-FAS-1010,Fashion,8,Palembang Hub,86,1017,437,1017,931,Critical,Order
+99,10,Hoodie Cotton,SKU-FAS-1010,Fashion,9,Denpasar Hub,199,903,377,903,704,Critical,Order
+101,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,1,Jakarta Hub,31,716,309,716,685,Critical,Order
+110,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,10,Balikpapan Hub,91,943,383,943,852,Critical,Order
+102,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,2,Bandung Hub,30,1038,436,1038,1008,Critical,Order
+103,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,3,Surabaya Hub,137,945,387,945,808,Critical,Order
+104,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,4,Medan Hub,191,906,360,906,715,Critical,Order
+105,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,5,Makassar Hub,218,607,261,607,389,Critical,Order
+106,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,6,Semarang Hub,131,602,261,602,471,Critical,Order
+107,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,7,Yogyakarta Hub,100,561,238,561,461,Critical,Order
+108,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,8,Palembang Hub,180,985,417,985,805,Critical,Order
+109,11,Canvas Tote Bag,SKU-FAS-1011,Fashion,9,Denpasar Hub,137,873,357,873,736,Critical,Order
+111,12,Socks Pack,SKU-FAS-1012,Fashion,1,Jakarta Hub,205,722,310,722,517,Critical,Order
+120,12,Socks Pack,SKU-FAS-1012,Fashion,10,Balikpapan Hub,24,893,383,893,869,Critical,Order
+112,12,Socks Pack,SKU-FAS-1012,Fashion,2,Bandung Hub,250,1029,436,1029,779,Critical,Order
+113,12,Socks Pack,SKU-FAS-1012,Fashion,3,Surabaya Hub,112,914,386,914,802,Critical,Order
+114,12,Socks Pack,SKU-FAS-1012,Fashion,4,Medan Hub,126,853,357,853,727,Critical,Order
+115,12,Socks Pack,SKU-FAS-1012,Fashion,5,Makassar Hub,22,580,261,580,558,Critical,Order
+116,12,Socks Pack,SKU-FAS-1012,Fashion,6,Semarang Hub,152,611,260,611,459,Critical,Order
+117,12,Socks Pack,SKU-FAS-1012,Fashion,7,Yogyakarta Hub,152,560,240,560,408,Critical,Order
+118,12,Socks Pack,SKU-FAS-1012,Fashion,8,Palembang Hub,270,954,417,954,684,Critical,Order
+119,12,Socks Pack,SKU-FAS-1012,Fashion,9,Denpasar Hub,284,831,359,831,547,Critical,Order
+121,13,Running Shoes,SKU-FAS-1013,Fashion,1,Jakarta Hub,143,886,371,886,743,Critical,Order
+130,13,Running Shoes,SKU-FAS-1013,Fashion,10,Balikpapan Hub,45,1116,461,1116,1071,Critical,Order
+122,13,Running Shoes,SKU-FAS-1013,Fashion,2,Bandung Hub,145,1302,525,1302,1157,Critical,Order
+123,13,Running Shoes,SKU-FAS-1013,Fashion,3,Surabaya Hub,65,1175,469,1175,1110,Critical,Order
+124,13,Running Shoes,SKU-FAS-1013,Fashion,4,Medan Hub,170,1080,432,1080,910,Critical,Order
+125,13,Running Shoes,SKU-FAS-1013,Fashion,5,Makassar Hub,271,734,315,734,463,Critical,Order
+126,13,Running Shoes,SKU-FAS-1013,Fashion,6,Semarang Hub,207,755,316,755,548,Critical,Order
+127,13,Running Shoes,SKU-FAS-1013,Fashion,7,Yogyakarta Hub,32,694,287,694,662,Critical,Order
+128,13,Running Shoes,SKU-FAS-1013,Fashion,8,Palembang Hub,285,1218,504,1218,933,Critical,Order
+129,13,Running Shoes,SKU-FAS-1013,Fashion,9,Denpasar Hub,196,1053,431,1053,857,Critical,Order
+131,14,Bucket Hat,SKU-FAS-1014,Fashion,1,Jakarta Hub,73,625,261,625,552,Critical,Order
+140,14,Bucket Hat,SKU-FAS-1014,Fashion,10,Balikpapan Hub,174,752,324,752,578,Critical,Order
+132,14,Bucket Hat,SKU-FAS-1014,Fashion,2,Bandung Hub,219,848,367,848,629,Critical,Order
+133,14,Bucket Hat,SKU-FAS-1014,Fashion,3,Surabaya Hub,216,758,327,758,542,Critical,Order
+134,14,Bucket Hat,SKU-FAS-1014,Fashion,4,Medan Hub,293,708,303,708,415,Critical,Order
+135,14,Bucket Hat,SKU-FAS-1014,Fashion,5,Makassar Hub,108,538,222,538,430,Critical,Order
+136,14,Bucket Hat,SKU-FAS-1014,Fashion,6,Semarang Hub,204,502,220,502,298,Critical,Order
+137,14,Bucket Hat,SKU-FAS-1014,Fashion,7,Yogyakarta Hub,164,478,202,478,314,Critical,Order
+138,14,Bucket Hat,SKU-FAS-1014,Fashion,8,Palembang Hub,10,826,350,826,816,Critical,Order
+139,14,Bucket Hat,SKU-FAS-1014,Fashion,9,Denpasar Hub,230,690,302,690,460,Critical,Order
+141,15,Denim Jacket,SKU-FAS-1015,Fashion,1,Jakarta Hub,119,921,390,921,802,Critical,Order
+150,15,Denim Jacket,SKU-FAS-1015,Fashion,10,Balikpapan Hub,109,1172,481,1172,1063,Critical,Order
+142,15,Denim Jacket,SKU-FAS-1015,Fashion,2,Bandung Hub,96,1397,547,1397,1301,Critical,Order
+143,15,Denim Jacket,SKU-FAS-1015,Fashion,3,Surabaya Hub,155,1170,489,1170,1015,Critical,Order
+144,15,Denim Jacket,SKU-FAS-1015,Fashion,4,Medan Hub,181,1102,450,1102,921,Critical,Order
+145,15,Denim Jacket,SKU-FAS-1015,Fashion,5,Makassar Hub,130,824,328,824,694,Critical,Order
+146,15,Denim Jacket,SKU-FAS-1015,Fashion,6,Semarang Hub,125,753,326,753,628,Critical,Order
+147,15,Denim Jacket,SKU-FAS-1015,Fashion,7,Yogyakarta Hub,85,694,300,694,609,Critical,Order
+148,15,Denim Jacket,SKU-FAS-1015,Fashion,8,Palembang Hub,33,1298,525,1298,1265,Critical,Order
+149,15,Denim Jacket,SKU-FAS-1015,Fashion,9,Denpasar Hub,47,1057,453,1057,1010,Critical,Order
+151,16,Pencil 2B,SKU-STA-1016,Stationery,1,Jakarta Hub,134,270,118,270,136,Critical,Transfer
+160,16,Pencil 2B,SKU-STA-1016,Stationery,10,Balikpapan Hub,268,313,143,313,45,Critical,Transfer
+152,16,Pencil 2B,SKU-STA-1016,Stationery,2,Bandung Hub,12,341,164,341,329,Critical,Transfer
+153,16,Pencil 2B,SKU-STA-1016,Stationery,3,Surabaya Hub,122,332,145,332,210,Critical,Transfer
+154,16,Pencil 2B,SKU-STA-1016,Stationery,4,Medan Hub,275,294,136,294,19,Critical,Transfer
+155,16,Pencil 2B,SKU-STA-1016,Stationery,5,Makassar Hub,35,214,98,214,179,Critical,Transfer
+156,16,Pencil 2B,SKU-STA-1016,Stationery,6,Semarang Hub,72,213,99,213,141,Critical,Transfer
+157,16,Pencil 2B,SKU-STA-1016,Stationery,7,Yogyakarta Hub,247,199,91,199,0,Healthy,None
+158,16,Pencil 2B,SKU-STA-1016,Stationery,8,Palembang Hub,296,341,157,341,45,Critical,Transfer
+159,16,Pencil 2B,SKU-STA-1016,Stationery,9,Denpasar Hub,172,310,135,310,138,Critical,Transfer
+161,17,Gel Pen Black,SKU-STA-1017,Stationery,1,Jakarta Hub,290,339,149,339,49,Critical,Order
+170,17,Gel Pen Black,SKU-STA-1017,Stationery,10,Balikpapan Hub,87,424,184,424,337,Critical,Order
+162,17,Gel Pen Black,SKU-STA-1017,Stationery,2,Bandung Hub,91,477,210,477,386,Critical,Order
+163,17,Gel Pen Black,SKU-STA-1017,Stationery,3,Surabaya Hub,136,417,187,417,281,Critical,Order
+164,17,Gel Pen Black,SKU-STA-1017,Stationery,4,Medan Hub,276,366,172,366,90,Critical,Order
+165,17,Gel Pen Black,SKU-STA-1017,Stationery,5,Makassar Hub,132,277,126,277,145,Critical,Order
+166,17,Gel Pen Black,SKU-STA-1017,Stationery,6,Semarang Hub,235,294,125,294,59,Critical,Order
+167,17,Gel Pen Black,SKU-STA-1017,Stationery,7,Yogyakarta Hub,156,265,115,265,109,Critical,Order
+168,17,Gel Pen Black,SKU-STA-1017,Stationery,8,Palembang Hub,149,469,198,469,320,Critical,Order
+169,17,Gel Pen Black,SKU-STA-1017,Stationery,9,Denpasar Hub,173,388,173,388,215,Critical,Order
+171,18,Notebook A5,SKU-STA-1018,Stationery,1,Jakarta Hub,88,889,374,889,801,Critical,Order
+180,18,Notebook A5,SKU-STA-1018,Stationery,10,Balikpapan Hub,122,1098,460,1098,976,Critical,Order
+172,18,Notebook A5,SKU-STA-1018,Stationery,2,Bandung Hub,42,1303,526,1303,1261,Critical,Order
+173,18,Notebook A5,SKU-STA-1018,Stationery,3,Surabaya Hub,287,1120,468,1120,833,Critical,Order
+174,18,Notebook A5,SKU-STA-1018,Stationery,4,Medan Hub,222,1040,431,1040,818,Critical,Order
+175,18,Notebook A5,SKU-STA-1018,Stationery,5,Makassar Hub,115,766,313,766,651,Critical,Order
+176,18,Notebook A5,SKU-STA-1018,Stationery,6,Semarang Hub,20,752,313,752,732,Critical,Order
+177,18,Notebook A5,SKU-STA-1018,Stationery,7,Yogyakarta Hub,13,693,288,693,680,Critical,Order
+178,18,Notebook A5,SKU-STA-1018,Stationery,8,Palembang Hub,209,1192,505,1192,983,Critical,Order
+179,18,Notebook A5,SKU-STA-1018,Stationery,9,Denpasar Hub,285,1015,433,1015,730,Critical,Order
+181,19,Sticky Notes,SKU-STA-1019,Stationery,1,Jakarta Hub,233,412,183,412,179,Critical,Order
+190,19,Sticky Notes,SKU-STA-1019,Stationery,10,Balikpapan Hub,35,482,223,482,447,Critical,Order
+182,19,Sticky Notes,SKU-STA-1019,Stationery,2,Bandung Hub,24,579,254,579,555,Critical,Order
+183,19,Sticky Notes,SKU-STA-1019,Stationery,3,Surabaya Hub,217,482,226,482,265,Critical,Order
+184,19,Sticky Notes,SKU-STA-1019,Stationery,4,Medan Hub,249,490,210,490,241,Critical,Order
+185,19,Sticky Notes,SKU-STA-1019,Stationery,5,Makassar Hub,283,322,153,322,39,Critical,Order
+186,19,Sticky Notes,SKU-STA-1019,Stationery,6,Semarang Hub,211,348,152,348,137,Critical,Order
+187,19,Sticky Notes,SKU-STA-1019,Stationery,7,Yogyakarta Hub,23,311,141,311,288,Critical,Order
+188,19,Sticky Notes,SKU-STA-1019,Stationery,8,Palembang Hub,229,579,243,579,350,Critical,Order
+189,19,Sticky Notes,SKU-STA-1019,Stationery,9,Denpasar Hub,246,505,210,505,259,Critical,Order
+11,2,Smartwatch,SKU-ELE-1002,Electronic,1,Jakarta Hub,111,630,261,630,519,Critical,Order
+20,2,Smartwatch,SKU-ELE-1002,Electronic,10,Balikpapan Hub,282,721,320,721,439,Critical,Order
+12,2,Smartwatch,SKU-ELE-1002,Electronic,2,Bandung Hub,201,863,368,863,662,Critical,Order
+13,2,Smartwatch,SKU-ELE-1002,Electronic,3,Surabaya Hub,286,763,328,763,477,Critical,Order
+14,2,Smartwatch,SKU-ELE-1002,Electronic,4,Medan Hub,10,716,303,716,706,Critical,Order
+15,2,Smartwatch,SKU-ELE-1002,Electronic,5,Makassar Hub,19,510,219,510,491,Critical,Order
+16,2,Smartwatch,SKU-ELE-1002,Electronic,6,Semarang Hub,167,515,219,515,348,Critical,Order
+17,2,Smartwatch,SKU-ELE-1002,Electronic,7,Yogyakarta Hub,39,452,201,452,413,Critical,Order
+18,2,Smartwatch,SKU-ELE-1002,Electronic,8,Palembang Hub,50,872,350,872,822,Critical,Order
+19,2,Smartwatch,SKU-ELE-1002,Electronic,9,Denpasar Hub,258,716,302,716,458,Critical,Order
+191,20,Highlighter Set,SKU-STA-1020,Stationery,1,Jakarta Hub,118,520,211,520,402,Critical,Order
+200,20,Highlighter Set,SKU-STA-1020,Stationery,10,Balikpapan Hub,74,599,262,599,525,Critical,Order
+192,20,Highlighter Set,SKU-STA-1020,Stationery,2,Bandung Hub,204,664,299,664,460,Critical,Order
+193,20,Highlighter Set,SKU-STA-1020,Stationery,3,Surabaya Hub,225,624,266,624,399,Critical,Order
+194,20,Highlighter Set,SKU-STA-1020,Stationery,4,Medan Hub,51,534,246,534,483,Critical,Order
+195,20,Highlighter Set,SKU-STA-1020,Stationery,5,Makassar Hub,286,409,180,409,123,Critical,Order
+196,20,Highlighter Set,SKU-STA-1020,Stationery,6,Semarang Hub,189,422,179,422,233,Critical,Order
+197,20,Highlighter Set,SKU-STA-1020,Stationery,7,Yogyakarta Hub,45,364,165,364,319,Critical,Order
+198,20,Highlighter Set,SKU-STA-1020,Stationery,8,Palembang Hub,25,681,284,681,656,Critical,Order
+199,20,Highlighter Set,SKU-STA-1020,Stationery,9,Denpasar Hub,20,573,246,573,553,Critical,Order
+201,21,Scissors,SKU-STA-1021,Stationery,1,Jakarta Hub,298,407,180,407,109,Critical,Order
+210,21,Scissors,SKU-STA-1021,Stationery,10,Balikpapan Hub,164,516,224,516,352,Critical,Order
+202,21,Scissors,SKU-STA-1021,Stationery,2,Bandung Hub,248,598,255,598,350,Critical,Order
+203,21,Scissors,SKU-STA-1021,Stationery,3,Surabaya Hub,198,525,226,525,327,Critical,Order
+204,21,Scissors,SKU-STA-1021,Stationery,4,Medan Hub,68,484,209,484,416,Critical,Order
+205,21,Scissors,SKU-STA-1021,Stationery,5,Makassar Hub,169,327,153,327,158,Critical,Order
+206,21,Scissors,SKU-STA-1021,Stationery,6,Semarang Hub,23,339,154,339,316,Critical,Order
+207,21,Scissors,SKU-STA-1021,Stationery,7,Yogyakarta Hub,202,316,141,316,114,Critical,Order
+208,21,Scissors,SKU-STA-1021,Stationery,8,Palembang Hub,111,602,244,602,491,Critical,Order
+209,21,Scissors,SKU-STA-1021,Stationery,9,Denpasar Hub,134,467,210,467,333,Critical,Order
+211,22,Desk Organizer,SKU-STA-1022,Stationery,1,Jakarta Hub,299,839,356,839,540,Critical,Order
+220,22,Desk Organizer,SKU-STA-1022,Stationery,10,Balikpapan Hub,285,1073,441,1073,788,Critical,Order
+212,22,Desk Organizer,SKU-STA-1022,Stationery,2,Bandung Hub,187,1192,501,1192,1005,Critical,Order
+213,22,Desk Organizer,SKU-STA-1022,Stationery,3,Surabaya Hub,199,1048,447,1048,849,Critical,Order
+214,22,Desk Organizer,SKU-STA-1022,Stationery,4,Medan Hub,269,996,412,996,727,Critical,Order
+215,22,Desk Organizer,SKU-STA-1022,Stationery,5,Makassar Hub,16,696,301,696,680,Critical,Order
+216,22,Desk Organizer,SKU-STA-1022,Stationery,6,Semarang Hub,64,675,299,675,611,Critical,Order
+217,22,Desk Organizer,SKU-STA-1022,Stationery,7,Yogyakarta Hub,245,653,276,653,408,Critical,Order
+218,22,Desk Organizer,SKU-STA-1022,Stationery,8,Palembang Hub,232,1111,482,1111,879,Critical,Order
+219,22,Desk Organizer,SKU-STA-1022,Stationery,9,Denpasar Hub,277,988,414,988,711,Critical,Order
+221,23,Matte Lipstick,SKU-MAK-1023,Makeup,1,Jakarta Hub,248,300,133,300,52,Critical,Transfer
+230,23,Matte Lipstick,SKU-MAK-1023,Makeup,10,Balikpapan Hub,218,389,165,389,171,Critical,Transfer
+222,23,Matte Lipstick,SKU-MAK-1023,Makeup,2,Bandung Hub,175,452,186,452,277,Critical,Transfer
+223,23,Matte Lipstick,SKU-MAK-1023,Makeup,3,Surabaya Hub,152,385,166,385,233,Critical,Transfer
+224,23,Matte Lipstick,SKU-MAK-1023,Makeup,4,Medan Hub,204,346,153,346,142,Critical,Transfer
+225,23,Matte Lipstick,SKU-MAK-1023,Makeup,5,Makassar Hub,263,236,113,236,0,Healthy,None
+226,23,Matte Lipstick,SKU-MAK-1023,Makeup,6,Semarang Hub,259,258,113,258,0,Healthy,None
+227,23,Matte Lipstick,SKU-MAK-1023,Makeup,7,Yogyakarta Hub,142,209,103,209,67,Critical,Transfer
+228,23,Matte Lipstick,SKU-MAK-1023,Makeup,8,Palembang Hub,151,419,178,419,268,Critical,Transfer
+229,23,Matte Lipstick,SKU-MAK-1023,Makeup,9,Denpasar Hub,107,355,154,355,248,Critical,Transfer
+231,24,Liquid Foundation,SKU-MAK-1024,Makeup,1,Jakarta Hub,261,653,294,653,392,Critical,Order
+240,24,Liquid Foundation,SKU-MAK-1024,Makeup,10,Balikpapan Hub,257,857,364,857,600,Critical,Order
+232,24,Liquid Foundation,SKU-MAK-1024,Makeup,2,Bandung Hub,57,956,413,956,899,Critical,Order
+233,24,Liquid Foundation,SKU-MAK-1024,Makeup,3,Surabaya Hub,134,930,367,930,796,Critical,Order
+234,24,Liquid Foundation,SKU-MAK-1024,Makeup,4,Medan Hub,252,791,338,791,539,Critical,Order
+235,24,Liquid Foundation,SKU-MAK-1024,Makeup,5,Makassar Hub,291,566,247,566,275,Critical,Order
+236,24,Liquid Foundation,SKU-MAK-1024,Makeup,6,Semarang Hub,242,570,249,570,328,Critical,Order
+237,24,Liquid Foundation,SKU-MAK-1024,Makeup,7,Yogyakarta Hub,138,554,225,554,416,Critical,Order
+238,24,Liquid Foundation,SKU-MAK-1024,Makeup,8,Palembang Hub,108,940,397,940,832,Critical,Order
+239,24,Liquid Foundation,SKU-MAK-1024,Makeup,9,Denpasar Hub,104,801,339,801,697,Critical,Order
+241,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,1,Jakarta Hub,154,843,356,843,689,Critical,Order
+250,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,10,Balikpapan Hub,215,1042,441,1042,827,Critical,Order
+242,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,2,Bandung Hub,161,1224,504,1224,1063,Critical,Order
+243,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,3,Surabaya Hub,101,1075,446,1075,974,Critical,Order
+244,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,4,Medan Hub,74,1008,414,1008,934,Critical,Order
+245,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,5,Makassar Hub,293,682,301,682,389,Critical,Order
+246,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,6,Semarang Hub,261,717,301,717,456,Critical,Order
+247,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,7,Yogyakarta Hub,155,655,277,655,500,Critical,Order
+248,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,8,Palembang Hub,104,1152,483,1152,1048,Critical,Order
+249,25,Eyebrow Pencil,SKU-MAK-1025,Makeup,9,Denpasar Hub,254,998,416,998,744,Critical,Order
+251,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,1,Jakarta Hub,37,512,215,512,475,Critical,Order
+260,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,10,Balikpapan Hub,219,583,263,583,364,Critical,Order
+252,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,2,Bandung Hub,165,707,300,707,542,Critical,Order
+253,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,3,Surabaya Hub,70,604,267,604,534,Critical,Order
+254,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,4,Medan Hub,125,556,246,556,431,Critical,Order
+255,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,5,Makassar Hub,236,386,180,386,150,Critical,Order
+256,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,6,Semarang Hub,166,404,179,404,238,Critical,Order
+257,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,7,Yogyakarta Hub,60,376,164,376,316,Critical,Order
+258,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,8,Palembang Hub,51,659,288,659,608,Critical,Order
+259,26,Eyeliner Waterproof,SKU-MAK-1026,Makeup,9,Denpasar Hub,98,554,246,554,456,Critical,Order
+261,27,Blush On,SKU-MAK-1027,Makeup,1,Jakarta Hub,159,222,102,222,63,Critical,Transfer
+270,27,Blush On,SKU-MAK-1027,Makeup,10,Balikpapan Hub,23,293,124,293,270,Critical,Transfer
+262,27,Blush On,SKU-MAK-1027,Makeup,2,Bandung Hub,157,329,142,329,172,Critical,Transfer
+263,27,Blush On,SKU-MAK-1027,Makeup,3,Surabaya Hub,46,287,126,287,241,Critical,Transfer
+264,27,Blush On,SKU-MAK-1027,Makeup,4,Medan Hub,111,255,116,255,144,Critical,Transfer
+265,27,Blush On,SKU-MAK-1027,Makeup,5,Makassar Hub,86,192,86,192,106,Critical,Transfer
+266,27,Blush On,SKU-MAK-1027,Makeup,6,Semarang Hub,94,188,86,188,94,Critical,Transfer
+267,27,Blush On,SKU-MAK-1027,Makeup,7,Yogyakarta Hub,249,153,78,153,0,Overstock,Discount
+268,27,Blush On,SKU-MAK-1027,Makeup,8,Palembang Hub,149,299,135,299,150,Critical,Transfer
+269,27,Blush On,SKU-MAK-1027,Makeup,9,Denpasar Hub,30,269,118,269,239,Critical,Transfer
+271,28,Setting Spray,SKU-MAK-1028,Makeup,1,Jakarta Hub,20,933,388,933,913,Critical,Order
+280,28,Setting Spray,SKU-MAK-1028,Makeup,10,Balikpapan Hub,69,1172,481,1172,1103,Critical,Order
+272,28,Setting Spray,SKU-MAK-1028,Makeup,2,Bandung Hub,99,1388,547,1388,1289,Critical,Order
+273,28,Setting Spray,SKU-MAK-1028,Makeup,3,Surabaya Hub,152,1118,486,1118,966,Critical,Order
+274,28,Setting Spray,SKU-MAK-1028,Makeup,4,Medan Hub,261,1091,451,1091,830,Critical,Order
+275,28,Setting Spray,SKU-MAK-1028,Makeup,5,Makassar Hub,188,801,327,801,613,Critical,Order
+276,28,Setting Spray,SKU-MAK-1028,Makeup,6,Semarang Hub,174,763,325,763,589,Critical,Order
+277,28,Setting Spray,SKU-MAK-1028,Makeup,7,Yogyakarta Hub,178,677,300,677,499,Critical,Order
+278,28,Setting Spray,SKU-MAK-1028,Makeup,8,Palembang Hub,215,1299,524,1299,1084,Critical,Order
+279,28,Setting Spray,SKU-MAK-1028,Makeup,9,Denpasar Hub,171,1105,453,1105,934,Critical,Order
+281,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,1,Jakarta Hub,10,735,309,735,725,Critical,Order
+290,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,10,Balikpapan Hub,159,899,381,899,740,Critical,Order
+282,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,2,Bandung Hub,106,1022,433,1022,916,Critical,Order
+283,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,3,Surabaya Hub,265,932,389,932,667,Critical,Order
+284,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,4,Medan Hub,114,857,359,857,743,Critical,Order
+285,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,5,Makassar Hub,157,592,260,592,435,Critical,Order
+286,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,6,Semarang Hub,132,577,261,577,445,Critical,Order
+287,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,7,Yogyakarta Hub,292,591,238,591,299,Critical,Order
+288,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,8,Palembang Hub,57,986,417,986,929,Critical,Order
+289,29,Sunscreen SPF50,SKU-SKI-1029,Skincare,9,Denpasar Hub,70,868,359,868,798,Critical,Order
+21,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,1,Jakarta Hub,75,361,165,361,286,Critical,Order
+30,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,10,Balikpapan Hub,293,444,204,444,151,Critical,Order
+22,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,2,Bandung Hub,94,550,232,550,456,Critical,Order
+23,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,3,Surabaya Hub,226,463,206,463,237,Critical,Order
+24,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,4,Medan Hub,286,453,191,453,167,Critical,Order
+25,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,5,Makassar Hub,169,318,139,318,149,Critical,Order
+26,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,6,Semarang Hub,201,336,139,336,135,Critical,Order
+27,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,7,Yogyakarta Hub,274,289,129,289,15,Critical,Order
+28,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,8,Palembang Hub,71,518,222,518,447,Critical,Order
+29,3,Bluetooth Speaker,SKU-ELE-1003,Electronic,9,Denpasar Hub,183,428,191,428,245,Critical,Order
+291,30,Moisturizer Gel,SKU-SKI-1030,Skincare,1,Jakarta Hub,257,396,181,396,139,Critical,Order
+300,30,Moisturizer Gel,SKU-SKI-1030,Skincare,10,Balikpapan Hub,132,491,225,491,359,Critical,Order
+292,30,Moisturizer Gel,SKU-SKI-1030,Skincare,2,Bandung Hub,243,588,256,588,345,Critical,Order
+293,30,Moisturizer Gel,SKU-SKI-1030,Skincare,3,Surabaya Hub,270,528,227,528,258,Critical,Order
+294,30,Moisturizer Gel,SKU-SKI-1030,Skincare,4,Medan Hub,151,479,209,479,328,Critical,Order
+295,30,Moisturizer Gel,SKU-SKI-1030,Skincare,5,Makassar Hub,269,338,153,338,69,Critical,Order
+296,30,Moisturizer Gel,SKU-SKI-1030,Skincare,6,Semarang Hub,154,341,153,341,187,Critical,Order
+297,30,Moisturizer Gel,SKU-SKI-1030,Skincare,7,Yogyakarta Hub,86,305,141,305,219,Critical,Order
+298,30,Moisturizer Gel,SKU-SKI-1030,Skincare,8,Palembang Hub,292,523,243,523,231,Critical,Order
+299,30,Moisturizer Gel,SKU-SKI-1030,Skincare,9,Denpasar Hub,243,475,210,475,232,Critical,Order
+301,31,Micellar Water,SKU-SKI-1031,Skincare,1,Jakarta Hub,220,590,261,590,370,Critical,Order
+310,31,Micellar Water,SKU-SKI-1031,Skincare,10,Balikpapan Hub,45,743,322,743,698,Critical,Order
+302,31,Micellar Water,SKU-SKI-1031,Skincare,2,Bandung Hub,252,859,368,859,607,Critical,Order
+303,31,Micellar Water,SKU-SKI-1031,Skincare,3,Surabaya Hub,87,734,328,734,647,Critical,Order
+304,31,Micellar Water,SKU-SKI-1031,Skincare,4,Medan Hub,179,719,299,719,540,Critical,Order
+305,31,Micellar Water,SKU-SKI-1031,Skincare,5,Makassar Hub,61,504,220,504,443,Critical,Order
+306,31,Micellar Water,SKU-SKI-1031,Skincare,6,Semarang Hub,83,477,220,477,394,Critical,Order
+307,31,Micellar Water,SKU-SKI-1031,Skincare,7,Yogyakarta Hub,145,476,203,476,331,Critical,Order
+308,31,Micellar Water,SKU-SKI-1031,Skincare,8,Palembang Hub,51,831,352,831,780,Critical,Order
+309,31,Micellar Water,SKU-SKI-1031,Skincare,9,Denpasar Hub,259,717,301,717,458,Critical,Order
+311,32,Vitamin C Serum,SKU-SKI-1032,Skincare,1,Jakarta Hub,56,452,197,452,396,Critical,Order
+320,32,Vitamin C Serum,SKU-SKI-1032,Skincare,10,Balikpapan Hub,248,537,243,537,289,Critical,Order
+312,32,Vitamin C Serum,SKU-SKI-1032,Skincare,2,Bandung Hub,61,695,279,695,634,Critical,Order
+313,32,Vitamin C Serum,SKU-SKI-1032,Skincare,3,Surabaya Hub,24,592,247,592,568,Critical,Order
+314,32,Vitamin C Serum,SKU-SKI-1032,Skincare,4,Medan Hub,38,529,228,529,491,Critical,Order
+315,32,Vitamin C Serum,SKU-SKI-1032,Skincare,5,Makassar Hub,84,382,166,382,298,Critical,Order
+316,32,Vitamin C Serum,SKU-SKI-1032,Skincare,6,Semarang Hub,102,374,166,374,272,Critical,Order
+317,32,Vitamin C Serum,SKU-SKI-1032,Skincare,7,Yogyakarta Hub,50,362,153,362,312,Critical,Order
+318,32,Vitamin C Serum,SKU-SKI-1032,Skincare,8,Palembang Hub,133,585,266,585,452,Critical,Order
+319,32,Vitamin C Serum,SKU-SKI-1032,Skincare,9,Denpasar Hub,140,529,229,529,389,Critical,Order
+321,33,Facial Wash,SKU-SKI-1033,Skincare,1,Jakarta Hub,47,739,307,739,692,Critical,Order
+330,33,Facial Wash,SKU-SKI-1033,Skincare,10,Balikpapan Hub,138,888,384,888,750,Critical,Order
+322,33,Facial Wash,SKU-SKI-1033,Skincare,2,Bandung Hub,163,997,436,997,834,Critical,Order
+323,33,Facial Wash,SKU-SKI-1033,Skincare,3,Surabaya Hub,243,937,386,937,694,Critical,Order
+324,33,Facial Wash,SKU-SKI-1033,Skincare,4,Medan Hub,206,838,357,838,632,Critical,Order
+325,33,Facial Wash,SKU-SKI-1033,Skincare,5,Makassar Hub,193,566,262,566,373,Critical,Order
+326,33,Facial Wash,SKU-SKI-1033,Skincare,6,Semarang Hub,161,613,259,613,452,Critical,Order
+327,33,Facial Wash,SKU-SKI-1033,Skincare,7,Yogyakarta Hub,150,566,238,566,416,Critical,Order
+328,33,Facial Wash,SKU-SKI-1033,Skincare,8,Palembang Hub,264,956,417,956,692,Critical,Order
+329,33,Facial Wash,SKU-SKI-1033,Skincare,9,Denpasar Hub,190,828,358,828,638,Critical,Order
+331,34,Clay Mask,SKU-SKI-1034,Skincare,1,Jakarta Hub,30,279,117,279,249,Critical,Transfer
+340,34,Clay Mask,SKU-SKI-1034,Skincare,10,Balikpapan Hub,212,315,144,315,103,Critical,Transfer
+332,34,Clay Mask,SKU-SKI-1034,Skincare,2,Bandung Hub,196,386,164,386,190,Critical,Transfer
+333,34,Clay Mask,SKU-SKI-1034,Skincare,3,Surabaya Hub,161,334,145,334,173,Critical,Transfer
+334,34,Clay Mask,SKU-SKI-1034,Skincare,4,Medan Hub,99,315,136,315,216,Critical,Transfer
+335,34,Clay Mask,SKU-SKI-1034,Skincare,5,Makassar Hub,286,206,100,206,0,Overstock,Discount
+336,34,Clay Mask,SKU-SKI-1034,Skincare,6,Semarang Hub,149,218,100,218,69,Critical,Transfer
+337,34,Clay Mask,SKU-SKI-1034,Skincare,7,Yogyakarta Hub,256,199,92,199,0,Healthy,None
+338,34,Clay Mask,SKU-SKI-1034,Skincare,8,Palembang Hub,68,389,158,389,321,Critical,Transfer
+339,34,Clay Mask,SKU-SKI-1034,Skincare,9,Denpasar Hub,125,297,136,297,172,Critical,Transfer
+341,35,Organic Banana,SKU-FRE-1035,Fresh Food,1,Jakarta Hub,284,693,292,693,409,Critical,Order
+350,35,Organic Banana,SKU-FRE-1035,Fresh Food,10,Balikpapan Hub,81,842,361,842,761,Critical,Order
+342,35,Organic Banana,SKU-FRE-1035,Fresh Food,2,Bandung Hub,242,945,414,945,703,Critical,Order
+343,35,Organic Banana,SKU-FRE-1035,Fresh Food,3,Surabaya Hub,144,868,363,868,724,Critical,Order
+344,35,Organic Banana,SKU-FRE-1035,Fresh Food,4,Medan Hub,200,768,338,768,568,Critical,Order
+345,35,Organic Banana,SKU-FRE-1035,Fresh Food,5,Makassar Hub,129,578,247,578,449,Critical,Order
+346,35,Organic Banana,SKU-FRE-1035,Fresh Food,6,Semarang Hub,297,570,246,570,273,Critical,Order
+347,35,Organic Banana,SKU-FRE-1035,Fresh Food,7,Yogyakarta Hub,123,525,227,525,402,Critical,Order
+348,35,Organic Banana,SKU-FRE-1035,Fresh Food,8,Palembang Hub,247,936,395,936,689,Critical,Order
+349,35,Organic Banana,SKU-FRE-1035,Fresh Food,9,Denpasar Hub,219,814,340,814,595,Critical,Order
+351,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,1,Jakarta Hub,29,819,340,819,790,Critical,Order
+360,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,10,Balikpapan Hub,237,987,423,987,750,Critical,Order
+352,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,2,Bandung Hub,69,1154,480,1154,1085,Critical,Order
+353,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,3,Surabaya Hub,130,1004,429,1004,874,Critical,Order
+354,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,4,Medan Hub,242,955,395,955,713,Critical,Order
+355,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,5,Makassar Hub,286,694,287,694,408,Critical,Order
+356,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,6,Semarang Hub,89,658,289,658,569,Critical,Order
+357,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,7,Yogyakarta Hub,260,623,264,623,363,Critical,Order
+358,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,8,Palembang Hub,153,1115,459,1115,962,Critical,Order
+359,36,Fresh Milk 1L,SKU-FRE-1036,Fresh Food,9,Denpasar Hub,199,938,397,938,739,Critical,Order
+361,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,1,Jakarta Hub,130,279,133,279,149,Critical,Order
+370,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,10,Balikpapan Hub,74,385,163,385,311,Critical,Order
+362,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,2,Bandung Hub,198,413,185,413,215,Critical,Order
+363,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,3,Surabaya Hub,193,379,166,379,186,Critical,Order
+364,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,4,Medan Hub,213,344,153,344,131,Critical,Order
+365,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,5,Makassar Hub,107,234,112,234,127,Critical,Order
+366,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,6,Semarang Hub,242,258,113,258,16,Critical,Order
+367,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,7,Yogyakarta Hub,118,224,103,224,106,Critical,Order
+368,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,8,Palembang Hub,20,417,180,417,397,Critical,Order
+369,37,Whole Wheat Bread,SKU-FRE-1037,Fresh Food,9,Denpasar Hub,180,362,154,362,182,Critical,Order
+371,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,1,Jakarta Hub,293,858,359,858,565,Critical,Order
+380,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,10,Balikpapan Hub,99,1077,439,1077,978,Critical,Order
+372,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,2,Bandung Hub,120,1215,502,1215,1095,Critical,Order
+373,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,3,Surabaya Hub,178,1059,448,1059,881,Critical,Order
+374,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,4,Medan Hub,11,993,413,993,982,Critical,Order
+375,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,5,Makassar Hub,84,742,300,742,658,Critical,Order
+376,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,6,Semarang Hub,286,693,300,693,407,Critical,Order
+377,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,7,Yogyakarta Hub,99,637,273,637,538,Critical,Order
+378,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,8,Palembang Hub,23,1157,482,1157,1134,Critical,Order
+379,38,Greek Yogurt,SKU-FRE-1038,Fresh Food,9,Denpasar Hub,131,987,414,987,856,Critical,Order
+381,39,Almond Milk,SKU-FRE-1039,Fresh Food,1,Jakarta Hub,225,454,197,454,229,Critical,Order
+390,39,Almond Milk,SKU-FRE-1039,Fresh Food,10,Balikpapan Hub,261,555,243,555,294,Critical,Order
+382,39,Almond Milk,SKU-FRE-1039,Fresh Food,2,Bandung Hub,42,631,276,631,589,Critical,Order
+383,39,Almond Milk,SKU-FRE-1039,Fresh Food,3,Surabaya Hub,195,574,247,574,379,Critical,Order
+384,39,Almond Milk,SKU-FRE-1039,Fresh Food,4,Medan Hub,241,532,228,532,291,Critical,Order
+385,39,Almond Milk,SKU-FRE-1039,Fresh Food,5,Makassar Hub,123,369,166,369,246,Critical,Order
+386,39,Almond Milk,SKU-FRE-1039,Fresh Food,6,Semarang Hub,276,382,166,382,106,Critical,Order
+387,39,Almond Milk,SKU-FRE-1039,Fresh Food,7,Yogyakarta Hub,244,327,152,327,83,Critical,Order
+388,39,Almond Milk,SKU-FRE-1039,Fresh Food,8,Palembang Hub,41,640,264,640,599,Critical,Order
+389,39,Almond Milk,SKU-FRE-1039,Fresh Food,9,Denpasar Hub,228,519,229,519,291,Critical,Order
+31,4,Powerbank 10k,SKU-ELE-1004,Electronic,1,Jakarta Hub,122,216,101,216,94,Critical,Transfer
+40,4,Powerbank 10k,SKU-ELE-1004,Electronic,10,Balikpapan Hub,59,277,124,277,218,Critical,Transfer
+32,4,Powerbank 10k,SKU-ELE-1004,Electronic,2,Bandung Hub,46,332,141,332,286,Critical,Transfer
+33,4,Powerbank 10k,SKU-ELE-1004,Electronic,3,Surabaya Hub,44,276,126,276,232,Critical,Transfer
+34,4,Powerbank 10k,SKU-ELE-1004,Electronic,4,Medan Hub,179,295,116,295,116,Critical,Transfer
+35,4,Powerbank 10k,SKU-ELE-1004,Electronic,5,Makassar Hub,273,179,85,179,0,Overstock,Discount
+36,4,Powerbank 10k,SKU-ELE-1004,Electronic,6,Semarang Hub,152,168,86,168,16,Critical,Transfer
+37,4,Powerbank 10k,SKU-ELE-1004,Electronic,7,Yogyakarta Hub,77,159,78,159,82,Critical,Transfer
+38,4,Powerbank 10k,SKU-ELE-1004,Electronic,8,Palembang Hub,134,274,135,274,140,Critical,Transfer
+39,4,Powerbank 10k,SKU-ELE-1004,Electronic,9,Denpasar Hub,107,261,117,261,154,Critical,Transfer
+391,40,Granola Bar,SKU-FRE-1040,Fresh Food,1,Jakarta Hub,47,302,132,302,255,Critical,Transfer
+400,40,Granola Bar,SKU-FRE-1040,Fresh Food,10,Balikpapan Hub,126,381,164,381,255,Critical,Transfer
+392,40,Granola Bar,SKU-FRE-1040,Fresh Food,2,Bandung Hub,174,446,186,446,272,Critical,Transfer
+393,40,Granola Bar,SKU-FRE-1040,Fresh Food,3,Surabaya Hub,74,375,168,375,301,Critical,Transfer
+394,40,Granola Bar,SKU-FRE-1040,Fresh Food,4,Medan Hub,290,352,153,352,62,Critical,Transfer
+395,40,Granola Bar,SKU-FRE-1040,Fresh Food,5,Makassar Hub,205,231,112,231,26,Critical,Transfer
+396,40,Granola Bar,SKU-FRE-1040,Fresh Food,6,Semarang Hub,242,268,113,268,26,Critical,Transfer
+397,40,Granola Bar,SKU-FRE-1040,Fresh Food,7,Yogyakarta Hub,230,227,103,227,0,Healthy,None
+398,40,Granola Bar,SKU-FRE-1040,Fresh Food,8,Palembang Hub,68,397,178,397,329,Critical,Transfer
+399,40,Granola Bar,SKU-FRE-1040,Fresh Food,9,Denpasar Hub,120,350,153,350,230,Critical,Transfer
+401,41,Organic Avocado,SKU-FRE-1041,Fresh Food,1,Jakarta Hub,242,223,102,223,0,Healthy,None
+410,41,Organic Avocado,SKU-FRE-1041,Fresh Food,10,Balikpapan Hub,297,273,124,273,0,Healthy,None
+402,41,Organic Avocado,SKU-FRE-1041,Fresh Food,2,Bandung Hub,222,312,140,312,90,Critical,Transfer
+403,41,Organic Avocado,SKU-FRE-1041,Fresh Food,3,Surabaya Hub,170,272,126,272,102,Critical,Transfer
+404,41,Organic Avocado,SKU-FRE-1041,Fresh Food,4,Medan Hub,140,274,117,274,134,Critical,Transfer
+405,41,Organic Avocado,SKU-FRE-1041,Fresh Food,5,Makassar Hub,252,183,86,183,0,Overstock,Discount
+406,41,Organic Avocado,SKU-FRE-1041,Fresh Food,6,Semarang Hub,56,189,85,189,133,Critical,Transfer
+407,41,Organic Avocado,SKU-FRE-1041,Fresh Food,7,Yogyakarta Hub,57,160,79,160,103,Critical,Transfer
+408,41,Organic Avocado,SKU-FRE-1041,Fresh Food,8,Palembang Hub,200,320,135,320,120,Critical,Transfer
+409,41,Organic Avocado,SKU-FRE-1041,Fresh Food,9,Denpasar Hub,294,241,117,241,0,Healthy,None
+411,42,Wireless Mouse,SKU-ELE-1042,Electronic,1,Jakarta Hub,178,341,164,341,163,Critical,Order
+420,42,Wireless Mouse,SKU-ELE-1042,Electronic,10,Balikpapan Hub,229,460,205,460,231,Critical,Order
+412,42,Wireless Mouse,SKU-ELE-1042,Electronic,2,Bandung Hub,220,566,234,566,346,Critical,Order
+413,42,Wireless Mouse,SKU-ELE-1042,Electronic,3,Surabaya Hub,226,473,207,473,247,Critical,Order
+414,42,Wireless Mouse,SKU-ELE-1042,Electronic,4,Medan Hub,157,417,190,417,260,Critical,Order
+415,42,Wireless Mouse,SKU-ELE-1042,Electronic,5,Makassar Hub,63,322,138,322,259,Critical,Order
+416,42,Wireless Mouse,SKU-ELE-1042,Electronic,6,Semarang Hub,89,306,140,306,217,Critical,Order
+417,42,Wireless Mouse,SKU-ELE-1042,Electronic,7,Yogyakarta Hub,65,289,128,289,224,Critical,Order
+418,42,Wireless Mouse,SKU-ELE-1042,Electronic,8,Palembang Hub,198,513,223,513,315,Critical,Order
+419,42,Wireless Mouse,SKU-ELE-1042,Electronic,9,Denpasar Hub,152,411,192,411,259,Critical,Order
+421,43,Fountain Pen,SKU-STA-1043,Stationery,1,Jakarta Hub,295,520,228,520,225,Critical,Order
+430,43,Fountain Pen,SKU-STA-1043,Stationery,10,Balikpapan Hub,281,666,284,666,385,Critical,Order
+422,43,Fountain Pen,SKU-STA-1043,Stationery,2,Bandung Hub,146,773,321,773,627,Critical,Order
+423,43,Fountain Pen,SKU-STA-1043,Stationery,3,Surabaya Hub,102,661,285,661,559,Critical,Order
+424,43,Fountain Pen,SKU-STA-1043,Stationery,4,Medan Hub,168,638,266,638,470,Critical,Order
+425,43,Fountain Pen,SKU-STA-1043,Stationery,5,Makassar Hub,189,447,194,447,258,Critical,Order
+426,43,Fountain Pen,SKU-STA-1043,Stationery,6,Semarang Hub,102,444,193,444,342,Critical,Order
+427,43,Fountain Pen,SKU-STA-1043,Stationery,7,Yogyakarta Hub,299,423,176,423,124,Critical,Order
+428,43,Fountain Pen,SKU-STA-1043,Stationery,8,Palembang Hub,45,717,308,717,672,Critical,Order
+429,43,Fountain Pen,SKU-STA-1043,Stationery,9,Denpasar Hub,25,645,267,645,620,Critical,Order
+431,44,Leather Belt,SKU-FAS-1044,Fashion,1,Jakarta Hub,202,310,133,310,108,Critical,Order
+440,44,Leather Belt,SKU-FAS-1044,Fashion,10,Balikpapan Hub,272,363,163,363,91,Critical,Order
+432,44,Leather Belt,SKU-FAS-1044,Fashion,2,Bandung Hub,242,427,187,427,185,Critical,Order
+433,44,Leather Belt,SKU-FAS-1044,Fashion,3,Surabaya Hub,90,371,167,371,281,Critical,Order
+434,44,Leather Belt,SKU-FAS-1044,Fashion,4,Medan Hub,176,353,154,353,177,Critical,Order
+435,44,Leather Belt,SKU-FAS-1044,Fashion,5,Makassar Hub,36,234,114,234,198,Critical,Order
+436,44,Leather Belt,SKU-FAS-1044,Fashion,6,Semarang Hub,35,254,112,254,219,Critical,Order
+437,44,Leather Belt,SKU-FAS-1044,Fashion,7,Yogyakarta Hub,149,237,104,237,88,Critical,Order
+438,44,Leather Belt,SKU-FAS-1044,Fashion,8,Palembang Hub,258,409,179,409,151,Critical,Order
+439,44,Leather Belt,SKU-FAS-1044,Fashion,9,Denpasar Hub,149,338,154,338,189,Critical,Order
+441,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,1,Jakarta Hub,186,856,355,856,670,Critical,Order
+450,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,10,Balikpapan Hub,99,1055,442,1055,956,Critical,Order
+442,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,2,Bandung Hub,259,1263,503,1263,1004,Critical,Order
+443,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,3,Surabaya Hub,167,1083,447,1083,916,Critical,Order
+444,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,4,Medan Hub,122,979,413,979,857,Critical,Order
+445,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,5,Makassar Hub,38,701,301,701,663,Critical,Order
+446,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,6,Semarang Hub,114,671,301,671,557,Critical,Order
+447,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,7,Yogyakarta Hub,80,648,275,648,568,Critical,Order
+448,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,8,Palembang Hub,71,1113,482,1113,1042,Critical,Order
+449,45,Red Apples 1kg,SKU-FRE-1045,Fresh Food,9,Denpasar Hub,264,1010,416,1010,746,Critical,Order
+451,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,1,Jakarta Hub,204,610,260,610,406,Critical,Order
+460,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,10,Balikpapan Hub,176,743,323,743,567,Critical,Order
+452,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,2,Bandung Hub,266,869,368,869,603,Critical,Order
+453,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,3,Surabaya Hub,191,774,327,774,583,Critical,Order
+454,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,4,Medan Hub,213,720,301,720,507,Critical,Order
+455,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,5,Makassar Hub,233,535,221,535,302,Critical,Order
+456,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,6,Semarang Hub,245,524,220,524,279,Critical,Order
+457,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,7,Yogyakarta Hub,170,459,203,459,289,Critical,Order
+458,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,8,Palembang Hub,217,836,352,836,619,Critical,Order
+459,46,Cheddar Cheese,SKU-FRE-1046,Fresh Food,9,Denpasar Hub,68,716,304,716,648,Critical,Order
+461,47,Hydrating Toner,SKU-SKI-1047,Skincare,1,Jakarta Hub,245,211,100,211,0,Healthy,None
+470,47,Hydrating Toner,SKU-SKI-1047,Skincare,10,Balikpapan Hub,88,264,125,264,176,Critical,Transfer
+462,47,Hydrating Toner,SKU-SKI-1047,Skincare,2,Bandung Hub,233,337,141,337,104,Critical,Transfer
+463,47,Hydrating Toner,SKU-SKI-1047,Skincare,3,Surabaya Hub,233,285,126,285,52,Critical,Transfer
+464,47,Hydrating Toner,SKU-SKI-1047,Skincare,4,Medan Hub,212,275,117,275,63,Critical,Transfer
+465,47,Hydrating Toner,SKU-SKI-1047,Skincare,5,Makassar Hub,123,194,86,194,71,Critical,Transfer
+466,47,Hydrating Toner,SKU-SKI-1047,Skincare,6,Semarang Hub,68,195,85,195,127,Critical,Transfer
+467,47,Hydrating Toner,SKU-SKI-1047,Skincare,7,Yogyakarta Hub,188,162,79,162,0,Healthy,None
+468,47,Hydrating Toner,SKU-SKI-1047,Skincare,8,Palembang Hub,130,311,136,311,181,Critical,Transfer
+469,47,Hydrating Toner,SKU-SKI-1047,Skincare,9,Denpasar Hub,141,266,116,266,125,Critical,Transfer
+471,48,Night Cream,SKU-SKI-1048,Skincare,1,Jakarta Hub,262,535,230,535,273,Critical,Order
+480,48,Night Cream,SKU-SKI-1048,Skincare,10,Balikpapan Hub,106,641,283,641,535,Critical,Order
+472,48,Night Cream,SKU-SKI-1048,Skincare,2,Bandung Hub,299,741,323,741,442,Critical,Order
+473,48,Night Cream,SKU-SKI-1048,Skincare,3,Surabaya Hub,171,668,288,668,497,Critical,Order
+474,48,Night Cream,SKU-SKI-1048,Skincare,4,Medan Hub,44,616,265,616,572,Critical,Order
+475,48,Night Cream,SKU-SKI-1048,Skincare,5,Makassar Hub,150,466,194,466,316,Critical,Order
+476,48,Night Cream,SKU-SKI-1048,Skincare,6,Semarang Hub,47,430,193,430,383,Critical,Order
+477,48,Night Cream,SKU-SKI-1048,Skincare,7,Yogyakarta Hub,39,406,177,406,367,Critical,Order
+478,48,Night Cream,SKU-SKI-1048,Skincare,8,Palembang Hub,56,723,308,723,667,Critical,Order
+479,48,Night Cream,SKU-SKI-1048,Skincare,9,Denpasar Hub,293,605,265,605,312,Critical,Order
+481,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,1,Jakarta Hub,41,313,133,313,272,Critical,Transfer
+490,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,10,Balikpapan Hub,178,361,165,361,183,Critical,Transfer
+482,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,2,Bandung Hub,185,430,187,430,245,Critical,Transfer
+483,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,3,Surabaya Hub,268,383,166,383,115,Critical,Transfer
+484,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,4,Medan Hub,136,343,154,343,207,Critical,Transfer
+485,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,5,Makassar Hub,278,231,113,231,0,Healthy,None
+486,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,6,Semarang Hub,91,233,111,233,142,Critical,Transfer
+487,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,7,Yogyakarta Hub,154,224,104,224,70,Critical,Transfer
+488,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,8,Palembang Hub,183,410,179,410,227,Critical,Transfer
+489,49,HDMI Cable 2m,SKU-ELE-1049,Electronic,9,Denpasar Hub,181,344,155,344,163,Critical,Transfer
+41,5,Phone Stand,SKU-ELE-1005,Electronic,1,Jakarta Hub,220,183,85,183,0,Healthy,None
+50,5,Phone Stand,SKU-ELE-1005,Electronic,10,Balikpapan Hub,35,231,104,231,196,Critical,Transfer
+42,5,Phone Stand,SKU-ELE-1005,Electronic,2,Bandung Hub,37,281,119,281,244,Critical,Transfer
+43,5,Phone Stand,SKU-ELE-1005,Electronic,3,Surabaya Hub,216,252,105,252,36,Critical,Transfer
+44,5,Phone Stand,SKU-ELE-1005,Electronic,4,Medan Hub,65,219,99,219,154,Critical,Transfer
+45,5,Phone Stand,SKU-ELE-1005,Electronic,5,Makassar Hub,284,159,73,159,0,Overstock,Discount
+46,5,Phone Stand,SKU-ELE-1005,Electronic,6,Semarang Hub,81,152,72,152,71,Critical,Transfer
+47,5,Phone Stand,SKU-ELE-1005,Electronic,7,Yogyakarta Hub,246,140,66,140,0,Overstock,Discount
+48,5,Phone Stand,SKU-ELE-1005,Electronic,8,Palembang Hub,48,282,113,282,234,Critical,Transfer
+49,5,Phone Stand,SKU-ELE-1005,Electronic,9,Denpasar Hub,291,226,98,226,0,Healthy,None
+491,50,Phone Case Clear,SKU-ELE-1050,Electronic,1,Jakarta Hub,295,688,291,688,393,Critical,Order
+500,50,Phone Case Clear,SKU-ELE-1050,Electronic,10,Balikpapan Hub,195,837,361,837,642,Critical,Order
+492,50,Phone Case Clear,SKU-ELE-1050,Electronic,2,Bandung Hub,155,945,413,945,790,Critical,Order
+493,50,Phone Case Clear,SKU-ELE-1050,Electronic,3,Surabaya Hub,86,852,365,852,766,Critical,Order
+494,50,Phone Case Clear,SKU-ELE-1050,Electronic,4,Medan Hub,82,761,337,761,679,Critical,Order
+495,50,Phone Case Clear,SKU-ELE-1050,Electronic,5,Makassar Hub,210,549,248,549,339,Critical,Order
+496,50,Phone Case Clear,SKU-ELE-1050,Electronic,6,Semarang Hub,53,577,248,577,524,Critical,Order
+497,50,Phone Case Clear,SKU-ELE-1050,Electronic,7,Yogyakarta Hub,178,501,227,501,323,Critical,Order
+498,50,Phone Case Clear,SKU-ELE-1050,Electronic,8,Palembang Hub,279,893,395,893,614,Critical,Order
+499,50,Phone Case Clear,SKU-ELE-1050,Electronic,9,Denpasar Hub,226,775,339,775,549,Critical,Order
+51,6,USB-C Cable,SKU-ELE-1006,Electronic,1,Jakarta Hub,57,628,261,628,571,Critical,Order
+60,6,USB-C Cable,SKU-ELE-1006,Electronic,10,Balikpapan Hub,39,757,321,757,718,Critical,Order
+52,6,USB-C Cable,SKU-ELE-1006,Electronic,2,Bandung Hub,258,848,366,848,590,Critical,Order
+53,6,USB-C Cable,SKU-ELE-1006,Electronic,3,Surabaya Hub,119,754,328,754,635,Critical,Order
+54,6,USB-C Cable,SKU-ELE-1006,Electronic,4,Medan Hub,94,696,300,696,602,Critical,Order
+55,6,USB-C Cable,SKU-ELE-1006,Electronic,5,Makassar Hub,209,479,221,479,270,Critical,Order
+56,6,USB-C Cable,SKU-ELE-1006,Electronic,6,Semarang Hub,242,485,220,485,243,Critical,Order
+57,6,USB-C Cable,SKU-ELE-1006,Electronic,7,Yogyakarta Hub,226,450,202,450,224,Critical,Order
+58,6,USB-C Cable,SKU-ELE-1006,Electronic,8,Palembang Hub,259,836,352,836,577,Critical,Order
+59,6,USB-C Cable,SKU-ELE-1006,Electronic,9,Denpasar Hub,107,708,302,708,601,Critical,Order
+61,7,LED Desk Lamp,SKU-ELE-1007,Electronic,1,Jakarta Hub,41,609,260,609,568,Critical,Order
+70,7,LED Desk Lamp,SKU-ELE-1007,Electronic,10,Balikpapan Hub,171,743,322,743,572,Critical,Order
+62,7,LED Desk Lamp,SKU-ELE-1007,Electronic,2,Bandung Hub,254,875,367,875,621,Critical,Order
+63,7,LED Desk Lamp,SKU-ELE-1007,Electronic,3,Surabaya Hub,281,763,326,763,482,Critical,Order
+64,7,LED Desk Lamp,SKU-ELE-1007,Electronic,4,Medan Hub,39,709,302,709,670,Critical,Order
+65,7,LED Desk Lamp,SKU-ELE-1007,Electronic,5,Makassar Hub,105,499,220,499,394,Critical,Order
+66,7,LED Desk Lamp,SKU-ELE-1007,Electronic,6,Semarang Hub,44,504,220,504,460,Critical,Order
+67,7,LED Desk Lamp,SKU-ELE-1007,Electronic,7,Yogyakarta Hub,136,491,201,491,355,Critical,Order
+68,7,LED Desk Lamp,SKU-ELE-1007,Electronic,8,Palembang Hub,51,829,350,829,778,Critical,Order
+69,7,LED Desk Lamp,SKU-ELE-1007,Electronic,9,Denpasar Hub,299,731,303,731,432,Critical,Order
+71,8,Mini Humidifier,SKU-ELE-1008,Electronic,1,Jakarta Hub,114,810,339,810,696,Critical,Order
+80,8,Mini Humidifier,SKU-ELE-1008,Electronic,10,Balikpapan Hub,135,977,421,977,842,Critical,Order
+72,8,Mini Humidifier,SKU-ELE-1008,Electronic,2,Bandung Hub,212,1164,482,1164,952,Critical,Order
+73,8,Mini Humidifier,SKU-ELE-1008,Electronic,3,Surabaya Hub,163,973,427,973,810,Critical,Order
+74,8,Mini Humidifier,SKU-ELE-1008,Electronic,4,Medan Hub,47,941,395,941,894,Critical,Order
+75,8,Mini Humidifier,SKU-ELE-1008,Electronic,5,Makassar Hub,244,660,288,660,416,Critical,Order
+76,8,Mini Humidifier,SKU-ELE-1008,Electronic,6,Semarang Hub,61,674,287,674,613,Critical,Order
+77,8,Mini Humidifier,SKU-ELE-1008,Electronic,7,Yogyakarta Hub,285,616,263,616,331,Critical,Order
+78,8,Mini Humidifier,SKU-ELE-1008,Electronic,8,Palembang Hub,269,1065,461,1065,796,Critical,Order
+79,8,Mini Humidifier,SKU-ELE-1008,Electronic,9,Denpasar Hub,77,927,398,927,850,Critical,Order
+81,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,1,Jakarta Hub,234,513,229,513,279,Critical,Order
+90,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,10,Balikpapan Hub,36,632,284,632,596,Critical,Order
+82,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,2,Bandung Hub,280,735,321,735,455,Critical,Order
+83,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,3,Surabaya Hub,293,669,285,669,376,Critical,Order
+84,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,4,Medan Hub,63,635,266,635,572,Critical,Order
+85,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,5,Makassar Hub,145,445,192,445,300,Critical,Order
+86,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,6,Semarang Hub,64,468,195,468,404,Critical,Order
+87,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,7,Yogyakarta Hub,154,386,178,386,232,Critical,Order
+88,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,8,Palembang Hub,185,741,310,741,556,Critical,Order
+89,9,T-Shirt Oversized,SKU-FAS-1009,Fashion,9,Denpasar Hub,145,627,266,627,482,Critical,Order
+=======
+1,1,Vanilla Ice Cream,FNB-001,Food & Beverage,1,Jakarta Hub,226,237,132,237,11,Critical,Transfer
+10,1,Vanilla Ice Cream,FNB-001,Food & Beverage,10,Balikpapan Hub,162,332,158,332,170,Critical,Transfer
+2,1,Vanilla Ice Cream,FNB-001,Food & Beverage,2,Bandung Hub,205,351,174,351,146,Critical,Transfer
+3,1,Vanilla Ice Cream,FNB-001,Food & Beverage,3,Surabaya Hub,280,295,158,295,15,Critical,Transfer
+4,1,Vanilla Ice Cream,FNB-001,Food & Beverage,4,Medan Hub,293,271,151,271,0,Healthy,None
+5,1,Vanilla Ice Cream,FNB-001,Food & Beverage,5,Makassar Hub,68,213,118,213,145,Critical,Transfer
+6,1,Vanilla Ice Cream,FNB-001,Food & Beverage,6,Semarang Hub,184,203,118,203,19,Critical,Transfer
+7,1,Vanilla Ice Cream,FNB-001,Food & Beverage,7,Yogyakarta Hub,160,200,111,200,40,Critical,Transfer
+8,1,Vanilla Ice Cream,FNB-001,Food & Beverage,8,Palembang Hub,11,298,168,298,287,Critical,Transfer
+9,1,Vanilla Ice Cream,FNB-001,Food & Beverage,9,Denpasar Hub,101,261,149,261,160,Critical,Transfer
+91,10,Lemonade Mix,FNB-010,Food & Beverage,1,Jakarta Hub,226,645,371,645,419,Critical,Order
+100,10,Lemonade Mix,FNB-010,Food & Beverage,10,Balikpapan Hub,230,789,452,789,559,Critical,Order
+92,10,Lemonade Mix,FNB-010,Food & Beverage,2,Bandung Hub,32,881,517,881,849,Critical,Order
+93,10,Lemonade Mix,FNB-010,Food & Beverage,3,Surabaya Hub,180,771,462,771,591,Critical,Order
+94,10,Lemonade Mix,FNB-010,Food & Beverage,4,Medan Hub,144,746,428,746,602,Critical,Order
+95,10,Lemonade Mix,FNB-010,Food & Beverage,5,Makassar Hub,236,569,315,569,333,Critical,Order
+96,10,Lemonade Mix,FNB-010,Food & Beverage,6,Semarang Hub,297,587,318,587,290,Critical,Order
+97,10,Lemonade Mix,FNB-010,Food & Beverage,7,Yogyakarta Hub,67,525,289,525,458,Critical,Order
+98,10,Lemonade Mix,FNB-010,Food & Beverage,8,Palembang Hub,86,837,495,837,751,Critical,Order
+99,10,Lemonade Mix,FNB-010,Food & Beverage,9,Denpasar Hub,199,809,425,809,610,Critical,Order
+101,11,Watermelon,FNB-011,Food & Beverage,1,Jakarta Hub,31,629,353,629,598,Critical,Order
+110,11,Watermelon,FNB-011,Food & Beverage,10,Balikpapan Hub,91,790,433,790,699,Critical,Order
+102,11,Watermelon,FNB-011,Food & Beverage,2,Bandung Hub,30,862,494,862,832,Critical,Order
+103,11,Watermelon,FNB-011,Food & Beverage,3,Surabaya Hub,137,745,438,745,608,Critical,Order
+104,11,Watermelon,FNB-011,Food & Beverage,4,Medan Hub,191,729,406,729,538,Critical,Order
+105,11,Watermelon,FNB-011,Food & Beverage,5,Makassar Hub,218,528,301,528,310,Critical,Order
+106,11,Watermelon,FNB-011,Food & Beverage,6,Semarang Hub,131,546,302,546,415,Critical,Order
+107,11,Watermelon,FNB-011,Food & Beverage,7,Yogyakarta Hub,100,502,278,502,402,Critical,Order
+108,11,Watermelon,FNB-011,Food & Beverage,8,Palembang Hub,180,826,471,826,646,Critical,Order
+109,11,Watermelon,FNB-011,Food & Beverage,9,Denpasar Hub,137,700,409,700,563,Critical,Order
+111,12,Camping Tent,OUT-012,Outdoor & Garden,1,Jakarta Hub,205,630,356,630,425,Critical,Order
+120,12,Camping Tent,OUT-012,Outdoor & Garden,10,Balikpapan Hub,24,740,432,740,716,Critical,Order
+112,12,Camping Tent,OUT-012,Outdoor & Garden,2,Bandung Hub,250,925,494,925,675,Critical,Order
+113,12,Camping Tent,OUT-012,Outdoor & Garden,3,Surabaya Hub,112,816,439,816,704,Critical,Order
+114,12,Camping Tent,OUT-012,Outdoor & Garden,4,Medan Hub,126,668,406,668,542,Critical,Order
+115,12,Camping Tent,OUT-012,Outdoor & Garden,5,Makassar Hub,22,526,304,526,504,Critical,Order
+116,12,Camping Tent,OUT-012,Outdoor & Garden,6,Semarang Hub,152,563,303,563,411,Critical,Order
+117,12,Camping Tent,OUT-012,Outdoor & Garden,7,Yogyakarta Hub,152,493,278,493,341,Critical,Order
+118,12,Camping Tent,OUT-012,Outdoor & Garden,8,Palembang Hub,270,855,473,855,585,Critical,Order
+119,12,Camping Tent,OUT-012,Outdoor & Garden,9,Denpasar Hub,284,696,408,696,412,Critical,Order
+121,13,Ice Cooler,OUT-013,Outdoor & Garden,1,Jakarta Hub,143,773,422,773,630,Critical,Order
+130,13,Ice Cooler,OUT-013,Outdoor & Garden,10,Balikpapan Hub,45,904,519,904,859,Critical,Order
+122,13,Ice Cooler,OUT-013,Outdoor & Garden,2,Bandung Hub,145,1055,591,1055,910,Critical,Order
+123,13,Ice Cooler,OUT-013,Outdoor & Garden,3,Surabaya Hub,65,918,527,918,853,Critical,Order
+124,13,Ice Cooler,OUT-013,Outdoor & Garden,4,Medan Hub,170,814,489,814,644,Critical,Order
+125,13,Ice Cooler,OUT-013,Outdoor & Garden,5,Makassar Hub,271,604,361,604,333,Critical,Order
+126,13,Ice Cooler,OUT-013,Outdoor & Garden,6,Semarang Hub,207,594,358,594,387,Critical,Order
+127,13,Ice Cooler,OUT-013,Outdoor & Garden,7,Yogyakarta Hub,32,599,331,599,567,Critical,Order
+128,13,Ice Cooler,OUT-013,Outdoor & Garden,8,Palembang Hub,285,999,564,999,714,Critical,Order
+129,13,Ice Cooler,OUT-013,Outdoor & Garden,9,Denpasar Hub,196,804,487,804,608,Critical,Order
+131,14,Winter Coat,APP-014,Apparel & Accessories,1,Jakarta Hub,73,1361,301,1361,1288,Critical,Order
+140,14,Winter Coat,APP-014,Apparel & Accessories,10,Balikpapan Hub,174,1659,368,1659,1485,Critical,Order
+132,14,Winter Coat,APP-014,Apparel & Accessories,2,Bandung Hub,219,1879,415,1879,1660,Critical,Order
+133,14,Winter Coat,APP-014,Apparel & Accessories,3,Surabaya Hub,216,1697,374,1697,1481,Critical,Order
+134,14,Winter Coat,APP-014,Apparel & Accessories,4,Medan Hub,293,1541,346,1541,1248,Critical,Order
+135,14,Winter Coat,APP-014,Apparel & Accessories,5,Makassar Hub,108,1137,257,1137,1029,Critical,Order
+136,14,Winter Coat,APP-014,Apparel & Accessories,6,Semarang Hub,204,1188,258,1188,984,Critical,Order
+137,14,Winter Coat,APP-014,Apparel & Accessories,7,Yogyakarta Hub,164,1072,238,1072,908,Critical,Order
+138,14,Winter Coat,APP-014,Apparel & Accessories,8,Palembang Hub,10,1913,402,1913,1903,Critical,Order
+139,14,Winter Coat,APP-014,Apparel & Accessories,9,Denpasar Hub,230,1601,347,1601,1371,Critical,Order
+141,15,Hot Chocolate Mix,FNB-015,Food & Beverage,1,Jakarta Hub,119,2075,441,2075,1956,Critical,Order
+150,15,Hot Chocolate Mix,FNB-015,Food & Beverage,10,Balikpapan Hub,109,2427,543,2427,2318,Critical,Order
+142,15,Hot Chocolate Mix,FNB-015,Food & Beverage,2,Bandung Hub,96,2649,615,2649,2553,Critical,Order
+143,15,Hot Chocolate Mix,FNB-015,Food & Beverage,3,Surabaya Hub,155,2445,548,2445,2290,Critical,Order
+144,15,Hot Chocolate Mix,FNB-015,Food & Beverage,4,Medan Hub,181,2309,507,2309,2128,Critical,Order
+145,15,Hot Chocolate Mix,FNB-015,Food & Beverage,5,Makassar Hub,130,1703,373,1703,1573,Critical,Order
+146,15,Hot Chocolate Mix,FNB-015,Food & Beverage,6,Semarang Hub,125,1701,373,1701,1576,Critical,Order
+147,15,Hot Chocolate Mix,FNB-015,Food & Beverage,7,Yogyakarta Hub,85,1488,342,1488,1403,Critical,Order
+148,15,Hot Chocolate Mix,FNB-015,Food & Beverage,8,Palembang Hub,33,2583,589,2583,2550,Critical,Order
+149,15,Hot Chocolate Mix,FNB-015,Food & Beverage,9,Denpasar Hub,47,2308,505,2308,2261,Critical,Order
+151,16,Snow Shovel,OUT-016,Outdoor & Garden,1,Jakarta Hub,134,636,149,636,502,Critical,Order
+160,16,Snow Shovel,OUT-016,Outdoor & Garden,10,Balikpapan Hub,268,757,179,757,489,Critical,Order
+152,16,Snow Shovel,OUT-016,Outdoor & Garden,2,Bandung Hub,12,876,198,876,864,Critical,Order
+153,16,Snow Shovel,OUT-016,Outdoor & Garden,3,Surabaya Hub,122,767,180,767,645,Critical,Order
+154,16,Snow Shovel,OUT-016,Outdoor & Garden,4,Medan Hub,275,751,168,751,476,Critical,Order
+155,16,Snow Shovel,OUT-016,Outdoor & Garden,5,Makassar Hub,35,527,132,527,492,Critical,Order
+156,16,Snow Shovel,OUT-016,Outdoor & Garden,6,Semarang Hub,72,538,131,538,466,Critical,Order
+157,16,Snow Shovel,OUT-016,Outdoor & Garden,7,Yogyakarta Hub,247,474,123,474,227,Critical,Order
+158,16,Snow Shovel,OUT-016,Outdoor & Garden,8,Palembang Hub,296,852,190,852,556,Critical,Order
+159,16,Snow Shovel,OUT-016,Outdoor & Garden,9,Denpasar Hub,172,722,168,722,550,Critical,Order
+161,17,Ice Scraper,AUT-017,Automotive,1,Jakarta Hub,290,833,184,833,543,Critical,Order
+170,17,Ice Scraper,AUT-017,Automotive,10,Balikpapan Hub,87,1038,219,1038,951,Critical,Order
+162,17,Ice Scraper,AUT-017,Automotive,2,Bandung Hub,91,1069,245,1069,978,Critical,Order
+163,17,Ice Scraper,AUT-017,Automotive,3,Surabaya Hub,136,974,221,974,838,Critical,Order
+164,17,Ice Scraper,AUT-017,Automotive,4,Medan Hub,276,980,207,980,704,Critical,Order
+165,17,Ice Scraper,AUT-017,Automotive,5,Makassar Hub,132,676,159,676,544,Critical,Order
+166,17,Ice Scraper,AUT-017,Automotive,6,Semarang Hub,235,724,160,724,489,Critical,Order
+167,17,Ice Scraper,AUT-017,Automotive,7,Yogyakarta Hub,156,631,148,631,475,Critical,Order
+168,17,Ice Scraper,AUT-017,Automotive,8,Palembang Hub,149,1099,236,1099,950,Critical,Order
+169,17,Ice Scraper,AUT-017,Automotive,9,Denpasar Hub,173,924,207,924,751,Critical,Order
+171,18,Thermal Socks,APP-018,Apparel & Accessories,1,Jakarta Hub,88,1942,423,1942,1854,Critical,Order
+180,18,Thermal Socks,APP-018,Apparel & Accessories,10,Balikpapan Hub,122,2356,520,2356,2234,Critical,Order
+172,18,Thermal Socks,APP-018,Apparel & Accessories,2,Bandung Hub,42,2583,588,2583,2541,Critical,Order
+173,18,Thermal Socks,APP-018,Apparel & Accessories,3,Surabaya Hub,287,2379,528,2379,2092,Critical,Order
+174,18,Thermal Socks,APP-018,Apparel & Accessories,4,Medan Hub,222,2206,489,2206,1984,Critical,Order
+175,18,Thermal Socks,APP-018,Apparel & Accessories,5,Makassar Hub,115,1597,359,1597,1482,Critical,Order
+176,18,Thermal Socks,APP-018,Apparel & Accessories,6,Semarang Hub,20,1658,357,1658,1638,Critical,Order
+177,18,Thermal Socks,APP-018,Apparel & Accessories,7,Yogyakarta Hub,13,1472,329,1472,1459,Critical,Order
+178,18,Thermal Socks,APP-018,Apparel & Accessories,8,Palembang Hub,209,2522,564,2522,2313,Critical,Order
+179,18,Thermal Socks,APP-018,Apparel & Accessories,9,Denpasar Hub,285,2269,487,2269,1984,Critical,Order
+181,19,Space Heater,HOM-019,Home Goods,1,Jakarta Hub,233,940,219,940,707,Critical,Order
+190,19,Space Heater,HOM-019,Home Goods,10,Balikpapan Hub,35,1192,262,1192,1157,Critical,Order
+182,19,Space Heater,HOM-019,Home Goods,2,Bandung Hub,24,1296,294,1296,1272,Critical,Order
+183,19,Space Heater,HOM-019,Home Goods,3,Surabaya Hub,217,1165,264,1165,948,Critical,Order
+184,19,Space Heater,HOM-019,Home Goods,4,Medan Hub,249,1160,247,1160,911,Critical,Order
+185,19,Space Heater,HOM-019,Home Goods,5,Makassar Hub,283,859,187,859,576,Critical,Order
+186,19,Space Heater,HOM-019,Home Goods,6,Semarang Hub,211,853,187,853,642,Critical,Order
+187,19,Space Heater,HOM-019,Home Goods,7,Yogyakarta Hub,23,798,174,798,775,Critical,Order
+188,19,Space Heater,HOM-019,Home Goods,8,Palembang Hub,229,1297,283,1297,1068,Critical,Order
+189,19,Space Heater,HOM-019,Home Goods,9,Denpasar Hub,246,1088,248,1088,842,Critical,Order
+11,2,Sunscreen SPF 50,HNB-002,Health & Beauty,1,Jakarta Hub,111,608,301,608,497,Critical,Order
+20,2,Sunscreen SPF 50,HNB-002,Health & Beauty,10,Balikpapan Hub,282,681,368,681,399,Critical,Order
+12,2,Sunscreen SPF 50,HNB-002,Health & Beauty,2,Bandung Hub,201,763,419,763,562,Critical,Order
+13,2,Sunscreen SPF 50,HNB-002,Health & Beauty,3,Surabaya Hub,286,689,373,689,403,Critical,Order
+14,2,Sunscreen SPF 50,HNB-002,Health & Beauty,4,Medan Hub,10,603,347,603,593,Critical,Order
+15,2,Sunscreen SPF 50,HNB-002,Health & Beauty,5,Makassar Hub,19,506,257,506,487,Critical,Order
+16,2,Sunscreen SPF 50,HNB-002,Health & Beauty,6,Semarang Hub,167,443,259,443,276,Critical,Order
+17,2,Sunscreen SPF 50,HNB-002,Health & Beauty,7,Yogyakarta Hub,39,416,239,416,377,Critical,Order
+18,2,Sunscreen SPF 50,HNB-002,Health & Beauty,8,Palembang Hub,50,708,397,708,658,Critical,Order
+19,2,Sunscreen SPF 50,HNB-002,Health & Beauty,9,Denpasar Hub,258,593,344,593,335,Critical,Order
+191,20,Lip Balm,HNB-020,Health & Beauty,1,Jakarta Hub,118,1188,250,1188,1070,Critical,Order
+200,20,Lip Balm,HNB-020,Health & Beauty,10,Balikpapan Hub,74,1360,302,1360,1286,Critical,Order
+192,20,Lip Balm,HNB-020,Health & Beauty,2,Bandung Hub,204,1541,344,1541,1337,Critical,Order
+193,20,Lip Balm,HNB-020,Health & Beauty,3,Surabaya Hub,225,1399,307,1399,1174,Critical,Order
+194,20,Lip Balm,HNB-020,Health & Beauty,4,Medan Hub,51,1292,285,1292,1241,Critical,Order
+195,20,Lip Balm,HNB-020,Health & Beauty,5,Makassar Hub,286,966,216,966,680,Critical,Order
+196,20,Lip Balm,HNB-020,Health & Beauty,6,Semarang Hub,189,944,213,944,755,Critical,Order
+197,20,Lip Balm,HNB-020,Health & Beauty,7,Yogyakarta Hub,45,913,199,913,868,Critical,Order
+198,20,Lip Balm,HNB-020,Health & Beauty,8,Palembang Hub,25,1519,328,1519,1494,Critical,Order
+199,20,Lip Balm,HNB-020,Health & Beauty,9,Denpasar Hub,20,1295,285,1295,1275,Critical,Order
+201,21,Marshmallows,FNB-021,Food & Beverage,1,Jakarta Hub,298,963,215,963,665,Critical,Order
+210,21,Marshmallows,FNB-021,Food & Beverage,10,Balikpapan Hub,164,1182,260,1182,1018,Critical,Order
+202,21,Marshmallows,FNB-021,Food & Beverage,2,Bandung Hub,248,1319,294,1319,1071,Critical,Order
+203,21,Marshmallows,FNB-021,Food & Beverage,3,Surabaya Hub,198,1232,264,1232,1034,Critical,Order
+204,21,Marshmallows,FNB-021,Food & Beverage,4,Medan Hub,68,1091,247,1091,1023,Critical,Order
+205,21,Marshmallows,FNB-021,Food & Beverage,5,Makassar Hub,169,841,187,841,672,Critical,Order
+206,21,Marshmallows,FNB-021,Food & Beverage,6,Semarang Hub,23,858,187,858,835,Critical,Order
+207,21,Marshmallows,FNB-021,Food & Beverage,7,Yogyakarta Hub,202,741,174,741,539,Critical,Order
+208,21,Marshmallows,FNB-021,Food & Beverage,8,Palembang Hub,111,1259,283,1259,1148,Critical,Order
+209,21,Marshmallows,FNB-021,Food & Beverage,9,Denpasar Hub,134,1139,247,1139,1005,Critical,Order
+211,22,Snow Boots,APP-022,Apparel & Accessories,1,Jakarta Hub,299,1872,406,1872,1573,Critical,Order
+220,22,Snow Boots,APP-022,Apparel & Accessories,10,Balikpapan Hub,285,2270,498,2270,1985,Critical,Order
+212,22,Snow Boots,APP-022,Apparel & Accessories,2,Bandung Hub,187,2479,562,2479,2292,Critical,Order
+213,22,Snow Boots,APP-022,Apparel & Accessories,3,Surabaya Hub,199,2315,503,2315,2116,Critical,Order
+214,22,Snow Boots,APP-022,Apparel & Accessories,4,Medan Hub,269,2146,466,2146,1877,Critical,Order
+215,22,Snow Boots,APP-022,Apparel & Accessories,5,Makassar Hub,16,1549,343,1549,1533,Critical,Order
+216,22,Snow Boots,APP-022,Apparel & Accessories,6,Semarang Hub,64,1554,343,1554,1490,Critical,Order
+217,22,Snow Boots,APP-022,Apparel & Accessories,7,Yogyakarta Hub,245,1410,316,1410,1165,Critical,Order
+218,22,Snow Boots,APP-022,Apparel & Accessories,8,Palembang Hub,232,2453,542,2453,2221,Critical,Order
+219,22,Snow Boots,APP-022,Apparel & Accessories,9,Denpasar Hub,277,2216,468,2216,1939,Critical,Order
+221,23,Fleece Blanket,HOM-023,Home Goods,1,Jakarta Hub,248,736,166,736,488,Critical,Order
+230,23,Fleece Blanket,HOM-023,Home Goods,10,Balikpapan Hub,218,878,199,878,660,Critical,Order
+222,23,Fleece Blanket,HOM-023,Home Goods,2,Bandung Hub,175,964,222,964,789,Critical,Order
+223,23,Fleece Blanket,HOM-023,Home Goods,3,Surabaya Hub,152,886,200,886,734,Critical,Order
+224,23,Fleece Blanket,HOM-023,Home Goods,4,Medan Hub,204,834,187,834,630,Critical,Order
+225,23,Fleece Blanket,HOM-023,Home Goods,5,Makassar Hub,263,607,144,607,344,Critical,Order
+226,23,Fleece Blanket,HOM-023,Home Goods,6,Semarang Hub,259,598,144,598,339,Critical,Order
+227,23,Fleece Blanket,HOM-023,Home Goods,7,Yogyakarta Hub,142,563,135,563,421,Critical,Order
+228,23,Fleece Blanket,HOM-023,Home Goods,8,Palembang Hub,151,990,213,990,839,Critical,Order
+229,23,Fleece Blanket,HOM-023,Home Goods,9,Denpasar Hub,107,822,189,822,715,Critical,Order
+231,24,Antifreeze,AUT-024,Automotive,1,Jakarta Hub,261,1593,336,1593,1332,Critical,Order
+240,24,Antifreeze,AUT-024,Automotive,10,Balikpapan Hub,257,1882,413,1882,1625,Critical,Order
+232,24,Antifreeze,AUT-024,Automotive,2,Bandung Hub,57,2238,465,2238,2181,Critical,Order
+233,24,Antifreeze,AUT-024,Automotive,3,Surabaya Hub,134,1965,416,1965,1831,Critical,Order
+234,24,Antifreeze,AUT-024,Automotive,4,Medan Hub,252,1784,386,1784,1532,Critical,Order
+235,24,Antifreeze,AUT-024,Automotive,5,Makassar Hub,291,1234,288,1234,943,Critical,Order
+236,24,Antifreeze,AUT-024,Automotive,6,Semarang Hub,242,1287,286,1287,1045,Critical,Order
+237,24,Antifreeze,AUT-024,Automotive,7,Yogyakarta Hub,138,1135,262,1135,997,Critical,Order
+238,24,Antifreeze,AUT-024,Automotive,8,Palembang Hub,108,2041,447,2041,1933,Critical,Order
+239,24,Antifreeze,AUT-024,Automotive,9,Denpasar Hub,104,1811,387,1811,1707,Critical,Order
+241,25,Beanie Hat,APP-025,Apparel & Accessories,1,Jakarta Hub,154,1878,404,1878,1724,Critical,Order
+250,25,Beanie Hat,APP-025,Apparel & Accessories,10,Balikpapan Hub,215,2289,500,2289,2074,Critical,Order
+242,25,Beanie Hat,APP-025,Apparel & Accessories,2,Bandung Hub,161,2502,564,2502,2341,Critical,Order
+243,25,Beanie Hat,APP-025,Apparel & Accessories,3,Surabaya Hub,101,2318,503,2318,2217,Critical,Order
+244,25,Beanie Hat,APP-025,Apparel & Accessories,4,Medan Hub,74,2143,465,2143,2069,Critical,Order
+245,25,Beanie Hat,APP-025,Apparel & Accessories,5,Makassar Hub,293,1537,344,1537,1244,Critical,Order
+246,25,Beanie Hat,APP-025,Apparel & Accessories,6,Semarang Hub,261,1509,345,1509,1248,Critical,Order
+247,25,Beanie Hat,APP-025,Apparel & Accessories,7,Yogyakarta Hub,155,1373,316,1373,1218,Critical,Order
+248,25,Beanie Hat,APP-025,Apparel & Accessories,8,Palembang Hub,104,2434,544,2434,2330,Critical,Order
+249,25,Beanie Hat,APP-025,Apparel & Accessories,9,Denpasar Hub,254,2120,465,2120,1866,Critical,Order
+251,26,Winter Gloves,APP-026,Apparel & Accessories,1,Jakarta Hub,37,1163,250,1163,1126,Critical,Order
+260,26,Winter Gloves,APP-026,Apparel & Accessories,10,Balikpapan Hub,219,1411,303,1411,1192,Critical,Order
+252,26,Winter Gloves,APP-026,Apparel & Accessories,2,Bandung Hub,165,1573,342,1573,1408,Critical,Order
+253,26,Winter Gloves,APP-026,Apparel & Accessories,3,Surabaya Hub,70,1417,306,1417,1347,Critical,Order
+254,26,Winter Gloves,APP-026,Apparel & Accessories,4,Medan Hub,125,1315,285,1315,1190,Critical,Order
+255,26,Winter Gloves,APP-026,Apparel & Accessories,5,Makassar Hub,236,1027,215,1027,791,Critical,Order
+256,26,Winter Gloves,APP-026,Apparel & Accessories,6,Semarang Hub,166,1012,216,1012,846,Critical,Order
+257,26,Winter Gloves,APP-026,Apparel & Accessories,7,Yogyakarta Hub,60,879,201,879,819,Critical,Order
+258,26,Winter Gloves,APP-026,Apparel & Accessories,8,Palembang Hub,51,1483,329,1483,1432,Critical,Order
+259,26,Winter Gloves,APP-026,Apparel & Accessories,9,Denpasar Hub,98,1349,286,1349,1251,Critical,Order
+261,27,Halloween Candy Pack,FNB-027,Food & Beverage,1,Jakarta Hub,159,414,134,414,255,Critical,Order
+270,27,Halloween Candy Pack,FNB-027,Food & Beverage,10,Balikpapan Hub,23,542,159,542,519,Critical,Order
+262,27,Halloween Candy Pack,FNB-027,Food & Beverage,2,Bandung Hub,157,579,176,579,422,Critical,Order
+263,27,Halloween Candy Pack,FNB-027,Food & Beverage,3,Surabaya Hub,46,510,160,510,464,Critical,Order
+264,27,Halloween Candy Pack,FNB-027,Food & Beverage,4,Medan Hub,111,430,149,430,319,Critical,Order
+265,27,Halloween Candy Pack,FNB-027,Food & Beverage,5,Makassar Hub,86,380,119,380,294,Critical,Order
+266,27,Halloween Candy Pack,FNB-027,Food & Beverage,6,Semarang Hub,94,371,119,371,277,Critical,Order
+267,27,Halloween Candy Pack,FNB-027,Food & Beverage,7,Yogyakarta Hub,249,339,112,339,90,Critical,Order
+268,27,Halloween Candy Pack,FNB-027,Food & Beverage,8,Palembang Hub,149,559,168,559,410,Critical,Order
+269,27,Halloween Candy Pack,FNB-027,Food & Beverage,9,Denpasar Hub,30,464,151,464,434,Critical,Order
+271,28,Pumpkin Carving Kit,TOY-028,Toys & Games,1,Jakarta Hub,20,1421,442,1421,1401,Critical,Order
+280,28,Pumpkin Carving Kit,TOY-028,Toys & Games,10,Balikpapan Hub,69,1804,540,1804,1735,Critical,Order
+272,28,Pumpkin Carving Kit,TOY-028,Toys & Games,2,Bandung Hub,99,1983,615,1983,1884,Critical,Order
+273,28,Pumpkin Carving Kit,TOY-028,Toys & Games,3,Surabaya Hub,152,1734,548,1734,1582,Critical,Order
+274,28,Pumpkin Carving Kit,TOY-028,Toys & Games,4,Medan Hub,261,1648,507,1648,1387,Critical,Order
+275,28,Pumpkin Carving Kit,TOY-028,Toys & Games,5,Makassar Hub,188,1235,375,1235,1047,Critical,Order
+276,28,Pumpkin Carving Kit,TOY-028,Toys & Games,6,Semarang Hub,174,1168,375,1168,994,Critical,Order
+277,28,Pumpkin Carving Kit,TOY-028,Toys & Games,7,Yogyakarta Hub,178,1109,343,1109,931,Critical,Order
+278,28,Pumpkin Carving Kit,TOY-028,Toys & Games,8,Palembang Hub,215,1938,589,1938,1723,Critical,Order
+279,28,Pumpkin Carving Kit,TOY-028,Toys & Games,9,Denpasar Hub,171,1637,507,1637,1466,Critical,Order
+281,29,College Ruled Notebooks,OFF-029,Office & School,1,Jakarta Hub,10,1191,353,1191,1181,Critical,Order
+290,29,College Ruled Notebooks,OFF-029,Office & School,10,Balikpapan Hub,159,1411,434,1411,1252,Critical,Order
+282,29,College Ruled Notebooks,OFF-029,Office & School,2,Bandung Hub,106,1585,491,1585,1479,Critical,Order
+283,29,College Ruled Notebooks,OFF-029,Office & School,3,Surabaya Hub,265,1413,439,1413,1148,Critical,Order
+284,29,College Ruled Notebooks,OFF-029,Office & School,4,Medan Hub,114,1267,405,1267,1153,Critical,Order
+285,29,College Ruled Notebooks,OFF-029,Office & School,5,Makassar Hub,157,1017,302,1017,860,Critical,Order
+286,29,College Ruled Notebooks,OFF-029,Office & School,6,Semarang Hub,132,1002,302,1002,870,Critical,Order
+287,29,College Ruled Notebooks,OFF-029,Office & School,7,Yogyakarta Hub,292,904,278,904,612,Critical,Order
+288,29,College Ruled Notebooks,OFF-029,Office & School,8,Palembang Hub,57,1510,474,1510,1453,Critical,Order
+289,29,College Ruled Notebooks,OFF-029,Office & School,9,Denpasar Hub,70,1292,408,1292,1222,Critical,Order
+21,3,BBQ Charcoal,OUT-003,Outdoor & Garden,1,Jakarta Hub,75,357,200,357,282,Critical,Order
+30,3,BBQ Charcoal,OUT-003,Outdoor & Garden,10,Balikpapan Hub,293,432,240,432,139,Critical,Order
+22,3,BBQ Charcoal,OUT-003,Outdoor & Garden,2,Bandung Hub,94,491,271,491,397,Critical,Order
+23,3,BBQ Charcoal,OUT-003,Outdoor & Garden,3,Surabaya Hub,226,437,244,437,211,Critical,Order
+24,3,BBQ Charcoal,OUT-003,Outdoor & Garden,4,Medan Hub,286,406,227,406,120,Critical,Order
+25,3,BBQ Charcoal,OUT-003,Outdoor & Garden,5,Makassar Hub,169,318,174,318,149,Critical,Order
+26,3,BBQ Charcoal,OUT-003,Outdoor & Garden,6,Semarang Hub,201,326,172,326,125,Critical,Order
+27,3,BBQ Charcoal,OUT-003,Outdoor & Garden,7,Yogyakarta Hub,274,302,162,302,28,Critical,Order
+28,3,BBQ Charcoal,OUT-003,Outdoor & Garden,8,Palembang Hub,71,466,261,466,395,Critical,Order
+29,3,BBQ Charcoal,OUT-003,Outdoor & Garden,9,Denpasar Hub,183,416,227,416,233,Critical,Order
+291,30,School Backpack,APP-030,Apparel & Accessories,1,Jakarta Hub,257,707,217,707,450,Critical,Order
+300,30,School Backpack,APP-030,Apparel & Accessories,10,Balikpapan Hub,132,851,262,851,719,Critical,Order
+292,30,School Backpack,APP-030,Apparel & Accessories,2,Bandung Hub,243,937,294,937,694,Critical,Order
+293,30,School Backpack,APP-030,Apparel & Accessories,3,Surabaya Hub,270,883,266,883,613,Critical,Order
+294,30,School Backpack,APP-030,Apparel & Accessories,4,Medan Hub,151,820,247,820,669,Critical,Order
+295,30,School Backpack,APP-030,Apparel & Accessories,5,Makassar Hub,269,614,187,614,345,Critical,Order
+296,30,School Backpack,APP-030,Apparel & Accessories,6,Semarang Hub,154,592,188,592,438,Critical,Order
+297,30,School Backpack,APP-030,Apparel & Accessories,7,Yogyakarta Hub,86,536,175,536,450,Critical,Order
+298,30,School Backpack,APP-030,Apparel & Accessories,8,Palembang Hub,292,915,284,915,623,Critical,Order
+299,30,School Backpack,APP-030,Apparel & Accessories,9,Denpasar Hub,243,796,247,796,553,Critical,Order
+301,31,Fall Wreath,HOM-031,Home Goods,1,Jakarta Hub,220,1004,301,1004,784,Critical,Order
+310,31,Fall Wreath,HOM-031,Home Goods,10,Balikpapan Hub,45,1195,371,1195,1150,Critical,Order
+302,31,Fall Wreath,HOM-031,Home Goods,2,Bandung Hub,252,1404,416,1404,1152,Critical,Order
+303,31,Fall Wreath,HOM-031,Home Goods,3,Surabaya Hub,87,1194,372,1194,1107,Critical,Order
+304,31,Fall Wreath,HOM-031,Home Goods,4,Medan Hub,179,1130,348,1130,951,Critical,Order
+305,31,Fall Wreath,HOM-031,Home Goods,5,Makassar Hub,61,835,259,835,774,Critical,Order
+306,31,Fall Wreath,HOM-031,Home Goods,6,Semarang Hub,83,829,258,829,746,Critical,Order
+307,31,Fall Wreath,HOM-031,Home Goods,7,Yogyakarta Hub,145,696,237,696,551,Critical,Order
+308,31,Fall Wreath,HOM-031,Home Goods,8,Palembang Hub,51,1364,400,1364,1313,Critical,Order
+309,31,Fall Wreath,HOM-031,Home Goods,9,Denpasar Hub,259,1100,348,1100,841,Critical,Order
+311,32,Apple Cider,FNB-032,Food & Beverage,1,Jakarta Hub,56,747,233,747,691,Critical,Order
+320,32,Apple Cider,FNB-032,Food & Beverage,10,Balikpapan Hub,248,906,284,906,658,Critical,Order
+312,32,Apple Cider,FNB-032,Food & Beverage,2,Bandung Hub,61,1065,320,1065,1004,Critical,Order
+313,32,Apple Cider,FNB-032,Food & Beverage,3,Surabaya Hub,24,932,287,932,908,Critical,Order
+314,32,Apple Cider,FNB-032,Food & Beverage,4,Medan Hub,38,855,267,855,817,Critical,Order
+315,32,Apple Cider,FNB-032,Food & Beverage,5,Makassar Hub,84,624,203,624,540,Critical,Order
+316,32,Apple Cider,FNB-032,Food & Beverage,6,Semarang Hub,102,621,201,621,519,Critical,Order
+317,32,Apple Cider,FNB-032,Food & Beverage,7,Yogyakarta Hub,50,582,187,582,532,Critical,Order
+318,32,Apple Cider,FNB-032,Food & Beverage,8,Palembang Hub,133,1051,306,1051,918,Critical,Order
+319,32,Apple Cider,FNB-032,Food & Beverage,9,Denpasar Hub,140,880,267,880,740,Critical,Order
+321,33,Flannel Shirt,APP-033,Apparel & Accessories,1,Jakarta Hub,47,1141,351,1141,1094,Critical,Order
+330,33,Flannel Shirt,APP-033,Apparel & Accessories,10,Balikpapan Hub,138,1320,433,1320,1182,Critical,Order
+322,33,Flannel Shirt,APP-033,Apparel & Accessories,2,Bandung Hub,163,1646,489,1646,1483,Critical,Order
+323,33,Flannel Shirt,APP-033,Apparel & Accessories,3,Surabaya Hub,243,1423,439,1423,1180,Critical,Order
+324,33,Flannel Shirt,APP-033,Apparel & Accessories,4,Medan Hub,206,1292,407,1292,1086,Critical,Order
+325,33,Flannel Shirt,APP-033,Apparel & Accessories,5,Makassar Hub,193,952,301,952,759,Critical,Order
+326,33,Flannel Shirt,APP-033,Apparel & Accessories,6,Semarang Hub,161,971,301,971,810,Critical,Order
+327,33,Flannel Shirt,APP-033,Apparel & Accessories,7,Yogyakarta Hub,150,904,278,904,754,Critical,Order
+328,33,Flannel Shirt,APP-033,Apparel & Accessories,8,Palembang Hub,264,1544,469,1544,1280,Critical,Order
+329,33,Flannel Shirt,APP-033,Apparel & Accessories,9,Denpasar Hub,190,1330,411,1330,1140,Critical,Order
+331,34,Leaf Rake,OUT-034,Outdoor & Garden,1,Jakarta Hub,30,424,150,424,394,Critical,Order
+340,34,Leaf Rake,OUT-034,Outdoor & Garden,10,Balikpapan Hub,212,575,179,575,363,Critical,Order
+332,34,Leaf Rake,OUT-034,Outdoor & Garden,2,Bandung Hub,196,601,200,601,405,Critical,Order
+333,34,Leaf Rake,OUT-034,Outdoor & Garden,3,Surabaya Hub,161,542,180,542,381,Critical,Order
+334,34,Leaf Rake,OUT-034,Outdoor & Garden,4,Medan Hub,99,541,169,541,442,Critical,Order
+335,34,Leaf Rake,OUT-034,Outdoor & Garden,5,Makassar Hub,286,410,132,410,124,Critical,Order
+336,34,Leaf Rake,OUT-034,Outdoor & Garden,6,Semarang Hub,149,419,133,419,270,Critical,Order
+337,34,Leaf Rake,OUT-034,Outdoor & Garden,7,Yogyakarta Hub,256,381,125,381,125,Critical,Order
+338,34,Leaf Rake,OUT-034,Outdoor & Garden,8,Palembang Hub,68,564,191,564,496,Critical,Order
+339,34,Leaf Rake,OUT-034,Outdoor & Garden,9,Denpasar Hub,125,520,169,520,395,Critical,Order
+341,35,3-Ring Binders,OFF-035,Office & School,1,Jakarta Hub,284,1075,335,1075,791,Critical,Order
+350,35,3-Ring Binders,OFF-035,Office & School,10,Balikpapan Hub,81,1360,413,1360,1279,Critical,Order
+342,35,3-Ring Binders,OFF-035,Office & School,2,Bandung Hub,242,1575,465,1575,1333,Critical,Order
+343,35,3-Ring Binders,OFF-035,Office & School,3,Surabaya Hub,144,1266,417,1266,1122,Critical,Order
+344,35,3-Ring Binders,OFF-035,Office & School,4,Medan Hub,200,1247,386,1247,1047,Critical,Order
+345,35,3-Ring Binders,OFF-035,Office & School,5,Makassar Hub,129,924,287,924,795,Critical,Order
+346,35,3-Ring Binders,OFF-035,Office & School,6,Semarang Hub,297,927,287,927,630,Critical,Order
+347,35,3-Ring Binders,OFF-035,Office & School,7,Yogyakarta Hub,123,865,264,865,742,Critical,Order
+348,35,3-Ring Binders,OFF-035,Office & School,8,Palembang Hub,247,1461,445,1461,1214,Critical,Order
+349,35,3-Ring Binders,OFF-035,Office & School,9,Denpasar Hub,219,1248,389,1248,1029,Critical,Order
+351,36,No. 2 Pencils (Box),OFF-036,Office & School,1,Jakarta Hub,29,1260,389,1260,1231,Critical,Order
+360,36,No. 2 Pencils (Box),OFF-036,Office & School,10,Balikpapan Hub,237,1585,477,1585,1348,Critical,Order
+352,36,No. 2 Pencils (Box),OFF-036,Office & School,2,Bandung Hub,69,1871,544,1871,1802,Critical,Order
+353,36,No. 2 Pencils (Box),OFF-036,Office & School,3,Surabaya Hub,130,1515,482,1515,1385,Critical,Order
+354,36,No. 2 Pencils (Box),OFF-036,Office & School,4,Medan Hub,242,1421,449,1421,1179,Critical,Order
+355,36,No. 2 Pencils (Box),OFF-036,Office & School,5,Makassar Hub,286,1100,330,1100,814,Critical,Order
+356,36,No. 2 Pencils (Box),OFF-036,Office & School,6,Semarang Hub,89,1102,329,1102,1013,Critical,Order
+357,36,No. 2 Pencils (Box),OFF-036,Office & School,7,Yogyakarta Hub,260,988,303,988,728,Critical,Order
+358,36,No. 2 Pencils (Box),OFF-036,Office & School,8,Palembang Hub,153,1719,520,1719,1566,Critical,Order
+359,36,No. 2 Pencils (Box),OFF-036,Office & School,9,Denpasar Hub,199,1448,448,1448,1249,Critical,Order
+361,37,Caramel Apples,FNB-037,Food & Beverage,1,Jakarta Hub,130,526,165,526,396,Critical,Order
+370,37,Caramel Apples,FNB-037,Food & Beverage,10,Balikpapan Hub,74,664,198,664,590,Critical,Order
+362,37,Caramel Apples,FNB-037,Food & Beverage,2,Bandung Hub,198,713,220,713,515,Critical,Order
+363,37,Caramel Apples,FNB-037,Food & Beverage,3,Surabaya Hub,193,648,201,648,455,Critical,Order
+364,37,Caramel Apples,FNB-037,Food & Beverage,4,Medan Hub,213,613,189,613,400,Critical,Order
+365,37,Caramel Apples,FNB-037,Food & Beverage,5,Makassar Hub,107,475,146,475,368,Critical,Order
+366,37,Caramel Apples,FNB-037,Food & Beverage,6,Semarang Hub,242,435,144,435,193,Critical,Order
+367,37,Caramel Apples,FNB-037,Food & Beverage,7,Yogyakarta Hub,118,385,136,385,267,Critical,Order
+368,37,Caramel Apples,FNB-037,Food & Beverage,8,Palembang Hub,20,728,215,728,708,Critical,Order
+369,37,Caramel Apples,FNB-037,Food & Beverage,9,Denpasar Hub,180,540,186,540,360,Critical,Order
+371,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,1,Jakarta Hub,293,1311,407,1311,1018,Critical,Order
+380,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,10,Balikpapan Hub,99,1551,497,1551,1452,Critical,Order
+372,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,2,Bandung Hub,120,1952,566,1952,1832,Critical,Order
+373,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,3,Surabaya Hub,178,1639,505,1639,1461,Critical,Order
+374,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,4,Medan Hub,11,1496,468,1496,1485,Critical,Order
+375,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,5,Makassar Hub,84,1112,345,1112,1028,Critical,Order
+376,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,6,Semarang Hub,286,1061,345,1061,775,Critical,Order
+377,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,7,Yogyakarta Hub,99,1026,318,1026,927,Critical,Order
+378,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,8,Palembang Hub,23,1835,543,1835,1812,Critical,Order
+379,38,Assorted Halloween Costumes,APP-038,Apparel & Accessories,9,Denpasar Hub,131,1521,466,1521,1390,Critical,Order
+381,39,Gardening Trowel,OUT-039,Outdoor & Garden,1,Jakarta Hub,225,712,233,712,487,Critical,Order
+390,39,Gardening Trowel,OUT-039,Outdoor & Garden,10,Balikpapan Hub,261,781,281,781,520,Critical,Order
+382,39,Gardening Trowel,OUT-039,Outdoor & Garden,2,Bandung Hub,42,934,316,934,892,Critical,Order
+383,39,Gardening Trowel,OUT-039,Outdoor & Garden,3,Surabaya Hub,195,821,288,821,626,Critical,Order
+384,39,Gardening Trowel,OUT-039,Outdoor & Garden,4,Medan Hub,241,835,266,835,594,Critical,Order
+385,39,Gardening Trowel,OUT-039,Outdoor & Garden,5,Makassar Hub,123,636,201,636,513,Critical,Order
+386,39,Gardening Trowel,OUT-039,Outdoor & Garden,6,Semarang Hub,276,608,200,608,332,Critical,Order
+387,39,Gardening Trowel,OUT-039,Outdoor & Garden,7,Yogyakarta Hub,244,511,185,511,267,Critical,Order
+388,39,Gardening Trowel,OUT-039,Outdoor & Garden,8,Palembang Hub,41,907,305,907,866,Critical,Order
+389,39,Gardening Trowel,OUT-039,Outdoor & Garden,9,Denpasar Hub,228,871,266,871,643,Critical,Order
+31,4,Beach Towel,HOM-004,Home Goods,1,Jakarta Hub,122,230,135,230,108,Critical,Transfer
+40,4,Beach Towel,HOM-004,Home Goods,10,Balikpapan Hub,59,301,157,301,242,Critical,Transfer
+32,4,Beach Towel,HOM-004,Home Goods,2,Bandung Hub,46,355,175,355,309,Critical,Transfer
+33,4,Beach Towel,HOM-004,Home Goods,3,Surabaya Hub,44,297,159,297,253,Critical,Transfer
+34,4,Beach Towel,HOM-004,Home Goods,4,Medan Hub,179,267,152,267,88,Critical,Transfer
+35,4,Beach Towel,HOM-004,Home Goods,5,Makassar Hub,273,209,118,209,0,Healthy,None
+36,4,Beach Towel,HOM-004,Home Goods,6,Semarang Hub,152,211,118,211,59,Critical,Transfer
+37,4,Beach Towel,HOM-004,Home Goods,7,Yogyakarta Hub,77,233,111,233,156,Critical,Transfer
+38,4,Beach Towel,HOM-004,Home Goods,8,Palembang Hub,134,316,168,316,182,Critical,Transfer
+39,4,Beach Towel,HOM-004,Home Goods,9,Denpasar Hub,107,297,152,297,190,Critical,Transfer
+391,40,Raincoat,APP-040,Apparel & Accessories,1,Jakarta Hub,47,470,164,470,423,Critical,Order
+400,40,Raincoat,APP-040,Apparel & Accessories,10,Balikpapan Hub,126,583,197,583,457,Critical,Order
+392,40,Raincoat,APP-040,Apparel & Accessories,2,Bandung Hub,174,636,219,636,462,Critical,Order
+393,40,Raincoat,APP-040,Apparel & Accessories,3,Surabaya Hub,74,580,200,580,506,Critical,Order
+394,40,Raincoat,APP-040,Apparel & Accessories,4,Medan Hub,290,603,187,603,313,Critical,Order
+395,40,Raincoat,APP-040,Apparel & Accessories,5,Makassar Hub,205,412,146,412,207,Critical,Order
+396,40,Raincoat,APP-040,Apparel & Accessories,6,Semarang Hub,242,449,145,449,207,Critical,Order
+397,40,Raincoat,APP-040,Apparel & Accessories,7,Yogyakarta Hub,230,381,135,381,151,Critical,Order
+398,40,Raincoat,APP-040,Apparel & Accessories,8,Palembang Hub,68,622,213,622,554,Critical,Order
+399,40,Raincoat,APP-040,Apparel & Accessories,9,Denpasar Hub,120,535,187,535,415,Critical,Order
+401,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,1,Jakarta Hub,242,390,135,390,148,Critical,Order
+410,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,10,Balikpapan Hub,297,476,156,476,179,Critical,Order
+402,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,2,Bandung Hub,222,538,174,538,316,Critical,Order
+403,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,3,Surabaya Hub,170,447,158,447,277,Critical,Order
+404,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,4,Medan Hub,140,421,150,421,281,Critical,Order
+405,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,5,Makassar Hub,252,335,117,335,83,Critical,Order
+406,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,6,Semarang Hub,56,351,119,351,295,Critical,Order
+407,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,7,Yogyakarta Hub,57,318,112,318,261,Critical,Order
+408,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,8,Palembang Hub,200,476,169,476,276,Critical,Order
+409,41,Easter Chocolate Eggs,FNB-041,Food & Beverage,9,Denpasar Hub,294,447,149,447,153,Critical,Order
+411,42,Allergy Medicine,HNB-042,Health & Beauty,1,Jakarta Hub,178,626,199,626,448,Critical,Order
+420,42,Allergy Medicine,HNB-042,Health & Beauty,10,Balikpapan Hub,229,671,239,671,442,Critical,Order
+412,42,Allergy Medicine,HNB-042,Health & Beauty,2,Bandung Hub,220,817,270,817,597,Critical,Order
+413,42,Allergy Medicine,HNB-042,Health & Beauty,3,Surabaya Hub,226,738,245,738,512,Critical,Order
+414,42,Allergy Medicine,HNB-042,Health & Beauty,4,Medan Hub,157,648,227,648,491,Critical,Order
+415,42,Allergy Medicine,HNB-042,Health & Beauty,5,Makassar Hub,63,506,173,506,443,Critical,Order
+416,42,Allergy Medicine,HNB-042,Health & Beauty,6,Semarang Hub,89,505,172,505,416,Critical,Order
+417,42,Allergy Medicine,HNB-042,Health & Beauty,7,Yogyakarta Hub,65,502,162,502,437,Critical,Order
+418,42,Allergy Medicine,HNB-042,Health & Beauty,8,Palembang Hub,198,739,261,739,541,Critical,Order
+419,42,Allergy Medicine,HNB-042,Health & Beauty,9,Denpasar Hub,152,670,228,670,518,Critical,Order
+421,43,Flower Seeds,OUT-043,Outdoor & Garden,1,Jakarta Hub,295,827,266,827,532,Critical,Order
+430,43,Flower Seeds,OUT-043,Outdoor & Garden,10,Balikpapan Hub,281,976,326,976,695,Critical,Order
+422,43,Flower Seeds,OUT-043,Outdoor & Garden,2,Bandung Hub,146,1066,364,1066,920,Critical,Order
+423,43,Flower Seeds,OUT-043,Outdoor & Garden,3,Surabaya Hub,102,1004,328,1004,902,Critical,Order
+424,43,Flower Seeds,OUT-043,Outdoor & Garden,4,Medan Hub,168,922,305,922,754,Critical,Order
+425,43,Flower Seeds,OUT-043,Outdoor & Garden,5,Makassar Hub,189,682,229,682,493,Critical,Order
+426,43,Flower Seeds,OUT-043,Outdoor & Garden,6,Semarang Hub,102,686,228,686,584,Critical,Order
+427,43,Flower Seeds,OUT-043,Outdoor & Garden,7,Yogyakarta Hub,299,648,212,648,349,Critical,Order
+428,43,Flower Seeds,OUT-043,Outdoor & Garden,8,Palembang Hub,45,1102,355,1102,1057,Critical,Order
+429,43,Flower Seeds,OUT-043,Outdoor & Garden,9,Denpasar Hub,25,971,307,971,946,Critical,Order
+431,44,Rubber Boots,APP-044,Apparel & Accessories,1,Jakarta Hub,202,497,169,497,295,Critical,Order
+440,44,Rubber Boots,APP-044,Apparel & Accessories,10,Balikpapan Hub,272,581,199,581,309,Critical,Order
+432,44,Rubber Boots,APP-044,Apparel & Accessories,2,Bandung Hub,242,633,225,633,391,Critical,Order
+433,44,Rubber Boots,APP-044,Apparel & Accessories,3,Surabaya Hub,90,624,200,624,534,Critical,Order
+434,44,Rubber Boots,APP-044,Apparel & Accessories,4,Medan Hub,176,560,189,560,384,Critical,Order
+435,44,Rubber Boots,APP-044,Apparel & Accessories,5,Makassar Hub,36,386,145,386,350,Critical,Order
+436,44,Rubber Boots,APP-044,Apparel & Accessories,6,Semarang Hub,35,424,146,424,389,Critical,Order
+437,44,Rubber Boots,APP-044,Apparel & Accessories,7,Yogyakarta Hub,149,380,137,380,231,Critical,Order
+438,44,Rubber Boots,APP-044,Apparel & Accessories,8,Palembang Hub,258,631,212,631,373,Critical,Order
+439,44,Rubber Boots,APP-044,Apparel & Accessories,9,Denpasar Hub,149,618,190,618,469,Critical,Order
+441,45,Spring Fertilizer,OUT-045,Outdoor & Garden,1,Jakarta Hub,186,1252,404,1252,1066,Critical,Order
+450,45,Spring Fertilizer,OUT-045,Outdoor & Garden,10,Balikpapan Hub,99,1484,497,1484,1385,Critical,Order
+442,45,Spring Fertilizer,OUT-045,Outdoor & Garden,2,Bandung Hub,259,1689,563,1689,1430,Critical,Order
+443,45,Spring Fertilizer,OUT-045,Outdoor & Garden,3,Surabaya Hub,167,1498,504,1498,1331,Critical,Order
+444,45,Spring Fertilizer,OUT-045,Outdoor & Garden,4,Medan Hub,122,1420,465,1420,1298,Critical,Order
+445,45,Spring Fertilizer,OUT-045,Outdoor & Garden,5,Makassar Hub,38,988,345,988,950,Critical,Order
+446,45,Spring Fertilizer,OUT-045,Outdoor & Garden,6,Semarang Hub,114,1081,345,1081,967,Critical,Order
+447,45,Spring Fertilizer,OUT-045,Outdoor & Garden,7,Yogyakarta Hub,80,972,317,972,892,Critical,Order
+448,45,Spring Fertilizer,OUT-045,Outdoor & Garden,8,Palembang Hub,71,1620,538,1620,1549,Critical,Order
+449,45,Spring Fertilizer,OUT-045,Outdoor & Garden,9,Denpasar Hub,264,1465,465,1465,1201,Critical,Order
+451,46,Pastel Decor,HOM-046,Home Goods,1,Jakarta Hub,204,851,299,851,647,Critical,Order
+460,46,Pastel Decor,HOM-046,Home Goods,10,Balikpapan Hub,176,1115,369,1115,939,Critical,Order
+452,46,Pastel Decor,HOM-046,Home Goods,2,Bandung Hub,266,1212,418,1212,946,Critical,Order
+453,46,Pastel Decor,HOM-046,Home Goods,3,Surabaya Hub,191,1128,374,1128,937,Critical,Order
+454,46,Pastel Decor,HOM-046,Home Goods,4,Medan Hub,213,1001,345,1001,788,Critical,Order
+455,46,Pastel Decor,HOM-046,Home Goods,5,Makassar Hub,233,769,258,769,536,Critical,Order
+456,46,Pastel Decor,HOM-046,Home Goods,6,Semarang Hub,245,740,257,740,495,Critical,Order
+457,46,Pastel Decor,HOM-046,Home Goods,7,Yogyakarta Hub,170,709,236,709,539,Critical,Order
+458,46,Pastel Decor,HOM-046,Home Goods,8,Palembang Hub,217,1202,400,1202,985,Critical,Order
+459,46,Pastel Decor,HOM-046,Home Goods,9,Denpasar Hub,68,1077,349,1077,1009,Critical,Order
+461,47,Watering Can,OUT-047,Outdoor & Garden,1,Jakarta Hub,245,398,134,398,153,Critical,Order
+470,47,Watering Can,OUT-047,Outdoor & Garden,10,Balikpapan Hub,88,456,158,456,368,Critical,Order
+462,47,Watering Can,OUT-047,Outdoor & Garden,2,Bandung Hub,233,497,175,497,264,Critical,Order
+463,47,Watering Can,OUT-047,Outdoor & Garden,3,Surabaya Hub,233,473,160,473,240,Critical,Order
+464,47,Watering Can,OUT-047,Outdoor & Garden,4,Medan Hub,212,438,149,438,226,Critical,Order
+465,47,Watering Can,OUT-047,Outdoor & Garden,5,Makassar Hub,123,338,120,338,215,Critical,Order
+466,47,Watering Can,OUT-047,Outdoor & Garden,6,Semarang Hub,68,355,118,355,287,Critical,Order
+467,47,Watering Can,OUT-047,Outdoor & Garden,7,Yogyakarta Hub,188,324,112,324,136,Critical,Order
+468,47,Watering Can,OUT-047,Outdoor & Garden,8,Palembang Hub,130,478,170,478,348,Critical,Order
+469,47,Watering Can,OUT-047,Outdoor & Garden,9,Denpasar Hub,141,396,150,396,255,Critical,Order
+471,48,Bird Feeder,OUT-048,Outdoor & Garden,1,Jakarta Hub,262,841,267,841,579,Critical,Order
+480,48,Bird Feeder,OUT-048,Outdoor & Garden,10,Balikpapan Hub,106,1025,327,1025,919,Critical,Order
+472,48,Bird Feeder,OUT-048,Outdoor & Garden,2,Bandung Hub,299,1140,368,1140,841,Critical,Order
+473,48,Bird Feeder,OUT-048,Outdoor & Garden,3,Surabaya Hub,171,1065,332,1065,894,Critical,Order
+474,48,Bird Feeder,OUT-048,Outdoor & Garden,4,Medan Hub,44,940,305,940,896,Critical,Order
+475,48,Bird Feeder,OUT-048,Outdoor & Garden,5,Makassar Hub,150,682,229,682,532,Critical,Order
+476,48,Bird Feeder,OUT-048,Outdoor & Garden,6,Semarang Hub,47,636,229,636,589,Critical,Order
+477,48,Bird Feeder,OUT-048,Outdoor & Garden,7,Yogyakarta Hub,39,659,213,659,620,Critical,Order
+478,48,Bird Feeder,OUT-048,Outdoor & Garden,8,Palembang Hub,56,1028,350,1028,972,Critical,Order
+479,48,Bird Feeder,OUT-048,Outdoor & Garden,9,Denpasar Hub,293,911,306,911,618,Critical,Order
+481,49,Picnic Basket,OUT-049,Outdoor & Garden,1,Jakarta Hub,41,485,167,485,444,Critical,Order
+490,49,Picnic Basket,OUT-049,Outdoor & Garden,10,Balikpapan Hub,178,556,200,556,378,Critical,Order
+482,49,Picnic Basket,OUT-049,Outdoor & Garden,2,Bandung Hub,185,644,222,644,459,Critical,Order
+483,49,Picnic Basket,OUT-049,Outdoor & Garden,3,Surabaya Hub,268,599,201,599,331,Critical,Order
+484,49,Picnic Basket,OUT-049,Outdoor & Garden,4,Medan Hub,136,519,187,519,383,Critical,Order
+485,49,Picnic Basket,OUT-049,Outdoor & Garden,5,Makassar Hub,278,411,145,411,133,Critical,Order
+486,49,Picnic Basket,OUT-049,Outdoor & Garden,6,Semarang Hub,91,417,147,417,326,Critical,Order
+487,49,Picnic Basket,OUT-049,Outdoor & Garden,7,Yogyakarta Hub,154,392,137,392,238,Critical,Order
+488,49,Picnic Basket,OUT-049,Outdoor & Garden,8,Palembang Hub,183,616,215,616,433,Critical,Order
+489,49,Picnic Basket,OUT-049,Outdoor & Garden,9,Denpasar Hub,181,576,188,576,395,Critical,Order
+41,5,Pool Float,TOY-005,Toys & Games,1,Jakarta Hub,220,219,117,219,0,Healthy,None
+50,5,Pool Float,TOY-005,Toys & Games,10,Balikpapan Hub,35,248,137,248,213,Critical,Transfer
+42,5,Pool Float,TOY-005,Toys & Games,2,Bandung Hub,37,291,152,291,254,Critical,Transfer
+43,5,Pool Float,TOY-005,Toys & Games,3,Surabaya Hub,216,260,139,260,44,Critical,Transfer
+44,5,Pool Float,TOY-005,Toys & Games,4,Medan Hub,65,233,132,233,168,Critical,Transfer
+45,5,Pool Float,TOY-005,Toys & Games,5,Makassar Hub,284,185,106,185,0,Overstock,Discount
+46,5,Pool Float,TOY-005,Toys & Games,6,Semarang Hub,81,195,105,195,114,Critical,Transfer
+47,5,Pool Float,TOY-005,Toys & Games,7,Yogyakarta Hub,246,168,101,168,0,Overstock,Discount
+48,5,Pool Float,TOY-005,Toys & Games,8,Palembang Hub,48,289,146,289,241,Critical,Transfer
+49,5,Pool Float,TOY-005,Toys & Games,9,Denpasar Hub,291,225,130,225,0,Healthy,None
+491,50,Kite,TOY-050,Toys & Games,1,Jakarta Hub,295,1024,337,1024,729,Critical,Order
+500,50,Kite,TOY-050,Toys & Games,10,Balikpapan Hub,195,1210,409,1210,1015,Critical,Order
+492,50,Kite,TOY-050,Toys & Games,2,Bandung Hub,155,1433,465,1433,1278,Critical,Order
+493,50,Kite,TOY-050,Toys & Games,3,Surabaya Hub,86,1235,414,1235,1149,Critical,Order
+494,50,Kite,TOY-050,Toys & Games,4,Medan Hub,82,1186,386,1186,1104,Critical,Order
+495,50,Kite,TOY-050,Toys & Games,5,Makassar Hub,210,908,287,908,698,Critical,Order
+496,50,Kite,TOY-050,Toys & Games,6,Semarang Hub,53,832,287,832,779,Critical,Order
+497,50,Kite,TOY-050,Toys & Games,7,Yogyakarta Hub,178,814,265,814,636,Critical,Order
+498,50,Kite,TOY-050,Toys & Games,8,Palembang Hub,279,1291,445,1291,1012,Critical,Order
+499,50,Kite,TOY-050,Toys & Games,9,Denpasar Hub,226,1182,386,1182,956,Critical,Order
+51,6,Insect Repellent,HNB-006,Health & Beauty,1,Jakarta Hub,57,541,302,541,484,Critical,Order
+60,6,Insect Repellent,HNB-006,Health & Beauty,10,Balikpapan Hub,39,659,370,659,620,Critical,Order
+52,6,Insect Repellent,HNB-006,Health & Beauty,2,Bandung Hub,258,755,417,755,497,Critical,Order
+53,6,Insect Repellent,HNB-006,Health & Beauty,3,Surabaya Hub,119,643,373,643,524,Critical,Order
+54,6,Insect Repellent,HNB-006,Health & Beauty,4,Medan Hub,94,632,345,632,538,Critical,Order
+55,6,Insect Repellent,HNB-006,Health & Beauty,5,Makassar Hub,209,445,258,445,236,Critical,Order
+56,6,Insect Repellent,HNB-006,Health & Beauty,6,Semarang Hub,242,426,258,426,184,Critical,Order
+57,6,Insect Repellent,HNB-006,Health & Beauty,7,Yogyakarta Hub,226,485,238,485,259,Critical,Order
+58,6,Insect Repellent,HNB-006,Health & Beauty,8,Palembang Hub,259,756,399,756,497,Critical,Order
+59,6,Insect Repellent,HNB-006,Health & Beauty,9,Denpasar Hub,107,599,347,599,492,Critical,Order
+61,7,Sunglasses,APP-007,Apparel & Accessories,1,Jakarta Hub,41,554,300,554,513,Critical,Order
+70,7,Sunglasses,APP-007,Apparel & Accessories,10,Balikpapan Hub,171,643,367,643,472,Critical,Order
+62,7,Sunglasses,APP-007,Apparel & Accessories,2,Bandung Hub,254,700,417,700,446,Critical,Order
+63,7,Sunglasses,APP-007,Apparel & Accessories,3,Surabaya Hub,281,686,373,686,405,Critical,Order
+64,7,Sunglasses,APP-007,Apparel & Accessories,4,Medan Hub,39,574,345,574,535,Critical,Order
+65,7,Sunglasses,APP-007,Apparel & Accessories,5,Makassar Hub,105,459,260,459,354,Critical,Order
+66,7,Sunglasses,APP-007,Apparel & Accessories,6,Semarang Hub,44,464,258,464,420,Critical,Order
+67,7,Sunglasses,APP-007,Apparel & Accessories,7,Yogyakarta Hub,136,435,238,435,299,Critical,Order
+68,7,Sunglasses,APP-007,Apparel & Accessories,8,Palembang Hub,51,717,400,717,666,Critical,Order
+69,7,Sunglasses,APP-007,Apparel & Accessories,9,Denpasar Hub,299,632,345,632,333,Critical,Order
+71,8,Swim Trunks,APP-008,Apparel & Accessories,1,Jakarta Hub,114,661,390,661,547,Critical,Order
+80,8,Swim Trunks,APP-008,Apparel & Accessories,10,Balikpapan Hub,135,885,475,885,750,Critical,Order
+72,8,Swim Trunks,APP-008,Apparel & Accessories,2,Bandung Hub,212,973,540,973,761,Critical,Order
+73,8,Swim Trunks,APP-008,Apparel & Accessories,3,Surabaya Hub,163,841,482,841,678,Critical,Order
+74,8,Swim Trunks,APP-008,Apparel & Accessories,4,Medan Hub,47,845,446,845,798,Critical,Order
+75,8,Swim Trunks,APP-008,Apparel & Accessories,5,Makassar Hub,244,627,332,627,383,Critical,Order
+76,8,Swim Trunks,APP-008,Apparel & Accessories,6,Semarang Hub,61,612,332,612,551,Critical,Order
+77,8,Swim Trunks,APP-008,Apparel & Accessories,7,Yogyakarta Hub,285,547,304,547,262,Critical,Order
+78,8,Swim Trunks,APP-008,Apparel & Accessories,8,Palembang Hub,269,931,517,931,662,Critical,Order
+79,8,Swim Trunks,APP-008,Apparel & Accessories,9,Denpasar Hub,77,750,450,750,673,Critical,Order
+81,9,Beach Umbrella,OUT-009,Outdoor & Garden,1,Jakarta Hub,234,452,267,452,218,Critical,Order
+90,9,Beach Umbrella,OUT-009,Outdoor & Garden,10,Balikpapan Hub,36,564,327,564,528,Critical,Order
+82,9,Beach Umbrella,OUT-009,Outdoor & Garden,2,Bandung Hub,280,645,368,645,365,Critical,Order
+83,9,Beach Umbrella,OUT-009,Outdoor & Garden,3,Surabaya Hub,293,531,331,531,238,Critical,Order
+84,9,Beach Umbrella,OUT-009,Outdoor & Garden,4,Medan Hub,63,494,308,494,431,Critical,Order
+85,9,Beach Umbrella,OUT-009,Outdoor & Garden,5,Makassar Hub,145,421,229,421,276,Critical,Order
+86,9,Beach Umbrella,OUT-009,Outdoor & Garden,6,Semarang Hub,64,415,228,415,351,Critical,Order
+87,9,Beach Umbrella,OUT-009,Outdoor & Garden,7,Yogyakarta Hub,154,404,213,404,250,Critical,Order
+88,9,Beach Umbrella,OUT-009,Outdoor & Garden,8,Palembang Hub,185,591,353,591,406,Critical,Order
+89,9,Beach Umbrella,OUT-009,Outdoor & Garden,9,Denpasar Hub,145,530,307,530,385,Critical,Order
+>>>>>>> 521348a31de2d03e3fa03a0a52b9b7a1c16316dd

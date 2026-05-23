@@ -4,3 +4,10 @@ scikit-learn
 lightgbm
 joblib
 pyarrow
+<<<<<<< HEAD
+=======
+fastapi
+uvicorn[standard]
+python-dotenv
+supabase
+>>>>>>> 521348a31de2d03e3fa03a0a52b9b7a1c16316dd
