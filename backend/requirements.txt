@@ -13,3 +13,5 @@ scikit-learn==1.4.0
 matplotlib==3.8.2
 python-dotenv==1.0.1
 openai>=1.30.0
+supabase>=2.0.0
+httpx>=0.24.0

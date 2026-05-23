@@ -1,8 +1,9 @@
-# Python
-.venv/
-venv/
-__pycache__/
-*.pyc
+# Python — semua level
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
 
 # Node
 node_modules/
@@ -11,6 +12,16 @@ node_modules/
 dist/
 build/
 
-# Env
-.env
-backend/.env
+# Env — semua level (jangan commit secrets)
+**/.env
+!**/.env.example
+
+# Database lokal
+**/*.db
+
+# ML artifacts (besar, tidak perlu di-track git)
+# artifacts/*.joblib   ← uncomment jika ingin exclude
+
+# Logs
+pip_install.log
+*.log

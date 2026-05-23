@@ -5,15 +5,14 @@ from collections import deque
 
 # Calendar features that can be computed for any future date
 CALENDAR_FEATURES = [
-    'year', 'month', 'dayofweek', 'dayofyear',
-    'quarter', 'is_weekend', 'weekofyear',
+    'year', 'month', 'quarter', 'weekofyear',
 ]
 
 # Lag/rolling features that must be propagated iteratively
 LAG_FEATURES = [
-    'lag_1', 'lag_7', 'lag_14', 'lag_30',
-    'rolling_mean_7', 'rolling_mean_14', 'rolling_mean_30',
-    'rolling_std_7',
+    'lag_1', 'lag_2', 'lag_3', 'lag_4',
+    'rolling_mean_4', 'rolling_mean_8',
+    'rolling_std_4',
 ]
 
 
@@ -45,14 +44,14 @@ class XGBoostForecaster:
         y = df['sales']
         self.model.fit(X, y)
 
-        # Keep a rolling buffer of the last 30 actual sales values.
+        # Keep a rolling buffer of the last 8 actual sales values.
         # This lets us compute all lag / rolling features during future prediction.
-        self._history = deque(df['sales'].values[-30:], maxlen=30)
+        self._history = deque(df['sales'].values[-8:], maxlen=8)
 
     # ─────────────────────────────────────────────────────────────────────────
     def _lag_features_from_history(self) -> dict:
         """Derive all lag/rolling features from the current history buffer."""
-        h = list(self._history)    # oldest → newest, length ≤ 30
+        h = list(self._history)    # oldest → newest, length ≤ 8
         n = len(h)
 
         def _safe(idx: int) -> float:
@@ -60,13 +59,12 @@ class XGBoostForecaster:
 
         return {
             'lag_1':            _safe(-1),
-            'lag_7':            _safe(-7),
-            'lag_14':           _safe(-14),
-            'lag_30':           _safe(-30),
-            'rolling_mean_7':   float(np.mean(h[-7:])),
-            'rolling_mean_14':  float(np.mean(h[-14:])),
-            'rolling_mean_30':  float(np.mean(h)),
-            'rolling_std_7':    float(np.std(h[-7:]) if len(h) >= 2 else 0.0),
+            'lag_2':            _safe(-2),
+            'lag_3':            _safe(-3),
+            'lag_4':            _safe(-4),
+            'rolling_mean_4':   float(np.mean(h[-4:])),
+            'rolling_mean_8':   float(np.mean(h)),
+            'rolling_std_4':    float(np.std(h[-4:]) if len(h) >= 2 else 0.0),
         }
 
     # ─────────────────────────────────────────────────────────────────────────

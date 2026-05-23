@@ -83,7 +83,7 @@ METRICS (evaluation on last year):
   R²: {metrics.get('r2', 0):.2f}
   sMAPE: {metrics.get('smape', 0):.2%}
 
-HISTORICAL BASELINE (recent 90 days avg): {historical_summary.get('avg_sales', 0):.1f} units/day
+HISTORICAL BASELINE (recent 13 weeks avg): {historical_summary.get('avg_sales', 0):.1f} units/week
 TREND vs HISTORY: {historical_summary.get('trend_pct', 0):+.0f}%
 """.strip()
 
@@ -168,7 +168,7 @@ def generate_ai_recommendation(
 
     # ── Compute historical summary stats ──────────────────────────────────────
     if historical_sales_values:
-        recent = historical_sales_values[-90:] if len(historical_sales_values) >= 90 else historical_sales_values
+        recent = historical_sales_values[-13:] if len(historical_sales_values) >= 13 else historical_sales_values
         avg_hist = float(sum(recent) / len(recent))
     else:
         avg_hist = 0.0

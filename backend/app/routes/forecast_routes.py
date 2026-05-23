@@ -56,6 +56,7 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
 
         # XGBoost: pass val_df directly (has real lag features)
         # Other models: auto-regressive via generate_future_dataframe
+        import numpy as np
         try:
             val_predictions = model.predict(val_df)
         except Exception:
@@ -65,6 +66,8 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
             )
             val_predictions = model.predict(val_future_df)
 
+        val_predictions = np.nan_to_num(val_predictions, nan=0.0, posinf=0.0, neginf=0.0)
+
         metrics_dict = calculate_metrics(val_df["sales"].values, val_predictions)
         metrics_obj  = Metrics(**metrics_dict)
 
@@ -72,11 +75,14 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         full_model = model_manager.get_model(request.model)
         full_model.train(df)
 
+        import math
+        forecast_period_weeks = math.ceil(request.forecast_period_days / 7.0)
         future_df       = model_manager.generate_future_dataframe(
             last_date=df["date"].max(),
-            steps=request.forecast_period_days,
+            steps=forecast_period_weeks,
         )
         raw_predictions = full_model.predict(future_df)
+        raw_predictions = np.nan_to_num(raw_predictions, nan=0.0, posinf=0.0, neginf=0.0)
         future_dates    = future_df["date"]
 
         # ── 6. What-if simulation ─────────────────────────────────────────────
@@ -88,9 +94,10 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
             demand_multiplier=request.demand_multiplier or 1.0,
             promotional_effect=resolved_promo,
         )
+        adjusted_predictions = np.nan_to_num(adjusted_predictions, nan=0.0, posinf=0.0, neginf=0.0)
 
-        # ── 7. Build historical data (last 90 days for the chart blue line) ───
-        hist_window = df.tail(90)
+        # ── 7. Build historical data (last 13 weeks for the chart blue line) ───
+        hist_window = df.tail(13)
         historical_points = [
             HistoricalDataPoint(
                 date=row["date"].strftime("%Y-%m-%d"),

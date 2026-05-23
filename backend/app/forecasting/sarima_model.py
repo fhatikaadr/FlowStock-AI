@@ -15,7 +15,7 @@ class SARIMAForecaster:
         model = SARIMAX(
             series,
             order=(1, 1, 1),
-            seasonal_order=(1, 1, 1, 7),  # weekly seasonality
+            seasonal_order=(0, 0, 0, 0),
         )
         self._res = model.fit(disp=False)
 

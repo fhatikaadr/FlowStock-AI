@@ -12,7 +12,7 @@ class ProphetForecaster:
     def __init__(self):
         self.model = Prophet(
             yearly_seasonality=True,
-            weekly_seasonality=True,
+            weekly_seasonality=False,
             daily_seasonality=False,
         )
         self._fitted = False
