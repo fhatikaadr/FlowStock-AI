@@ -202,11 +202,13 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         else:
             hist_window = df.tail(90)  # ~3 months of daily data
 
-        # Compute peak_week / peak_sales from the monthly weekly aggregation.
-        if weekly_raw:
-            _peak = max(weekly_raw, key=lambda w: w["predicted_sales"])
-            peak_week  = _peak["week"]
-            peak_sales = round(float(_peak["predicted_sales"]), 2)
+        # ── Compute peak from daily predictions (matches what the chart shows) ─
+        if len(daily_preds_arr) > 0:
+            peak_idx   = int(np.argmax(daily_preds_arr))
+            peak_date  = pd.Timestamp(daily_dates_list[peak_idx])
+            peak_sales = round(float(daily_preds_arr[peak_idx]), 2)
+            wk_num     = (peak_date.day - 1) // 7 + 1
+            peak_week  = f"{peak_date.strftime('%b')} W{wk_num} (day {peak_date.day})"
         else:
             peak_week  = None
             peak_sales = None
@@ -217,6 +219,8 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
             metrics=metrics_dict,
             peak_week=peak_week,
             peak_sales=peak_sales,
+            product_name=request.product_name or (f"Item #{request.item}" if request.item else None),
+            month_label=request.month or "All months",
         )
 
         # ── 11. Persist to DB ─────────────────────────────────────────────────
@@ -398,13 +402,25 @@ def get_ai_insight(request: AIInsightRequest):
                 detail="Provide either 'forecast' (daily) or 'weekly_forecast' in the request body.",
             )
 
-        # ── Auto-compute peak week / peak sales from the weekly summary ─────────
+        # ── Compute peak from daily data (matches chart) or fall back to weekly ──
         peak_week  = request.peak_week
         peak_sales = request.peak_sales
-        if (peak_week is None or peak_sales is None) and weekly_forecast_dicts:
-            best       = max(weekly_forecast_dicts, key=lambda w: w["predicted_sales"])
-            peak_week  = peak_week  or best["week"]
-            peak_sales = peak_sales or round(float(best["predicted_sales"]), 2)
+        if peak_week is None or peak_sales is None:
+            if request.forecast:
+                # Use max daily prediction — same values the chart displays
+                daily_pts = [(pd.Timestamp(pt.date), pt.predicted_sales)
+                             for pt in request.forecast]
+                if daily_pts:
+                    best_pt    = max(daily_pts, key=lambda x: x[1])
+                    peak_date  = best_pt[0]
+                    wk_num     = (peak_date.day - 1) // 7 + 1
+                    peak_week  = peak_week  or f"{peak_date.strftime('%b')} W{wk_num} (day {peak_date.day})"
+                    peak_sales = peak_sales or round(float(best_pt[1]), 2)
+            elif weekly_forecast_dicts:
+                # Fallback: weekly sum — less accurate but available
+                best       = max(weekly_forecast_dicts, key=lambda w: w["predicted_sales"])
+                peak_week  = peak_week  or best["week"]
+                peak_sales = peak_sales or round(float(best["predicted_sales"]), 2)
 
         result = generate_ai_recommendation(
             weekly_forecast=weekly_forecast_dicts,
@@ -412,6 +428,8 @@ def get_ai_insight(request: AIInsightRequest):
             metrics=metrics_dict,
             peak_week=peak_week,
             peak_sales=peak_sales,
+            product_name=request.product_name or (f"Item #{request.item}" if request.item else None),
+            month_label=request.month_label or "All months",
         )
 
         hf_token = os.getenv("HF_TOKEN", "")

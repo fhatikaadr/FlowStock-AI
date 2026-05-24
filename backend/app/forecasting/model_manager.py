@@ -50,6 +50,11 @@ class ModelManager:
         df['is_payday']        = (df['day_of_month'] == 25).astype(int)
         df['is_payday_window'] = df['day_of_month'].isin([24, 25, 26]).astype(int)
 
+        # ── Double-date features ──────────────────────────────────────────────
+        # 1/1, 2/2, 3/3 … 12/12 — shopping event spike days
+        df['is_double_date']        = (df['day_of_month'] == df['month']).astype(int)
+        df['is_double_date_window'] = ((df['day_of_month'] - df['month']).abs() <= 1).astype(int)
+
         return df
 
     def train_and_predict(self, model_name: str, historical_df: pd.DataFrame, forecast_period_days: int):

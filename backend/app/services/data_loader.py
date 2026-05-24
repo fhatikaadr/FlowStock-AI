@@ -144,6 +144,17 @@ def _apply_feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
     daily_df["is_payday"]        = (daily_df["day_of_month"] == 25).astype(int)
     daily_df["is_payday_window"] = daily_df["day_of_month"].isin([24, 25, 26]).astype(int)
 
+    # ── Double-date features ───────────────────────────────────────────────────
+    # Shopping events where day == month: 1/1, 2/2, 3/3 … 12/12
+    # (e.g. 11.11 Singles' Day, 12.12 Double Twelve, etc.)
+    daily_df["is_double_date"] = (
+        daily_df["day_of_month"] == daily_df["month"]
+    ).astype(int)
+    # ±1 day halo around the double-date event
+    daily_df["is_double_date_window"] = (
+        (daily_df["day_of_month"] - daily_df["month"]).abs() <= 1
+    ).astype(int)
+
     # ── Lag features (Daily) ──────────────────────────────────────────────────
     for lag in range(1, 8):
         daily_df[f"lag_{lag}"] = daily_df["sales"].shift(lag)
@@ -189,21 +200,36 @@ def load_raw_daily_data(
     item: Optional[int] = None,
 ) -> pd.DataFrame:
     """
-    Load raw **daily** sales data WITHOUT weekly aggregation.
+    Load raw **daily** sales data aggregated to one row per date.
 
-    Used for building the daily historical chart line. Returns a DataFrame
-    with at minimum columns: date (datetime64), sales (float).
+    Used for building the daily historical chart line and for computing
+    the historical baseline in AI insight. Sales are SUMMED across all
+    warehouses for each date so the scale matches the forecast model,
+    which also trains on date-aggregated totals.
+
+    Returns a DataFrame with columns: date (datetime64), sales (float).
     """
     if _supabase_enabled():
         raw = _load_from_supabase(warehouse=store, item=item)
         if not raw.empty:
             raw["date"] = pd.to_datetime(raw["date"])
-            raw = raw.sort_values("date").reset_index(drop=True)
-            logger.info("Loaded %d raw daily rows for display.", len(raw))
+            # Aggregate to one row per date — same as _apply_feature_engineering
+            raw = (
+                raw.groupby("date", as_index=False)["sales"]
+                .sum()
+                .sort_values("date")
+                .reset_index(drop=True)
+            )
+            logger.info("Loaded %d aggregated daily rows for display.", len(raw))
             return raw[["date", "sales"]]
         logger.warning("Supabase returned empty data for raw daily load — falling back to CSV.")
 
     raw = _load_from_csv(store=store, item=item)
     raw["date"] = pd.to_datetime(raw["date"])
-    raw = raw.sort_values("date").reset_index(drop=True)
+    raw = (
+        raw.groupby("date", as_index=False)["sales"]
+        .sum()
+        .sort_values("date")
+        .reset_index(drop=True)
+    )
     return raw[["date", "sales"]]

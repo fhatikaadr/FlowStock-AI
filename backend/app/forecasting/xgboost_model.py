@@ -12,6 +12,7 @@ CALENDAR_FEATURES = [
 DAY_FEATURES = [
     'day_of_month', 'day_of_week', 'week_of_month',
     'is_payday', 'is_payday_window',
+    'is_double_date', 'is_double_date_window',
 ]
 
 # Lag/rolling features that must be propagated iteratively

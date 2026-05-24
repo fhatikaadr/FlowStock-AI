@@ -78,6 +78,13 @@ class ForecastRequest(BaseModel):
         examples=["March"],
     )
 
+    # Human-readable context for AI insight prompt
+    product_name: Optional[str] = Field(
+        default=None,
+        description="Product/item name shown in the UI, e.g. 'Milk 1L'",
+        examples=["Milk 1L"],
+    )
+
     def resolved_month(self) -> Optional[int]:
         """Normalise month label to month number (1-12)."""
         if not self.month:
@@ -131,6 +138,9 @@ class AIInsightRequest(BaseModel):
     """Input payload for POST /forecast/ai-insight"""
     store:              Optional[int]   = None
     item:               Optional[int]   = None
+    # Human-readable context injected into the LLM prompt
+    product_name:       Optional[str]   = None   # e.g. "Milk 1L"
+    month_label:        Optional[str]   = None   # e.g. "March" or "All months"
     # Accepts EITHER daily forecast (preferred) OR pre-aggregated weekly_forecast.
     # If both are supplied, daily_forecast takes precedence.
     forecast:           Optional[List[ForecastDataPoint]]       = None  # daily
