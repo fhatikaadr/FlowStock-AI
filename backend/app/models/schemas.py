@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 
@@ -31,45 +31,62 @@ QUARTER_MAP: Dict[str, str] = {
     "q4":               "Q4",
 }
 
+# ── Month label → month number mapping ──────────────────────────────────────
+MONTH_MAP: Dict[str, int] = {
+    "jan": 1,
+    "january": 1,
+    "feb": 2,
+    "february": 2,
+    "mar": 3,
+    "march": 3,
+    "apr": 4,
+    "april": 4,
+    "may": 5,
+    "jun": 6,
+    "june": 6,
+    "jul": 7,
+    "july": 7,
+    "aug": 8,
+    "august": 8,
+    "sep": 9,
+    "sept": 9,
+    "september": 9,
+    "oct": 10,
+    "okt": 10,
+    "october": 10,
+    "nov": 11,
+    "november": 11,
+    "dec": 12,
+    "des": 12,
+    "december": 12,
+}
+
 
 class ForecastRequest(BaseModel):
-    store: Optional[int] = None
-    item: Optional[int] = None
+    store: Optional[int] = Field(default=None, examples=[1])
+    item: Optional[int] = Field(default=None, examples=[23])
     model: str = Field(
         default="xgboost",
-        description="Model: xgboost | prophet | sarima | mlp | lstm"
+        description="Model: xgboost | prophet | sarima | mlp | lstm",
+        examples=["xgboost"],
     )
-    forecast_period_days: int = Field(default=90, ge=1, le=365)
 
-    # Quarter accepts both "Q4" and "Oct - Des" style labels
-    quarter: Optional[str] = Field(
+    # Month filter for frontend chart (e.g. "March")
+    month: Optional[str] = Field(
         default=None,
-        description="Q1/Q2/Q3/Q4 or 'Jan - Mar' / 'Oct - Des' style labels"
+        description="Month name, e.g. March",
+        examples=["March"],
     )
-    seasonality_impact: Optional[str] = Field(
-        default=None,
-        description="Low | Medium | High"
-    )
-    demand_multiplier: Optional[float] = Field(default=1.0, ge=0.0)
 
-    # Named campaign support — mapped to promotional_effect internally
-    campaign: Optional[str] = Field(
-        default=None,
-        description="Campaign name: 'Payday Sale', 'Flash Sale', 'Year End Sale', etc."
-    )
-    promotional_effect: Optional[float] = Field(default=1.0, ge=0.0)
-
-    def resolved_quarter(self) -> Optional[str]:
-        """Normalise quarter label to Q1-Q4."""
-        if not self.quarter:
+    def resolved_month(self) -> Optional[int]:
+        """Normalise month label to month number (1-12)."""
+        if not self.month:
             return None
-        return QUARTER_MAP.get(self.quarter.strip().lower(), self.quarter.upper())
-
-    def resolved_promotional_effect(self) -> float:
-        """Return campaign multiplier if a campaign is named, else raw promotional_effect."""
-        if self.campaign:
-            return CAMPAIGN_MULTIPLIERS.get(self.campaign.strip().lower(), 1.0)
-        return self.promotional_effect or 1.0
+        key = self.month.strip().lower()
+        if key.isdigit():
+            value = int(key)
+            return value if 1 <= value <= 12 else None
+        return MONTH_MAP.get(key)
 
 
 class Metrics(BaseModel):
@@ -114,7 +131,10 @@ class AIInsightRequest(BaseModel):
     """Input payload for POST /forecast/ai-insight"""
     store:              Optional[int]   = None
     item:               Optional[int]   = None
-    weekly_forecast:    List[WeeklyForecastPoint]
+    # Accepts EITHER daily forecast (preferred) OR pre-aggregated weekly_forecast.
+    # If both are supplied, daily_forecast takes precedence.
+    forecast:           Optional[List[ForecastDataPoint]]       = None  # daily
+    weekly_forecast:    Optional[List[WeeklyForecastPoint]]     = []    # weekly (legacy / chart)
     historical:         Optional[List[HistoricalDataPoint]] = []
     metrics:            Optional[Metrics]  = None
     peak_week:          Optional[str]   = None
@@ -136,6 +156,8 @@ class AIInsightResponse(BaseModel):
 class ForecastResponse(BaseModel):
     status:         str
     selected_model: str
+    target_year:    int                    # e.g. 2018 — the year being forecast
+    forecast_month: Optional[str]          # e.g. "March" — the requested month, if any
     metrics:        Metrics
     # Daily forecast (for raw data consumers / tables)
     forecast:         List[ForecastDataPoint]
@@ -149,24 +171,49 @@ class ForecastResponse(BaseModel):
 class SavedScenarioCreate(BaseModel):
     name:        str
     description: Optional[str] = None
+    # parameters should include store, item, model, month used in the forecast
     parameters:  Dict[str, Any]
+    month:       Optional[str] = Field(
+        default=None,
+        description="Month the scenario was generated for, e.g. March",
+    )
 
 
 class ScenarioResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id:          int
     name:        str
     description: Optional[str]
     parameters:  Dict[str, Any]
+    month:       Optional[str]
     created_at:  datetime
 
-    class Config:
-        from_attributes = True
+
+class ForecastHistoryItem(BaseModel):
+    """One row returned by GET /forecast/history/{store}/{item}"""
+    model_config = ConfigDict(from_attributes=True, protected_namespaces=())
+
+    id:              int
+    store:           Optional[int]
+    item:            Optional[int]
+    model_used:      str
+    forecast_date:   datetime
+    predictions:     List[ForecastDataPoint]
+    metrics:         Optional[Dict[str, Any]]
+    insight_summary: Optional[str]
+
+
+class MetricsHistoryItem(BaseModel):
+    """One row returned by GET /forecast/metrics"""
+    model:   str
+    metrics: Optional[Dict[str, Any]]
+    date:    Optional[datetime]
 
 
 class ModelMetadataResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True, protected_namespaces=())
+
     model_name:   str
     description:  str
     last_trained: Optional[datetime]
-
-    class Config:
-        from_attributes = True

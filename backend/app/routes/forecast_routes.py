@@ -1,4 +1,5 @@
 import logging
+import os
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
@@ -8,21 +9,37 @@ from app.models.schemas import (
     ForecastDataPoint, WeeklyForecastPoint,
     HistoricalDataPoint, Metrics,
     AIInsightRequest, AIInsightResponse,
+    ForecastHistoryItem, MetricsHistoryItem,
 )
 from app.models import db_models
-from app.services.data_loader import load_and_preprocess_data
+from app.services.data_loader import load_and_preprocess_data, load_raw_daily_data
 from app.forecasting.model_manager import ModelManager
 from app.services.simulation_engine import apply_what_if_scenario
-from app.services.ai_insight import generate_insights, aggregate_to_weekly
+from app.services.ai_insight import aggregate_to_weekly
 from app.services.ai_recommendation import generate_ai_recommendation
 from app.evaluation.metrics import calculate_metrics
 from app.visualization.charts import generate_prediction_chart
+
+import numpy as np
+from datetime import timedelta
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
 model_manager = ModelManager()
 
 
+# NOTE: _distribute_weekly_to_daily has been removed.
+# The pipeline now works at daily resolution end-to-end, so each
+# prediction already corresponds to a single calendar day.
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# POST /forecast/run
+# Runs the full forecasting pipeline for a store/item/month combination.
+# Always forecasts a full 52-week window into the next year, then slices the
+# requested month from those results.
+# ─────────────────────────────────────────────────────────────────────────────
 @router.post("/forecast/run", response_model=ForecastResponse)
 def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
     try:
@@ -34,15 +51,32 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
                 detail="No data found for the given store/item combination."
             )
 
+        logger.info(
+            "Loaded %d rows for store=%s item=%s (min_date=%s max_date=%s)",
+            len(df),
+            request.store,
+            request.item,
+            df["date"].min().date(),
+            df["date"].max().date(),
+        )
+
         # ── 2. Resolve frontend-friendly inputs ──────────────────────────────
-        resolved_quarter    = request.resolved_quarter()
-        resolved_promo      = request.resolved_promotional_effect()
-        seasonality_impact  = (request.seasonality_impact or "").capitalize() or None
+        resolved_month     = request.resolved_month()
+        seasonality_impact = None
 
         # ── 3. Chronological year-based train/val split ──────────────────────
-        last_year = df["year"].max()
-        train_df  = df[df["year"] < last_year].copy()
-        val_df    = df[df["year"] == last_year].copy()
+        # Data is now at daily resolution. Detect a stray artifact year at the
+        # boundary by checking if the max year has ≤ 7 rows (less than a week).
+        last_year = int(df["date"].dt.year.max())
+        if (df["date"].dt.year == last_year).sum() <= 7:
+            logger.info(
+                "Daily boundary artifact detected: year %d has ≤7 rows. Rolling back to %d.",
+                last_year, last_year - 1,
+            )
+            last_year -= 1
+
+        train_df = df[df["date"].dt.year < last_year].copy()
+        val_df   = df[df["date"].dt.year == last_year].copy()
 
         if train_df.empty or val_df.empty:
             raise HTTPException(
@@ -54,13 +88,12 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         model = model_manager.get_model(request.model)
         model.train(train_df)
 
-        # XGBoost: pass val_df directly (has real lag features)
+        # XGBoost: pass val_df directly (has real lag features from the loader)
         # Other models: auto-regressive via generate_future_dataframe
-        import numpy as np
         try:
             val_predictions = model.predict(val_df)
         except Exception:
-            val_future_df   = model_manager.generate_future_dataframe(
+            val_future_df = model_manager.generate_future_dataframe(
                 last_date=train_df["date"].max(),
                 steps=len(val_df),
             )
@@ -75,11 +108,15 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         full_model = model_manager.get_model(request.model)
         full_model.train(df)
 
-        import math
-        forecast_period_weeks = math.ceil(request.forecast_period_days / 7.0)
-        future_df       = model_manager.generate_future_dataframe(
+        # Generate a full 365-day (one year) daily forecast ahead.
+        # Working at daily resolution means each prediction maps to exactly
+        # one calendar day — no weekly distribution needed.
+        target_year          = int(last_year + 1)
+        forecast_period_days = 365
+
+        future_df = model_manager.generate_future_dataframe(
             last_date=df["date"].max(),
-            steps=forecast_period_weeks,
+            steps=forecast_period_days,
         )
         raw_predictions = full_model.predict(future_df)
         raw_predictions = np.nan_to_num(raw_predictions, nan=0.0, posinf=0.0, neginf=0.0)
@@ -89,44 +126,97 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         adjusted_predictions = apply_what_if_scenario(
             predictions=raw_predictions,
             dates=future_dates,
-            quarter=resolved_quarter,
+            quarter=None,
             seasonality_impact=seasonality_impact,
-            demand_multiplier=request.demand_multiplier or 1.0,
-            promotional_effect=resolved_promo,
+            demand_multiplier=1.0,
+            promotional_effect=1.0,
         )
         adjusted_predictions = np.nan_to_num(adjusted_predictions, nan=0.0, posinf=0.0, neginf=0.0)
 
-        # ── 7. Build historical data (last 13 weeks for the chart blue line) ───
-        hist_window = df.tail(13)
+        # ── 6b. Slice to the requested month (daily resolution) ───────────────
+        if resolved_month:
+            mask = (
+                (future_dates.dt.year  == target_year) &
+                (future_dates.dt.month == resolved_month)
+            )
+            daily_dates_month = future_dates[mask]
+            daily_preds_month = adjusted_predictions[mask.to_numpy()]
+            if len(daily_dates_month) == 0:
+                raise HTTPException(
+                    status_code=400,
+                    detail=(
+                        f"No forecast points for {target_year}-{resolved_month:02d}. "
+                        "Check that the dataset covers dates close to year-end."
+                    ),
+                )
+        else:
+            daily_dates_month = future_dates
+            daily_preds_month = adjusted_predictions
+
+        # ── 7. Daily historical data — raw Supabase/CSV ───────────────────────
+        raw_daily = load_raw_daily_data(store=request.store, item=request.item)
+        if resolved_month:
+            hist_daily = raw_daily[
+                (raw_daily["date"].dt.year  == last_year) &
+                (raw_daily["date"].dt.month == resolved_month)
+            ]
+        else:
+            hist_daily = raw_daily[raw_daily["date"].dt.year == last_year]
+
         historical_points = [
             HistoricalDataPoint(
                 date=row["date"].strftime("%Y-%m-%d"),
                 sales=float(row["sales"]),
             )
-            for _, row in hist_window.iterrows()
+            for _, row in hist_daily.iterrows()
         ]
 
         # ── 8. Daily forecast data points ─────────────────────────────────────
+        # Predictions are already at daily resolution — emit them directly.
         forecast_points = [
             ForecastDataPoint(
                 date=d.strftime("%Y-%m-%d"),
                 predicted_sales=round(float(p), 4),
             )
-            for d, p in zip(future_dates, adjusted_predictions)
+            for d, p in zip(daily_dates_month, daily_preds_month)
         ]
 
-        # ── 9. Weekly aggregated forecast (for the chart) ─────────────────────
-        weekly_raw = aggregate_to_weekly(future_dates.tolist(), adjusted_predictions)
+        # ── 9. Weekly aggregated forecast (for the chart summary / ai-insight) ──
+        # Aggregate the daily predictions to weekly buckets for the summary chart.
+        daily_dates_list = list(daily_dates_month)
+        daily_preds_arr  = np.array(daily_preds_month)
+        weekly_raw = aggregate_to_weekly(daily_dates_list, daily_preds_arr)
         weekly_points = [
             WeeklyForecastPoint(week=w["week"], predicted_sales=w["predicted_sales"])
             for w in weekly_raw
         ]
 
-        # ── 10. AI Insights with peak week detection ───────────────────────────
-        insights_dict = generate_insights(
-            historical_sales=df["sales"].values,
-            predicted_sales=adjusted_predictions,
-            future_dates=future_dates.tolist(),
+        # ── 10. AI Insight — infer per month × item ───────────────────────────
+        # Run LLM (or rule-based fallback) scoped to the selected month & item.
+        # Historical baseline: same month in the previous year (daily resolution).
+        if resolved_month:
+            hist_window = df[
+                (df["date"].dt.year  == last_year) &
+                (df["date"].dt.month == resolved_month)
+            ].copy()
+        else:
+            hist_window = df.tail(90)  # ~3 months of daily data
+
+        # Compute peak_week / peak_sales from the monthly weekly aggregation.
+        if weekly_raw:
+            _peak = max(weekly_raw, key=lambda w: w["predicted_sales"])
+            peak_week  = _peak["week"]
+            peak_sales = round(float(_peak["predicted_sales"]), 2)
+        else:
+            peak_week  = None
+            peak_sales = None
+
+        insights_dict = generate_ai_recommendation(
+            weekly_forecast=weekly_raw,
+            historical_sales_values=hist_window["sales"].tolist(),
+            metrics=metrics_dict,
+            peak_week=peak_week,
+            peak_sales=peak_sales,
         )
 
         # ── 11. Persist to DB ─────────────────────────────────────────────────
@@ -153,6 +243,8 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         return ForecastResponse(
             status="success",
             selected_model=request.model,
+            target_year=target_year,
+            forecast_month=request.month,
             metrics=metrics_obj,
             forecast=forecast_points,
             weekly_forecast=weekly_points,
@@ -167,7 +259,15 @@ def run_forecast(request: ForecastRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@router.get("/forecast/history/{store}/{item}")
+# ─────────────────────────────────────────────────────────────────────────────
+# GET /forecast/history/{store}/{item}
+# Returns past forecast runs for a given store+item pair, newest first.
+# ─────────────────────────────────────────────────────────────────────────────
+@router.get(
+    "/forecast/history/{store}/{item}",
+    response_model=list[ForecastHistoryItem],
+    summary="Get forecast history for a store/item pair",
+)
 def get_forecast_history(store: int, item: int, db: Session = Depends(get_db)):
     history = (
         db.query(db_models.ForecastHistory)
@@ -178,15 +278,29 @@ def get_forecast_history(store: int, item: int, db: Session = Depends(get_db)):
         .order_by(db_models.ForecastHistory.forecast_date.desc())
         .all()
     )
+    if not history:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No forecast history found for store={store}, item={item}.",
+        )
     return history
 
 
-@router.post("/forecast/scenario/save", response_model=ScenarioResponse)
+# ─────────────────────────────────────────────────────────────────────────────
+# POST /forecast/scenario/save
+# Saves a named forecast scenario (store, item, model, month) to the DB.
+# ─────────────────────────────────────────────────────────────────────────────
+@router.post(
+    "/forecast/scenario/save",
+    response_model=ScenarioResponse,
+    summary="Save a forecast scenario",
+)
 def save_scenario(scenario: SavedScenarioCreate, db: Session = Depends(get_db)):
     db_scenario = db_models.SavedScenario(
         name=scenario.name,
         description=scenario.description,
         parameters=scenario.parameters,
+        month=scenario.month,
     )
     db.add(db_scenario)
     db.commit()
@@ -194,16 +308,38 @@ def save_scenario(scenario: SavedScenarioCreate, db: Session = Depends(get_db)):
     return db_scenario
 
 
-@router.get("/forecast/models")
+# ─────────────────────────────────────────────────────────────────────────────
+# GET /forecast/models
+# Returns the list of supported forecasting models and valid month names.
+# ─────────────────────────────────────────────────────────────────────────────
+@router.get(
+    "/forecast/models",
+    summary="List supported forecasting models and valid month options",
+)
 def get_models():
+    from app.models.schemas import MONTH_MAP
     return {
         "supported_models": model_manager.get_supported_models(),
-        "supported_campaigns": list(__import__("app.models.schemas", fromlist=["CAMPAIGN_MULTIPLIERS"]).CAMPAIGN_MULTIPLIERS.keys()),
-        "supported_quarters": ["Q1 (Jan-Mar)", "Q2 (Apr-Jun)", "Q3 (Jul-Sep)", "Q4 (Oct-Des)"],
+        "supported_months": sorted(
+            {k.capitalize() for k in MONTH_MAP if not k.isdigit() and len(k) > 3},
+            key=lambda m: MONTH_MAP[m.lower()],
+        ),
+        "note": (
+            "Pass 'month' in the /forecast/run request body (e.g. 'March'). "
+            "The backend always forecasts a full year ahead and slices the requested month."
+        ),
     }
 
 
-@router.get("/forecast/metrics")
+# ─────────────────────────────────────────────────────────────────────────────
+# GET /forecast/metrics
+# Returns the 10 most recent forecast metric summaries from the DB.
+# ─────────────────────────────────────────────────────────────────────────────
+@router.get(
+    "/forecast/metrics",
+    response_model=list[MetricsHistoryItem],
+    summary="Get recent forecast performance metrics",
+)
 def get_recent_metrics(db: Session = Depends(get_db)):
     history = (
         db.query(db_models.ForecastHistory)
@@ -212,45 +348,72 @@ def get_recent_metrics(db: Session = Depends(get_db)):
         .all()
     )
     return [
-        {"model": h.model_used, "metrics": h.metrics, "date": h.forecast_date}
+        MetricsHistoryItem(
+            model=h.model_used,
+            metrics=h.metrics,
+            date=h.forecast_date,
+        )
         for h in history
     ]
 
 
-@router.post("/forecast/ai-insight", response_model=AIInsightResponse)
+# ─────────────────────────────────────────────────────────────────────────────
+# POST /forecast/ai-insight
+# Generates AI-powered business insights from already-computed forecast data.
+# Accepts weekly_forecast + historical + metrics from a previous /forecast/run
+# call and returns natural-language insights and bullet points.
+# Falls back to rule-based insight when HF_TOKEN is not configured.
+# ─────────────────────────────────────────────────────────────────────────────
+@router.post(
+    "/forecast/ai-insight",
+    response_model=AIInsightResponse,
+    summary="Generate AI business insights from forecast results",
+)
 def get_ai_insight(request: AIInsightRequest):
-    """
-    Generate AI-powered business insights using HuggingFace LLM (Qwen).
-
-    This is an independent endpoint — it accepts already-computed forecast
-    data (weekly_forecast, historical, metrics) and returns natural-language
-    insights and bullet points tailored to the AI Insight panel in the frontend.
-
-    If the HF_TOKEN is not configured, it gracefully falls back to rule-based
-    insights so the panel always has data to display.
-    """
     try:
-        # Serialise schema objects → plain dicts for the service layer
-        weekly_forecast_dicts = [
-            {"week": pt.week, "predicted_sales": pt.predicted_sales}
-            for pt in request.weekly_forecast
-        ]
+        metrics_dict = request.metrics.model_dump() if request.metrics else {}
 
         historical_values = [
             float(pt.sales) for pt in (request.historical or [])
         ]
 
-        metrics_dict = request.metrics.model_dump() if request.metrics else {}
+        # ── Resolve weekly_forecast from daily data or use pre-aggregated ──────
+        # Priority: daily forecast (request.forecast) > weekly_forecast supplied
+        if request.forecast:
+            # Aggregate daily → weekly so the LLM prompt stays concise
+            daily_dates = [pd.Timestamp(pt.date) for pt in request.forecast]
+            daily_preds = np.array([pt.predicted_sales for pt in request.forecast])
+            weekly_forecast_dicts = aggregate_to_weekly(daily_dates, daily_preds)
+        elif request.weekly_forecast:
+            weekly_forecast_dicts = [
+                {"week": pt.week, "predicted_sales": pt.predicted_sales}
+                for pt in request.weekly_forecast
+            ]
+        else:
+            weekly_forecast_dicts = []
+
+        if not weekly_forecast_dicts:
+            raise HTTPException(
+                status_code=400,
+                detail="Provide either 'forecast' (daily) or 'weekly_forecast' in the request body.",
+            )
+
+        # ── Auto-compute peak week / peak sales from the weekly summary ─────────
+        peak_week  = request.peak_week
+        peak_sales = request.peak_sales
+        if (peak_week is None or peak_sales is None) and weekly_forecast_dicts:
+            best       = max(weekly_forecast_dicts, key=lambda w: w["predicted_sales"])
+            peak_week  = peak_week  or best["week"]
+            peak_sales = peak_sales or round(float(best["predicted_sales"]), 2)
 
         result = generate_ai_recommendation(
             weekly_forecast=weekly_forecast_dicts,
             historical_sales_values=historical_values,
             metrics=metrics_dict,
-            peak_week=request.peak_week,
-            peak_sales=request.peak_sales,
+            peak_week=peak_week,
+            peak_sales=peak_sales,
         )
 
-        import os
         hf_token = os.getenv("HF_TOKEN", "")
         source = "rule-based" if not hf_token or hf_token in ("xx", "your_token_here", "") else "llm"
 
@@ -265,6 +428,9 @@ def get_ai_insight(request: AIInsightRequest):
             source=source,
         )
 
+    except HTTPException:
+        raise
     except Exception as e:
         logger.exception("AI Insight endpoint failed")
         raise HTTPException(status_code=500, detail=str(e))
+

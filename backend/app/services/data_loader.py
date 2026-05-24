@@ -26,8 +26,13 @@ DATASET_PATH = os.getenv(
     str(_PROJECT_ROOT / "dataset" / "store_sales.csv"),
 )
 
-# ── Supabase REST batch size (max rows per request) ───────────────────────────
-_SUPABASE_BATCH = 10_000
+# ── Supabase REST batch size ───────────────────────────────────────────────────
+# Supabase REST API caps each response at 1 000 rows by default.
+# The pagination loop exits when len(batch) < _SUPABASE_BATCH, so this value
+# MUST match Supabase's real limit — otherwise the loop exits after the first
+# page and only ~1 000 rows (e.g. 2013–mid-2015) are loaded instead of all
+# 1 826 rows (2013–2017).
+_SUPABASE_BATCH = 1_000
 
 
 def _supabase_enabled() -> bool:
@@ -115,37 +120,44 @@ def _apply_feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
     """
     Common feature engineering applied to either Supabase or CSV data.
     Input must have columns: date, sales (optionally store/item filtered).
-    Aggregates to weekly (W-MON) resolution.
+    Operates at DAILY resolution so the model can learn intra-week and
+    intra-month patterns (including the payday spike on the 25th).
     """
     df["date"] = pd.to_datetime(df["date"])
 
-    # Aggregate to weekly level (W-MON)
-    weekly_df = df.set_index("date").resample("W-MON")["sales"].sum().reset_index()
-    weekly_df.sort_values("date", inplace=True)
-    weekly_df.reset_index(drop=True, inplace=True)
+    # Aggregate to daily level (sum across any store/item duplicates for same date)
+    daily_df = df.groupby("date", as_index=False)["sales"].sum()
+    daily_df.sort_values("date", inplace=True)
+    daily_df.reset_index(drop=True, inplace=True)
 
     # ── Calendar features ─────────────────────────────────────────────────────
-    weekly_df["year"]       = weekly_df["date"].dt.year
-    weekly_df["month"]      = weekly_df["date"].dt.month
-    weekly_df["quarter"]    = weekly_df["date"].dt.quarter
-    weekly_df["weekofyear"] = weekly_df["date"].dt.isocalendar().week.astype(int)
+    daily_df["year"]        = daily_df["date"].dt.year
+    daily_df["month"]       = daily_df["date"].dt.month
+    daily_df["quarter"]     = daily_df["date"].dt.quarter
+    daily_df["weekofyear"]  = daily_df["date"].dt.isocalendar().week.astype(int)
+    daily_df["day_of_month"] = daily_df["date"].dt.day
+    daily_df["day_of_week"]  = daily_df["date"].dt.dayofweek   # 0=Mon … 6=Sun
+    daily_df["week_of_month"] = (daily_df["date"].dt.day - 1) // 7 + 1
 
-    # ── Lag features (Weekly) ──────────────────────────────────────────────────
-    weekly_df["lag_1"] = weekly_df["sales"].shift(1)
-    weekly_df["lag_2"] = weekly_df["sales"].shift(2)
-    weekly_df["lag_3"] = weekly_df["sales"].shift(3)
-    weekly_df["lag_4"] = weekly_df["sales"].shift(4)
+    # ── Payday features ───────────────────────────────────────────────────────
+    # The 25th of each month is payday → strong sales spike
+    daily_df["is_payday"]        = (daily_df["day_of_month"] == 25).astype(int)
+    daily_df["is_payday_window"] = daily_df["day_of_month"].isin([24, 25, 26]).astype(int)
 
-    # ── Rolling statistics (Weekly) ────────────────────────────────────────────
-    weekly_df["rolling_mean_4"] = weekly_df["sales"].rolling(4, min_periods=1).mean()
-    weekly_df["rolling_mean_8"] = weekly_df["sales"].rolling(8, min_periods=1).mean()
-    weekly_df["rolling_std_4"]  = weekly_df["sales"].rolling(4, min_periods=1).std().fillna(0)
+    # ── Lag features (Daily) ──────────────────────────────────────────────────
+    for lag in range(1, 8):
+        daily_df[f"lag_{lag}"] = daily_df["sales"].shift(lag)
+
+    # ── Rolling statistics (Daily) ────────────────────────────────────────────
+    daily_df["rolling_mean_7"]  = daily_df["sales"].rolling(7,  min_periods=1).mean()
+    daily_df["rolling_mean_14"] = daily_df["sales"].rolling(14, min_periods=1).mean()
+    daily_df["rolling_std_7"]   = daily_df["sales"].rolling(7,  min_periods=1).std().fillna(0)
 
     # Back-fill any remaining NaNs from initial lag periods
-    weekly_df.bfill(inplace=True)
-    weekly_df.reset_index(drop=True, inplace=True)
+    daily_df.bfill(inplace=True)
+    daily_df.reset_index(drop=True, inplace=True)
 
-    return weekly_df
+    return daily_df
 
 
 def load_and_preprocess_data(
@@ -170,3 +182,28 @@ def load_and_preprocess_data(
     # Fallback to CSV
     raw = _load_from_csv(store=store, item=item)
     return _apply_feature_engineering(raw)
+
+
+def load_raw_daily_data(
+    store: Optional[int] = None,
+    item: Optional[int] = None,
+) -> pd.DataFrame:
+    """
+    Load raw **daily** sales data WITHOUT weekly aggregation.
+
+    Used for building the daily historical chart line. Returns a DataFrame
+    with at minimum columns: date (datetime64), sales (float).
+    """
+    if _supabase_enabled():
+        raw = _load_from_supabase(warehouse=store, item=item)
+        if not raw.empty:
+            raw["date"] = pd.to_datetime(raw["date"])
+            raw = raw.sort_values("date").reset_index(drop=True)
+            logger.info("Loaded %d raw daily rows for display.", len(raw))
+            return raw[["date", "sales"]]
+        logger.warning("Supabase returned empty data for raw daily load — falling back to CSV.")
+
+    raw = _load_from_csv(store=store, item=item)
+    raw["date"] = pd.to_datetime(raw["date"])
+    raw = raw.sort_values("date").reset_index(drop=True)
+    return raw[["date", "sales"]]

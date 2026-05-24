@@ -17,7 +17,8 @@ class SavedScenario(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     description = Column(String, nullable=True)
-    parameters = Column(JSON) # e.g., {"quarter": "Q2", "seasonality_impact": "High"}
+    parameters = Column(JSON) # e.g., {"store": 1, "item": 23, "model": "xgboost", "month": "March"}
+    month = Column(String, nullable=True)  # e.g. "March"
     created_at = Column(DateTime, default=datetime.utcnow)
 
 class ForecastHistory(Base):

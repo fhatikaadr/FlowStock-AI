@@ -9,7 +9,7 @@ from collections import deque
 
 
 class MLPForecaster:
-    def __init__(self, window_size: int = 8):
+    def __init__(self, window_size: int = 14):
         self.window_size = window_size
         self.scaler      = MinMaxScaler(feature_range=(0, 1))
         self._model      = None

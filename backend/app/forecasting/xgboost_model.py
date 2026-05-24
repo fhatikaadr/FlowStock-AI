@@ -8,11 +8,17 @@ CALENDAR_FEATURES = [
     'year', 'month', 'quarter', 'weekofyear',
 ]
 
+# Day-level features (deterministic for any future date)
+DAY_FEATURES = [
+    'day_of_month', 'day_of_week', 'week_of_month',
+    'is_payday', 'is_payday_window',
+]
+
 # Lag/rolling features that must be propagated iteratively
 LAG_FEATURES = [
-    'lag_1', 'lag_2', 'lag_3', 'lag_4',
-    'rolling_mean_4', 'rolling_mean_8',
-    'rolling_std_4',
+    'lag_1', 'lag_2', 'lag_3', 'lag_4', 'lag_5', 'lag_6', 'lag_7',
+    'rolling_mean_7', 'rolling_mean_14',
+    'rolling_std_7',
 ]
 
 
@@ -31,27 +37,29 @@ class XGBoostForecaster:
             n_jobs=-1,
         )
         self.trained_features: list[str] = []
-        # Circular buffer of recent actual/predicted values for lag propagation
+        # Circular buffer of recent actual/predicted values for lag propagation.
+        # Keep 14 days (2 weeks) so all lag_1..lag_7 and rolling windows are covered.
         self._history: deque | None = None
 
     # ─────────────────────────────────────────────────────────────────────────
     def train(self, df: pd.DataFrame):
         available_cal = [f for f in CALENDAR_FEATURES if f in df.columns]
+        available_day = [f for f in DAY_FEATURES      if f in df.columns]
         available_lag = [f for f in LAG_FEATURES      if f in df.columns]
-        self.trained_features = available_cal + available_lag
+        self.trained_features = available_cal + available_day + available_lag
 
         X = df[self.trained_features]
         y = df['sales']
         self.model.fit(X, y)
 
-        # Keep a rolling buffer of the last 8 actual sales values.
-        # This lets us compute all lag / rolling features during future prediction.
-        self._history = deque(df['sales'].values[-8:], maxlen=8)
+        # Keep a rolling buffer of the last 14 actual daily sales values.
+        # This lets us compute all lag/rolling features during future prediction.
+        self._history = deque(df['sales'].values[-14:], maxlen=14)
 
     # ─────────────────────────────────────────────────────────────────────────
     def _lag_features_from_history(self) -> dict:
         """Derive all lag/rolling features from the current history buffer."""
-        h = list(self._history)    # oldest → newest, length ≤ 8
+        h = list(self._history)    # oldest → newest, length ≤ 14
         n = len(h)
 
         def _safe(idx: int) -> float:
@@ -62,9 +70,12 @@ class XGBoostForecaster:
             'lag_2':            _safe(-2),
             'lag_3':            _safe(-3),
             'lag_4':            _safe(-4),
-            'rolling_mean_4':   float(np.mean(h[-4:])),
-            'rolling_mean_8':   float(np.mean(h)),
-            'rolling_std_4':    float(np.std(h[-4:]) if len(h) >= 2 else 0.0),
+            'lag_5':            _safe(-5),
+            'lag_6':            _safe(-6),
+            'lag_7':            _safe(-7),
+            'rolling_mean_7':   float(np.mean(h[-7:])),
+            'rolling_mean_14':  float(np.mean(h)),
+            'rolling_std_7':    float(np.std(h[-7:]) if len(h) >= 2 else 0.0),
         }
 
     # ─────────────────────────────────────────────────────────────────────────
@@ -93,7 +104,7 @@ class XGBoostForecaster:
             lag_feats = self._lag_features_from_history()
             feat_row: dict = {}
             for f in self.trained_features:
-                if f in CALENDAR_FEATURES:
+                if f in CALENDAR_FEATURES or f in DAY_FEATURES:
                     feat_row[f] = row[f]
                 else:
                     feat_row[f] = lag_feats.get(f, 0.0)

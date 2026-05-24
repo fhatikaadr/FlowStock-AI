@@ -12,8 +12,8 @@ class ProphetForecaster:
     def __init__(self):
         self.model = Prophet(
             yearly_seasonality=True,
-            weekly_seasonality=False,
-            daily_seasonality=False,
+            weekly_seasonality=True,   # captures Mon-Sun variation (daily data)
+            daily_seasonality=False,   # sub-daily data not available
         )
         self._fitted = False
 

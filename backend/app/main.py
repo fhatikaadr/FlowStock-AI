@@ -1,16 +1,28 @@
+import logging
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.exc import SQLAlchemyError
+
 from app.database import engine, Base
 from app.routes import forecast_routes
-
-# Create DB Tables
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="FlowStock AI Forecasting API",
     description="Backend AI engine for inventory management and sales prediction.",
     version="1.0.0"
 )
+
+logger = logging.getLogger("uvicorn.error")
+
+
+@app.on_event("startup")
+def init_db() -> None:
+    try:
+        Base.metadata.create_all(bind=engine)
+    except SQLAlchemyError as exc:
+        # Allow the app to boot even if the database is unreachable.
+        logger.warning("Database init skipped: %s", exc)
 
 # CORS configuration
 app.add_middleware(
