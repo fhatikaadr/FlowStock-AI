@@ -1,0 +1,73 @@
+{
+  "calendar_features": [
+    "year",
+    "month",
+    "quarter",
+    "weekofyear"
+  ],
+  "day_features": [
+    "day_of_month",
+    "day_of_week",
+    "week_of_month",
+    "is_payday",
+    "is_payday_window"
+  ],
+  "lag_features": [
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_4",
+    "lag_5",
+    "lag_6",
+    "lag_7",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_std_7"
+  ],
+  "all_features": [
+    "year",
+    "month",
+    "quarter",
+    "weekofyear",
+    "day_of_month",
+    "day_of_week",
+    "week_of_month",
+    "is_payday",
+    "is_payday_window",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_4",
+    "lag_5",
+    "lag_6",
+    "lag_7",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_std_7"
+  ],
+  "training_info": {
+    "train_shape": [
+      1460,
+      19
+    ],
+    "val_shape": [
+      366,
+      19
+    ],
+    "date_range": "2013-01-01 00:00:00 to 2017-12-31 00:00:00",
+    "training_rmse": 187.07812956756865,
+    "validation_rmse": 2297.534765787016,
+    "validation_r2": 0.863664448261261,
+    "validation_mape": 4.188247995566198
+  },
+  "model_params": {
+    "n_estimators": 500,
+    "learning_rate": 0.04,
+    "max_depth": 6,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0
+  }
+}
